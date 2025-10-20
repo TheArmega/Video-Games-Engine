@@ -10,22 +10,25 @@ private:
   bool render;
   float radius;
   float mass;
+  float xPos, yPos;
   float xVel, yVel;
   int rColor, gColor, bColor;
 
 public:
   Circle(std::string _name = "circle", bool _render = true,
-         float _radius = 1.0f, float _mass = 1.0f, float _xVel = 1.0f,
-         float _yVel = 1.0f, int _rColor = 255, int _gColor = 255,
-         int _bColor = 255);
+         float _radius = 1.0f, float _mass = 1.0f, float _xPos = 0.f,
+         float _yPos = 0.f, float _xVel = 1.0f, float _yVel = 1.0f,
+         int _rColor = 255, int _gColor = 255, int _bColor = 255);
 
   // Setters
   void setName(std::string n);
   void setRender(bool r);
   void setRadius(float r);
   void setMass(float m);
-  void setXVel(float x);
-  void setYVel(float y);
+  void setXPos(float p);
+  void setYPos(float p);
+  void setXVel(float v);
+  void setYVel(float v);
   void setRColor(int r);
   void setGColor(int g);
   void setBColor(int b);
@@ -35,6 +38,8 @@ public:
   bool getRender() const;
   float getRadius() const;
   float getMass() const;
+  float getXPos() const;
+  float getYPos() const;
   float getXVel() const;
   float getYVel() const;
   int getRColor() const;

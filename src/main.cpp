@@ -22,13 +22,15 @@ int main() {
     return -1;
   }
 
-  Circle circle("circle", true, 100.f, 1.f, 1.f, 1.f, 138, 206, 255);
-  sf::CircleShape shape(circle.getRadius());
+  CircleContainer container("container");
+  Circle circle1("circle1", true, 100.f, 10.f, 200.f, 300.f, 1.f, 1.f, 138, 206,
+                 255);
+  container.addCircle(circle1);
+  Circle circle2("circle2", true, 100.f, 10.f, 400.f, 600.f, 1.f, 1.f, 170, 51,
+                 235);
+  container.addCircle(circle2);
 
-  shape.setFillColor(
-      sf::Color(circle.getRColor(), circle.getGColor(), circle.getBColor()));
-  shape.setOrigin({shape.getRadius(), shape.getRadius()});
-  shape.setPosition({float(width) / 2, float(height) / 2});
+  // container.delCircle(circle2.getName());
 
   sf::Clock deltaClock;
 
@@ -49,7 +51,11 @@ int main() {
     ImGui::End();
 
     window.clear();
-    window.draw(shape);
+
+    for (const auto &pair : container.getContainer()) {
+      window.draw(pair.second);
+    }
+
     ImGui::SFML::Render(window);
     window.display();
   }
