@@ -13,11 +13,7 @@ set(IMGUI_SFML_DIR "${CMAKE_SOURCE_DIR}/imgui-sfml")
 
 add_executable(VideoGamesEngine
   src/main.cpp
-<<<<<<< Updated upstream
-=======
   src/circle.cpp
-  src/circleContainer.cpp
->>>>>>> Stashed changes
 )
 
 # Agregar subdirectorio de ImGui-SFML
