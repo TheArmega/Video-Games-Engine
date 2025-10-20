@@ -1,6 +1,8 @@
 #include "imgui-SFML.h"
 #include "imgui.h"
 
+#include "circle.h"
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/CircleShape.hpp>
 #include <SFML/Graphics/Color.hpp>
@@ -20,8 +22,11 @@ int main() {
     return -1;
   }
 
-  sf::CircleShape shape(100.f);
-  shape.setFillColor(sf::Color(138, 206, 0));
+  Circle circle("circle", true, 100.f, 1.f, 1.f, 1.f, 138, 206, 255);
+  sf::CircleShape shape(circle.getRadius());
+
+  shape.setFillColor(
+      sf::Color(circle.getRColor(), circle.getGColor(), circle.getBColor()));
   shape.setOrigin({shape.getRadius(), shape.getRadius()});
   shape.setPosition({float(width) / 2, float(height) / 2});
 
