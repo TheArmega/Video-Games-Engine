@@ -2,6 +2,7 @@
 #include "imgui.h"
 
 #include "circle.h"
+#include "circleContainer.h"
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/CircleShape.hpp>
