@@ -27,6 +27,8 @@ public:
   void closeDb();
   void checkDbExist(std::string f);
   void createTable(std::string t = TABLE_CREATION_QUERY);
+  sqlite3_stmt *prepareStatement(const char *sql);
+  bool processQuery(sqlite3_stmt *stmt, std::string msg);
   void insertCircle(Circle circle);
   void deleteCircle(Circle circle);
 };

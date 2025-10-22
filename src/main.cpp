@@ -24,7 +24,7 @@ int main() {
     return -1;
   }
 
-  DataBase db("../example.db");
+  DataBase db("../circles.db");
   db.createTable();
 
   CircleContainer container("container");
@@ -37,8 +37,6 @@ int main() {
                  235);
   container.addCircle(circle2);
   db.insertCircle(circle2);
-
-  db.deleteCircle(circle1);
 
   container.delCircle(circle2.getName());
 

@@ -67,6 +67,33 @@ void DataBase::createTable(std::string t) {
   closeDb();
 }
 
+sqlite3_stmt *DataBase::prepareStatement(const char *sql) {
+  sqlite3_stmt *stmt;
+  int exit = sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
+  if (exit != SQLITE_OK) {
+    std::cerr << "Error while preparing statement: " << sqlite3_errmsg(db)
+              << std::endl;
+    return nullptr;
+  } else
+    return stmt;
+}
+
+bool DataBase::processQuery(sqlite3_stmt *stmt, std::string msg) {
+
+  int exit = sqlite3_step(stmt);
+
+  if (exit != SQLITE_DONE) {
+    std::cerr << "Error while processing query: " << sqlite3_errmsg(db)
+              << std::endl;
+    sqlite3_finalize(stmt);
+    return false;
+  } else
+    std::cout << msg << std::endl;
+
+  sqlite3_finalize(stmt);
+  return true;
+}
+
 void DataBase::insertCircle(Circle c) {
   if (!openDb())
     return;
@@ -76,11 +103,8 @@ void DataBase::insertCircle(Circle c) {
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
   )";
 
-  sqlite3_stmt *stmt;
-  int exit = sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
-  if (exit != SQLITE_OK) {
-    std::cerr << "Error while preparing statement: " << sqlite3_errmsg(db)
-              << std::endl;
+  sqlite3_stmt *stmt = prepareStatement(sql);
+  if (!stmt) {
     closeDb();
     return;
   }
@@ -97,15 +121,7 @@ void DataBase::insertCircle(Circle c) {
   sqlite3_bind_int(stmt, 10, c.getGColor());
   sqlite3_bind_int(stmt, 11, c.getBColor());
 
-  exit = sqlite3_step(stmt);
-
-  if (exit != SQLITE_DONE) {
-    std::cerr << "Error while inserting query: " << sqlite3_errmsg(db)
-              << std::endl;
-  } else
-    std::cout << "Circle inserted in table!" << std::endl;
-
-  sqlite3_finalize(stmt);
+  processQuery(stmt, "Inserted Circle successfully!");
   closeDb();
 }
 
@@ -117,24 +133,14 @@ void DataBase::deleteCircle(Circle c) {
       DELETE FROM CIRCLES WHERE name = ?; 
     )";
 
-  sqlite3_stmt *stmt;
-  int exit = sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
-  if (exit != SQLITE_OK) {
-    std::cerr << "Error while preparing statement: " << sqlite3_errmsg(db)
-              << std::endl;
+  sqlite3_stmt *stmt = prepareStatement(sql);
+  if (!stmt) {
     closeDb();
     return;
   }
 
   sqlite3_bind_text(stmt, 1, c.getName().c_str(), -1, SQLITE_TRANSIENT);
 
-  exit = sqlite3_step(stmt);
-  if (exit != SQLITE_DONE) {
-    std::cerr << "Error while deleting query: " << sqlite3_errmsg(db)
-              << std::endl;
-  } else
-    std::cout << "Circle deleted from table!" << std::endl;
-
-  sqlite3_finalize(stmt);
+  processQuery(stmt, "Deleted Circle successfully!");
   closeDb();
 }
