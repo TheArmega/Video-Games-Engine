@@ -31,9 +31,14 @@ int main() {
   Circle circle1("circle1", true, 100.f, 10.f, 200.f, 300.f, 1.f, 1.f, 138, 206,
                  255);
   container.addCircle(circle1);
+  db.insertCircle(circle1);
+
   Circle circle2("circle2", true, 100.f, 10.f, 400.f, 600.f, 1.f, 1.f, 170, 51,
                  235);
   container.addCircle(circle2);
+  db.insertCircle(circle2);
+
+  db.deleteCircle(circle1);
 
   container.delCircle(circle2.getName());
 

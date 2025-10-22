@@ -1,9 +1,10 @@
 #ifndef DATABASE_H
 #define DATABASE_H
 
+#include <iostream>
 #include <sqlite3.h>
 
-#include <iostream>
+#include "circle.h"
 
 extern const std::string TABLE_CREATION_QUERY;
 
@@ -22,8 +23,12 @@ public:
   std::string getDbFile();
 
   // Mehods
+  bool openDb();
+  void closeDb();
   void checkDbExist(std::string f);
   void createTable(std::string t = TABLE_CREATION_QUERY);
+  void insertCircle(Circle circle);
+  void deleteCircle(Circle circle);
 };
 
 #endif // DATABASE_H
