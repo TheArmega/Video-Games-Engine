@@ -3,6 +3,7 @@
 
 #include "circle.h"
 #include "circleContainer.h"
+#include "dataBase.h"
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/CircleShape.hpp>
@@ -23,6 +24,9 @@ int main() {
     return -1;
   }
 
+  DataBase db("../example.db");
+  db.createTable();
+
   CircleContainer container("container");
   Circle circle1("circle1", true, 100.f, 10.f, 200.f, 300.f, 1.f, 1.f, 138, 206,
                  255);
@@ -31,7 +35,7 @@ int main() {
                  235);
   container.addCircle(circle2);
 
-  // container.delCircle(circle2.getName());
+  container.delCircle(circle2.getName());
 
   sf::Clock deltaClock;
 

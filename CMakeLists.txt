@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Buscar SFML 3
 find_package(SFML 3 REQUIRED COMPONENTS Graphics Window System Audio)
+find_package(SQLite3 REQUIRED)
 
 # Definir rutas de librerías externas
 set(IMGUI_DIR "${CMAKE_SOURCE_DIR}/imgui")
@@ -15,6 +16,7 @@ add_executable(VideoGamesEngine
   src/main.cpp
   src/circle.cpp
   src/circleContainer.cpp
+  src/dataBase.cpp
 )
 
 # Agregar subdirectorio de ImGui-SFML
@@ -35,4 +37,5 @@ target_link_libraries(VideoGamesEngine
     SFML::System
     SFML::Audio
     ImGui-SFML
+    SQLite::SQLite3
 )
