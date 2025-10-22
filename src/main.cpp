@@ -38,8 +38,6 @@ int main() {
   container.addCircle(circle2);
   db.insertCircle(circle2);
 
-  container.delCircle(circle2.getName());
-
   sf::Clock deltaClock;
 
   while (window.isOpen()) {

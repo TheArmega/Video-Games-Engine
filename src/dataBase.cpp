@@ -98,12 +98,38 @@ void DataBase::insertCircle(Circle c) {
   if (!openDb())
     return;
 
+  std::vector<std::string> circlesNames;
   const char *sql = R"(
+      SELECT name FROM CIRCLES;
+  )";
+
+  sqlite3_stmt *stmt = prepareStatement(sql);
+  if (!stmt) {
+    closeDb();
+    return;
+  }
+
+  while (sqlite3_step(stmt) == SQLITE_ROW) {
+    const unsigned char *name = sqlite3_column_text(stmt, 0);
+    if (name) {
+      circlesNames.push_back(std::string(reinterpret_cast<const char *>(name)));
+    }
+  }
+  sqlite3_finalize(stmt);
+
+  if (std::find(circlesNames.begin(), circlesNames.end(), c.getName()) !=
+      circlesNames.end()) {
+    std::cout << "Circle already in BD" << std::endl;
+    closeDb();
+    return;
+  }
+
+  sql = R"(
       INSERT INTO CIRCLES (name, render, radius, mass, xPos, yPos, xVel, yVel, r, g, b)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
   )";
 
-  sqlite3_stmt *stmt = prepareStatement(sql);
+  stmt = prepareStatement(sql);
   if (!stmt) {
     closeDb();
     return;
@@ -130,10 +156,36 @@ void DataBase::deleteCircle(Circle c) {
     return;
 
   const char *sql = R"(
-      DELETE FROM CIRCLES WHERE name = ?; 
+      SELECT name FROM CIRCLES;
     )";
 
   sqlite3_stmt *stmt = prepareStatement(sql);
+  if (!stmt) {
+    closeDb();
+    return;
+  }
+
+  std::vector<std::string> circlesNames;
+  while (sqlite3_step(stmt) == SQLITE_ROW) {
+    const unsigned char *name = sqlite3_column_text(stmt, 0);
+    if (name) {
+      circlesNames.push_back(std::string(reinterpret_cast<const char *>(name)));
+    }
+  }
+  sqlite3_finalize(stmt);
+
+  if (std::find(circlesNames.begin(), circlesNames.end(), c.getName()) ==
+      circlesNames.end()) {
+    std::cout << "Circle not in BD!" << std::endl;
+    closeDb();
+    return;
+  }
+
+  sql = R"(
+      DELETE FROM CIRCLES WHERE name = ?; 
+    )";
+
+  stmt = prepareStatement(sql);
   if (!stmt) {
     closeDb();
     return;
