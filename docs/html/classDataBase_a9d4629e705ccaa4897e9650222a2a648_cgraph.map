@@ -1,0 +1,5 @@
+<map id="DataBase::~DataBase" name="DataBase::~DataBase">
+<area shape="rect" id="Node000001" title="Destructs the DataBase object and closes the connection." alt="" coords="5,5,159,32"/>
+<area shape="rect" id="Node000002" href="$classDataBase.html#a5ae5a957f63e07dbb326a2f08a8e2757" title="Closes the database connection." alt="" coords="207,5,342,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,16,191,16,191,21,159,21"/>
+</map>

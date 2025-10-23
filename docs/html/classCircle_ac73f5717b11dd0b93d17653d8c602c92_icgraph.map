@@ -1,0 +1,7 @@
+<map id="Circle::getRender" name="Circle::getRender">
+<area shape="rect" id="Node000001" title="Returns true if rendered." alt="" coords="304,5,427,32"/>
+<area shape="rect" id="Node000002" href="$classDataBase.html#a95e6568a7cc00d214111282e333aa8f8" title="Inserts a Circle into the database." alt="" coords="103,5,256,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="289,21,257,21,257,16,289,16"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main function of the VideoGameEngine." alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>

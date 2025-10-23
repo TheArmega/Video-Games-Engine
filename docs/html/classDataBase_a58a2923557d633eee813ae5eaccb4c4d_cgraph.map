@@ -1,0 +1,9 @@
+<map id="DataBase::DataBase" name="DataBase::DataBase">
+<area shape="rect" id="Node000001" title="Constructs a new DataBase object." alt="" coords="5,31,151,57"/>
+<area shape="rect" id="Node000002" href="$classDataBase.html#a1f6a8360f23f0fe135566f6329c70bd0" title="Checks if the database exists and is accessible." alt="" coords="199,31,368,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,41,183,41,183,47,151,47"/>
+<area shape="rect" id="Node000003" href="$classDataBase.html#a5ae5a957f63e07dbb326a2f08a8e2757" title="Closes the database connection." alt="" coords="416,5,551,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="368,31,401,26,401,32,369,36"/>
+<area shape="rect" id="Node000004" href="$classDataBase.html#a8774b0989ee6fe253803e1b25f23f8cc" title="Opens the database connection." alt="" coords="418,56,550,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="369,52,402,56,402,62,368,57"/>
+</map>

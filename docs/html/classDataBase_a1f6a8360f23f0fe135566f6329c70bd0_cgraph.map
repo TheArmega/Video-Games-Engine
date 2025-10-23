@@ -1,0 +1,7 @@
+<map id="DataBase::checkDbExist" name="DataBase::checkDbExist">
+<area shape="rect" id="Node000001" title="Checks if the database exists and is accessible." alt="" coords="5,31,175,57"/>
+<area shape="rect" id="Node000002" href="$classDataBase.html#a5ae5a957f63e07dbb326a2f08a8e2757" title="Closes the database connection." alt="" coords="223,5,358,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,31,207,26,208,32,176,36"/>
+<area shape="rect" id="Node000003" href="$classDataBase.html#a8774b0989ee6fe253803e1b25f23f8cc" title="Opens the database connection." alt="" coords="224,56,356,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="176,52,209,56,208,62,175,57"/>
+</map>

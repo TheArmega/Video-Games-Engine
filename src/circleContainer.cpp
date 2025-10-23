@@ -1,10 +1,28 @@
+/**
+ * @file circleContainer.cpp
+ * @brief CircleContainer class implementation
+ * @ingroup CircleContainerModule
+ *
+ * Implements the CircleContainer constructor, setters, getters, and management
+ * methods.
+ */
+
 #include "circleContainer.h"
 #include <SFML/Graphics/CircleShape.hpp>
 
+// =======================
+// Constructor
+// =======================
 CircleContainer::CircleContainer(std::string _name) : name(_name) {}
 
+// =======================
+// Setters
+// =======================
 void CircleContainer::setName(std::string n) { name = n; }
 
+// =======================
+// Getters
+// =======================
 std::string CircleContainer::getName() const { return name; }
 
 const std::unordered_map<std::string, sf::CircleShape> &
@@ -12,6 +30,9 @@ CircleContainer::getContainer() const {
   return container;
 }
 
+// =======================
+// Methods
+// =======================
 void CircleContainer::addCircle(const Circle &c) {
   sf::CircleShape shape(c.getRadius());
   shape.setFillColor(sf::Color(c.getRColor(), c.getGColor(), c.getBColor()));
