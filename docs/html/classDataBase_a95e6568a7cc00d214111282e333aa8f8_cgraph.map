@@ -1,0 +1,33 @@
+<map id="DataBase::insertCircle" name="DataBase::insertCircle">
+<area shape="rect" id="Node000001" title="Inserts a Circle into the database." alt="" coords="5,360,159,387"/>
+<area shape="rect" id="Node000002" href="$classDataBase.html#a5ae5a957f63e07dbb326a2f08a8e2757" title="Closes the database connection." alt="" coords="234,5,370,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,359,88,301,107,216,123,169,144,123,171,80,205,42,219,32,222,37,208,46,175,83,149,125,128,171,113,217,94,302,87,360"/>
+<area shape="rect" id="Node000003" href="$classCircle.html#aee1b0bc904840aabe6120e7cbcf3654a" title="Returns the blue component." alt="" coords="241,56,362,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="83,359,92,309,114,237,130,198,150,160,175,124,205,93,225,80,228,85,208,97,179,127,154,162,135,200,119,239,97,311,88,360"/>
+<area shape="rect" id="Node000004" href="$classCircle.html#a8fe1427e33c3a91e08b565562a947083" title="Returns the green component." alt="" coords="241,107,363,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="84,359,97,317,120,258,156,196,179,168,205,143,224,132,227,136,208,147,183,172,160,199,125,261,102,318,89,360"/>
+<area shape="rect" id="Node000005" href="$classCircle.html#a49bd8e27cbd4677bfe44738bbe854c54" title="Returns the mass." alt="" coords="245,157,358,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="86,359,102,325,127,280,162,234,205,194,229,181,232,186,208,198,166,237,132,283,107,328,91,361"/>
+<area shape="rect" id="Node000006" href="$classCircle.html#a8532d048164b60dbf0c5b60b7dc8fe26" title="Returns the name." alt="" coords="244,208,360,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="91,358,136,303,168,271,205,244,228,234,230,239,208,249,172,275,140,306,95,361"/>
+<area shape="rect" id="Node000007" href="$classCircle.html#a95b7dc25d2e9b1e40a189cd83386a12e" title="Returns the radius." alt="" coords="241,259,363,285"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="101,357,147,326,206,295,225,288,227,293,208,300,150,331,104,362"/>
+<area shape="rect" id="Node000008" href="$classCircle.html#a20a3423a61262cf229db5ac53eb4c6c3" title="Returns the red component." alt="" coords="241,309,363,336"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="143,357,226,337,227,343,144,362"/>
+<area shape="rect" id="Node000009" href="$classCircle.html#ac73f5717b11dd0b93d17653d8c602c92" title="Returns true if rendered." alt="" coords="240,360,364,387"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="159,371,225,371,225,376,159,376"/>
+<area shape="rect" id="Node000010" href="$classCircle.html#a57a962a92b83f003debd33b1198468d5" title="Returns the X position." alt="" coords="245,411,358,437"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="144,385,230,405,229,410,143,390"/>
+<area shape="rect" id="Node000011" href="$classCircle.html#a14fc9c404b1d6933550bf53d6b706d9b" title="Returns the X velocity." alt="" coords="248,461,356,488"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="104,385,150,416,208,447,234,457,232,462,206,452,147,420,101,389"/>
+<area shape="rect" id="Node000012" href="$classCircle.html#a20b6bc70bb22a78062f3b06b0bec4c5f" title="Returns the Y position." alt="" coords="245,512,358,539"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="95,385,140,440,172,471,208,498,232,509,230,513,205,502,168,475,136,444,91,389"/>
+<area shape="rect" id="Node000013" href="$classCircle.html#a0ea79556c4e7e734cd36f3a07d6d0cfd" title="Returns the Y velocity." alt="" coords="248,563,356,589"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="91,386,107,419,132,463,166,509,208,548,234,561,231,566,205,553,162,513,127,466,102,422,86,388"/>
+<area shape="rect" id="Node000014" href="$classDataBase.html#a8774b0989ee6fe253803e1b25f23f8cc" title="Opens the database connection." alt="" coords="236,613,368,640"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="89,386,102,428,125,486,160,547,183,575,208,599,223,608,220,613,205,603,179,579,156,550,120,488,97,430,84,388"/>
+<area shape="rect" id="Node000015" href="$classDataBase.html#adcf7e3433dd200d8f709eca1b55fe2c0" title=" " alt="" coords="207,664,397,691"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="88,386,97,436,119,508,135,546,154,584,179,619,208,650,214,654,210,658,205,654,175,623,150,587,130,549,114,509,92,437,83,387"/>
+<area shape="rect" id="Node000016" href="$classDataBase.html#ac037b0e760165f24f790f2e06c12e8d6" title="Executes a prepared statement." alt="" coords="218,715,386,741"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="87,387,94,444,113,529,128,576,149,621,175,664,209,701,212,704,209,708,205,705,171,667,144,624,123,578,107,531,88,445,82,387"/>
+</map>

@@ -1,0 +1,111 @@
+/**
+ * @file main.cpp
+ * @brief Entry point for the VideoGameEngine using SFML and ImGui-SFML
+ * @author Jaime
+ * @version 0.1
+ * @date 23/10/25
+ *
+ * @details
+ * This file initializes the SFML window and ImGui-SFML integration,
+ * manages the Circle database, populates a CircleContainer, and runs
+ * the main render loop displaying circles and ImGui widgets.
+ */
+
+#include "imgui-SFML.h"
+#include "imgui.h"
+
+#include "circle.h"
+#include "circleContainer.h"
+#include "dataBase.h"
+
+#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/CircleShape.hpp>
+#include <SFML/Graphics/Color.hpp>
+
+#include <iostream>
+
+/**
+ * @brief Main function of the VideoGameEngine
+ *
+ * Initializes the window and ImGui-SFML, creates example Circle objects,
+ * stores them in the database, populates the CircleContainer, and runs
+ * the main render loop with ImGui GUI elements.
+ *
+ * @return int Returns 0 on success, -1 on failure (ImGui initialization
+ * failure)
+ */
+int main() {
+  // Window dimensions
+  const int width = 1440;
+  const int height = 1080;
+
+  // Create the SFML window
+  sf::RenderWindow window(sf::VideoMode({width, height}), "VideoGameEngine");
+  window.setFramerateLimit(60);
+
+  // Initialize ImGui-SFML
+  if (!ImGui::SFML::Init(window)) {
+    std::cerr << "Failed to initialize ImGui-SFML\n";
+    return -1;
+  }
+
+  // Open or create the database and create the table if it doesn't exist
+  DataBase db("../circles.db");
+  db.createTable();
+
+  // Create example Circle objects
+  Circle circle1("circle1", true, 100.f, 10.f, 200.f, 300.f, 1.f, 1.f, 138, 206,
+                 255);
+  db.insertCircle(circle1);
+
+  Circle circle2("circle2", true, 100.f, 10.f, 400.f, 600.f, 1.f, 1.f, 170, 51,
+                 235);
+  db.insertCircle(circle2);
+
+  Circle circle3("circle3", true, 50.f, 10.f, 100.f, 700.f, 1.f, 1.f, 200, 100,
+                 177);
+  db.insertCircle(circle3);
+
+  // Load data from database and insert it into a CircleContainer
+  CircleContainer container("container");
+  container.addCirclesFromVector(db.getAllCircles());
+
+  sf::Clock deltaClock;
+
+  // Main render loop
+  while (window.isOpen()) {
+    while (const std::optional event = window.pollEvent()) {
+      ImGui::SFML::ProcessEvent(window, *event);
+
+      // Close window if requested
+      if (event->is<sf::Event::Closed>())
+        window.close();
+    }
+
+    // Update ImGui-SFML
+    ImGui::SFML::Update(window, deltaClock.restart());
+
+    // Display ImGui demo window
+    ImGui::ShowDemoWindow();
+
+    // Example custom ImGui window
+    ImGui::Begin("Hello, world!");
+    ImGui::Button("Look at this pretty button");
+    ImGui::End();
+
+    // Clear window
+    window.clear();
+
+    // Draw all circles from the container
+    for (const auto &pair : container.getContainer()) {
+      window.draw(pair.second);
+    }
+
+    // Render ImGui and display
+    ImGui::SFML::Render(window);
+    window.display();
+  }
+
+  // Shutdown ImGui-SFML
+  ImGui::SFML::Shutdown();
+}

@@ -1,0 +1,428 @@
+\doxysection{Circle Class Reference}
+\hypertarget{classCircle}{}\label{classCircle}\index{Circle@{Circle}}
+
+
+Represents a circle with position, velocity, mass, radius, and color.  
+
+
+
+
+{\ttfamily \#include $<$circle.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCircle_a429b6d656d99da7508228642f77239ff}{Circle}} (std\+::string \+\_\+name="{}circle"{}, bool \+\_\+render=true, float \+\_\+radius=1.\+0f, float \+\_\+mass=1.\+0f, float \+\_\+x\+Pos=0.f, float \+\_\+y\+Pos=0.f, float \+\_\+x\+Vel=1.\+0f, float \+\_\+y\+Vel=1.\+0f, int \+\_\+r\+Color=255, int \+\_\+g\+Color=255, int \+\_\+b\+Color=255)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classCircle}{Circle} object with specified properties. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Setters}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCircle_a439e8e73bd87c6beb75c803a71560cc3}{set\+Name}} (std\+::string n)
+\begin{DoxyCompactList}\small\item\em Sets the circle\textquotesingle{}s name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCircle_af5fde26f7863a98c389e9ee49daec505}{set\+Render}} (bool r)
+\begin{DoxyCompactList}\small\item\em Enables or disables rendering. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCircle_af2e568fbc6274720cade0c11521f8fa1}{set\+Radius}} (float r)
+\begin{DoxyCompactList}\small\item\em Sets the radius. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCircle_a22d5124fb8ba3f72f8c5b6e76d8e9b1f}{set\+Mass}} (float m)
+\begin{DoxyCompactList}\small\item\em Sets the mass. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCircle_af0da96c01199291df91b53b34c055d02}{set\+XPos}} (float p)
+\begin{DoxyCompactList}\small\item\em Sets the X position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCircle_a74e10f1a1a3fd3f4a997a995a6d4075b}{set\+YPos}} (float p)
+\begin{DoxyCompactList}\small\item\em Sets the Y position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCircle_ac1d9af09282e51ad79204a8e1891e51e}{set\+XVel}} (float v)
+\begin{DoxyCompactList}\small\item\em Sets the X velocity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCircle_ab569ef675da599c31e0e347c4e3c783b}{set\+YVel}} (float v)
+\begin{DoxyCompactList}\small\item\em Sets the Y velocity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCircle_a153414f3e1da69bd2d4dafab39821774}{set\+RColor}} (int r)
+\begin{DoxyCompactList}\small\item\em Sets the red component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCircle_aa7b934d39b78c40b2784e76d778b6641}{set\+GColor}} (int g)
+\begin{DoxyCompactList}\small\item\em Sets the green component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCircle_a2d0a12433b8e071c3fb8263642f36c02}{set\+BColor}} (int b)
+\begin{DoxyCompactList}\small\item\em Sets the blue component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Getters}\par
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classCircle_a8532d048164b60dbf0c5b60b7dc8fe26}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Returns the name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCircle_ac73f5717b11dd0b93d17653d8c602c92}{get\+Render}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if rendered. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCircle_a95b7dc25d2e9b1e40a189cd83386a12e}{get\+Radius}} () const
+\begin{DoxyCompactList}\small\item\em Returns the radius. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCircle_a49bd8e27cbd4677bfe44738bbe854c54}{get\+Mass}} () const
+\begin{DoxyCompactList}\small\item\em Returns the mass. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCircle_a57a962a92b83f003debd33b1198468d5}{get\+XPos}} () const
+\begin{DoxyCompactList}\small\item\em Returns the X position. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCircle_a20b6bc70bb22a78062f3b06b0bec4c5f}{get\+YPos}} () const
+\begin{DoxyCompactList}\small\item\em Returns the Y position. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCircle_a14fc9c404b1d6933550bf53d6b706d9b}{get\+XVel}} () const
+\begin{DoxyCompactList}\small\item\em Returns the X velocity. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCircle_a0ea79556c4e7e734cd36f3a07d6d0cfd}{get\+YVel}} () const
+\begin{DoxyCompactList}\small\item\em Returns the Y velocity. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCircle_a20a3423a61262cf229db5ac53eb4c6c3}{get\+RColor}} () const
+\begin{DoxyCompactList}\small\item\em Returns the red component. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCircle_a8fe1427e33c3a91e08b565562a947083}{get\+GColor}} () const
+\begin{DoxyCompactList}\small\item\em Returns the green component. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCircle_aee1b0bc904840aabe6120e7cbcf3654a}{get\+BColor}} () const
+\begin{DoxyCompactList}\small\item\em Returns the blue component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Represents a circle with position, velocity, mass, radius, and color. 
+
+The \doxylink{classCircle}{Circle} class allows defining a circle that can be rendered or not, with basic physical properties and RGB color components. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCircle_a429b6d656d99da7508228642f77239ff}\index{Circle@{Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{Circle()}{Circle()}}
+{\footnotesize\ttfamily \label{classCircle_a429b6d656d99da7508228642f77239ff} 
+Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+name}{ = {\ttfamily "{}circle"{}}, }\item[{bool}]{\+\_\+render}{ = {\ttfamily true}, }\item[{float}]{\+\_\+radius}{ = {\ttfamily 1.0f}, }\item[{float}]{\+\_\+mass}{ = {\ttfamily 1.0f}, }\item[{float}]{\+\_\+x\+Pos}{ = {\ttfamily 0.f}, }\item[{float}]{\+\_\+y\+Pos}{ = {\ttfamily 0.f}, }\item[{float}]{\+\_\+x\+Vel}{ = {\ttfamily 1.0f}, }\item[{float}]{\+\_\+y\+Vel}{ = {\ttfamily 1.0f}, }\item[{int}]{\+\_\+r\+Color}{ = {\ttfamily 255}, }\item[{int}]{\+\_\+g\+Color}{ = {\ttfamily 255}, }\item[{int}]{\+\_\+b\+Color}{ = {\ttfamily 255}}\end{DoxyParamCaption})}
+
+
+
+Constructs a new \doxylink{classCircle}{Circle} object with specified properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+name} & Name of the circle (default "{}circle"{}) \\
+\hline
+{\em \+\_\+render} & True if it should be rendered (default true) \\
+\hline
+{\em \+\_\+radius} & Radius of the circle (default 1.\+0) \\
+\hline
+{\em \+\_\+mass} & Mass of the circle (default 1.\+0) \\
+\hline
+{\em \+\_\+x\+Pos} & Initial X position (default 0.\+0) \\
+\hline
+{\em \+\_\+y\+Pos} & Initial Y position (default 0.\+0) \\
+\hline
+{\em \+\_\+x\+Vel} & Initial X velocity (default 1.\+0) \\
+\hline
+{\em \+\_\+y\+Vel} & Initial Y velocity (default 1.\+0) \\
+\hline
+{\em \+\_\+r\+Color} & Red component (0-\/255, default 255) \\
+\hline
+{\em \+\_\+g\+Color} & Green component (0-\/255, default 255) \\
+\hline
+{\em \+\_\+b\+Color} & Blue component (0-\/255, default 255) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCircle_aee1b0bc904840aabe6120e7cbcf3654a}\index{Circle@{Circle}!getBColor@{getBColor}}
+\index{getBColor@{getBColor}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{getBColor()}{getBColor()}}
+{\footnotesize\ttfamily \label{classCircle_aee1b0bc904840aabe6120e7cbcf3654a} 
+int Circle\+::get\+BColor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the blue component. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCircle_aee1b0bc904840aabe6120e7cbcf3654a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCircle_a8fe1427e33c3a91e08b565562a947083}\index{Circle@{Circle}!getGColor@{getGColor}}
+\index{getGColor@{getGColor}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{getGColor()}{getGColor()}}
+{\footnotesize\ttfamily \label{classCircle_a8fe1427e33c3a91e08b565562a947083} 
+int Circle\+::get\+GColor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the green component. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCircle_a8fe1427e33c3a91e08b565562a947083_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCircle_a49bd8e27cbd4677bfe44738bbe854c54}\index{Circle@{Circle}!getMass@{getMass}}
+\index{getMass@{getMass}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{getMass()}{getMass()}}
+{\footnotesize\ttfamily \label{classCircle_a49bd8e27cbd4677bfe44738bbe854c54} 
+float Circle\+::get\+Mass (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the mass. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCircle_a49bd8e27cbd4677bfe44738bbe854c54_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCircle_a8532d048164b60dbf0c5b60b7dc8fe26}\index{Circle@{Circle}!getName@{getName}}
+\index{getName@{getName}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classCircle_a8532d048164b60dbf0c5b60b7dc8fe26} 
+std\+::string Circle\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the name. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCircle_a8532d048164b60dbf0c5b60b7dc8fe26_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCircle_a95b7dc25d2e9b1e40a189cd83386a12e}\index{Circle@{Circle}!getRadius@{getRadius}}
+\index{getRadius@{getRadius}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{getRadius()}{getRadius()}}
+{\footnotesize\ttfamily \label{classCircle_a95b7dc25d2e9b1e40a189cd83386a12e} 
+float Circle\+::get\+Radius (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the radius. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCircle_a95b7dc25d2e9b1e40a189cd83386a12e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCircle_a20a3423a61262cf229db5ac53eb4c6c3}\index{Circle@{Circle}!getRColor@{getRColor}}
+\index{getRColor@{getRColor}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{getRColor()}{getRColor()}}
+{\footnotesize\ttfamily \label{classCircle_a20a3423a61262cf229db5ac53eb4c6c3} 
+int Circle\+::get\+RColor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the red component. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCircle_a20a3423a61262cf229db5ac53eb4c6c3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCircle_ac73f5717b11dd0b93d17653d8c602c92}\index{Circle@{Circle}!getRender@{getRender}}
+\index{getRender@{getRender}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{getRender()}{getRender()}}
+{\footnotesize\ttfamily \label{classCircle_ac73f5717b11dd0b93d17653d8c602c92} 
+bool Circle\+::get\+Render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns true if rendered. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCircle_ac73f5717b11dd0b93d17653d8c602c92_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCircle_a57a962a92b83f003debd33b1198468d5}\index{Circle@{Circle}!getXPos@{getXPos}}
+\index{getXPos@{getXPos}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{getXPos()}{getXPos()}}
+{\footnotesize\ttfamily \label{classCircle_a57a962a92b83f003debd33b1198468d5} 
+float Circle\+::get\+XPos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the X position. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCircle_a57a962a92b83f003debd33b1198468d5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCircle_a14fc9c404b1d6933550bf53d6b706d9b}\index{Circle@{Circle}!getXVel@{getXVel}}
+\index{getXVel@{getXVel}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{getXVel()}{getXVel()}}
+{\footnotesize\ttfamily \label{classCircle_a14fc9c404b1d6933550bf53d6b706d9b} 
+float Circle\+::get\+XVel (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the X velocity. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCircle_a14fc9c404b1d6933550bf53d6b706d9b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCircle_a20b6bc70bb22a78062f3b06b0bec4c5f}\index{Circle@{Circle}!getYPos@{getYPos}}
+\index{getYPos@{getYPos}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{getYPos()}{getYPos()}}
+{\footnotesize\ttfamily \label{classCircle_a20b6bc70bb22a78062f3b06b0bec4c5f} 
+float Circle\+::get\+YPos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the Y position. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCircle_a20b6bc70bb22a78062f3b06b0bec4c5f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCircle_a0ea79556c4e7e734cd36f3a07d6d0cfd}\index{Circle@{Circle}!getYVel@{getYVel}}
+\index{getYVel@{getYVel}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{getYVel()}{getYVel()}}
+{\footnotesize\ttfamily \label{classCircle_a0ea79556c4e7e734cd36f3a07d6d0cfd} 
+float Circle\+::get\+YVel (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the Y velocity. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCircle_a0ea79556c4e7e734cd36f3a07d6d0cfd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCircle_a2d0a12433b8e071c3fb8263642f36c02}\index{Circle@{Circle}!setBColor@{setBColor}}
+\index{setBColor@{setBColor}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{setBColor()}{setBColor()}}
+{\footnotesize\ttfamily \label{classCircle_a2d0a12433b8e071c3fb8263642f36c02} 
+void Circle\+::set\+BColor (\begin{DoxyParamCaption}\item[{int}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Sets the blue component. 
+
+\Hypertarget{classCircle_aa7b934d39b78c40b2784e76d778b6641}\index{Circle@{Circle}!setGColor@{setGColor}}
+\index{setGColor@{setGColor}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{setGColor()}{setGColor()}}
+{\footnotesize\ttfamily \label{classCircle_aa7b934d39b78c40b2784e76d778b6641} 
+void Circle\+::set\+GColor (\begin{DoxyParamCaption}\item[{int}]{g}{}\end{DoxyParamCaption})}
+
+
+
+Sets the green component. 
+
+\Hypertarget{classCircle_a22d5124fb8ba3f72f8c5b6e76d8e9b1f}\index{Circle@{Circle}!setMass@{setMass}}
+\index{setMass@{setMass}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{setMass()}{setMass()}}
+{\footnotesize\ttfamily \label{classCircle_a22d5124fb8ba3f72f8c5b6e76d8e9b1f} 
+void Circle\+::set\+Mass (\begin{DoxyParamCaption}\item[{float}]{m}{}\end{DoxyParamCaption})}
+
+
+
+Sets the mass. 
+
+\Hypertarget{classCircle_a439e8e73bd87c6beb75c803a71560cc3}\index{Circle@{Circle}!setName@{setName}}
+\index{setName@{setName}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily \label{classCircle_a439e8e73bd87c6beb75c803a71560cc3} 
+void Circle\+::set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{n}{}\end{DoxyParamCaption})}
+
+
+
+Sets the circle\textquotesingle{}s name. 
+
+\Hypertarget{classCircle_af2e568fbc6274720cade0c11521f8fa1}\index{Circle@{Circle}!setRadius@{setRadius}}
+\index{setRadius@{setRadius}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{setRadius()}{setRadius()}}
+{\footnotesize\ttfamily \label{classCircle_af2e568fbc6274720cade0c11521f8fa1} 
+void Circle\+::set\+Radius (\begin{DoxyParamCaption}\item[{float}]{r}{}\end{DoxyParamCaption})}
+
+
+
+Sets the radius. 
+
+\Hypertarget{classCircle_a153414f3e1da69bd2d4dafab39821774}\index{Circle@{Circle}!setRColor@{setRColor}}
+\index{setRColor@{setRColor}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{setRColor()}{setRColor()}}
+{\footnotesize\ttfamily \label{classCircle_a153414f3e1da69bd2d4dafab39821774} 
+void Circle\+::set\+RColor (\begin{DoxyParamCaption}\item[{int}]{r}{}\end{DoxyParamCaption})}
+
+
+
+Sets the red component. 
+
+\Hypertarget{classCircle_af5fde26f7863a98c389e9ee49daec505}\index{Circle@{Circle}!setRender@{setRender}}
+\index{setRender@{setRender}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{setRender()}{setRender()}}
+{\footnotesize\ttfamily \label{classCircle_af5fde26f7863a98c389e9ee49daec505} 
+void Circle\+::set\+Render (\begin{DoxyParamCaption}\item[{bool}]{r}{}\end{DoxyParamCaption})}
+
+
+
+Enables or disables rendering. 
+
+\Hypertarget{classCircle_af0da96c01199291df91b53b34c055d02}\index{Circle@{Circle}!setXPos@{setXPos}}
+\index{setXPos@{setXPos}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{setXPos()}{setXPos()}}
+{\footnotesize\ttfamily \label{classCircle_af0da96c01199291df91b53b34c055d02} 
+void Circle\+::set\+XPos (\begin{DoxyParamCaption}\item[{float}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Sets the X position. 
+
+\Hypertarget{classCircle_ac1d9af09282e51ad79204a8e1891e51e}\index{Circle@{Circle}!setXVel@{setXVel}}
+\index{setXVel@{setXVel}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{setXVel()}{setXVel()}}
+{\footnotesize\ttfamily \label{classCircle_ac1d9af09282e51ad79204a8e1891e51e} 
+void Circle\+::set\+XVel (\begin{DoxyParamCaption}\item[{float}]{v}{}\end{DoxyParamCaption})}
+
+
+
+Sets the X velocity. 
+
+\Hypertarget{classCircle_a74e10f1a1a3fd3f4a997a995a6d4075b}\index{Circle@{Circle}!setYPos@{setYPos}}
+\index{setYPos@{setYPos}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{setYPos()}{setYPos()}}
+{\footnotesize\ttfamily \label{classCircle_a74e10f1a1a3fd3f4a997a995a6d4075b} 
+void Circle\+::set\+YPos (\begin{DoxyParamCaption}\item[{float}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Sets the Y position. 
+
+\Hypertarget{classCircle_ab569ef675da599c31e0e347c4e3c783b}\index{Circle@{Circle}!setYVel@{setYVel}}
+\index{setYVel@{setYVel}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{setYVel()}{setYVel()}}
+{\footnotesize\ttfamily \label{classCircle_ab569ef675da599c31e0e347c4e3c783b} 
+void Circle\+::set\+YVel (\begin{DoxyParamCaption}\item[{float}]{v}{}\end{DoxyParamCaption})}
+
+
+
+Sets the Y velocity. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/jaimemas/dev/videogames/\+Video-\/\+Games-\/\+Engine/include/\mbox{\hyperlink{circle_8h}{circle.\+h}}\item 
+/home/jaimemas/dev/videogames/\+Video-\/\+Games-\/\+Engine/src/\mbox{\hyperlink{circle_8cpp}{circle.\+cpp}}\end{DoxyCompactItemize}

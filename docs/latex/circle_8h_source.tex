@@ -1,0 +1,57 @@
+\doxysection{circle.\+h}
+\hypertarget{circle_8h_source}{}\label{circle_8h_source}\index{/home/jaimemas/dev/videogames/Video-\/Games-\/Engine/include/circle.h@{/home/jaimemas/dev/videogames/Video-\/Games-\/Engine/include/circle.h}}
+\mbox{\hyperlink{circle_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ CIRCLE\_H}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ CIRCLE\_H}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCircle_a429b6d656d99da7508228642f77239ff}{Circle}}\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ std::string\ name;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{bool}\ render;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{float}\ radius;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{float}\ mass;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{float}\ xPos,\ yPos;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{float}\ xVel,\ yVel;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{int}\ rColor,\ gColor,\ bColor;\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{classCircle_a429b6d656d99da7508228642f77239ff}{Circle}}(std::string\ \_name\ =\ \textcolor{stringliteral}{"{}circle"{}},\ \textcolor{keywordtype}{bool}\ \_render\ =\ \textcolor{keyword}{true},}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \_radius\ =\ 1.0f,\ \textcolor{keywordtype}{float}\ \_mass\ =\ 1.0f,\ \textcolor{keywordtype}{float}\ \_xPos\ =\ 0.f,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \_yPos\ =\ 0.f,\ \textcolor{keywordtype}{float}\ \_xVel\ =\ 1.0f,\ \textcolor{keywordtype}{float}\ \_yVel\ =\ 1.0f,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_rColor\ =\ 255,\ \textcolor{keywordtype}{int}\ \_gColor\ =\ 255,\ \textcolor{keywordtype}{int}\ \_bColor\ =\ 255);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCircle_a439e8e73bd87c6beb75c803a71560cc3}{setName}}(std::string\ n);\ }
+\DoxyCodeLine{00060\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCircle_af5fde26f7863a98c389e9ee49daec505}{setRender}}(\textcolor{keywordtype}{bool}\ r);\ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCircle_af2e568fbc6274720cade0c11521f8fa1}{setRadius}}(\textcolor{keywordtype}{float}\ r);\ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCircle_a22d5124fb8ba3f72f8c5b6e76d8e9b1f}{setMass}}(\textcolor{keywordtype}{float}\ m);\ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCircle_af0da96c01199291df91b53b34c055d02}{setXPos}}(\textcolor{keywordtype}{float}\ p);\ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCircle_a74e10f1a1a3fd3f4a997a995a6d4075b}{setYPos}}(\textcolor{keywordtype}{float}\ p);\ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCircle_ac1d9af09282e51ad79204a8e1891e51e}{setXVel}}(\textcolor{keywordtype}{float}\ v);\ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCircle_ab569ef675da599c31e0e347c4e3c783b}{setYVel}}(\textcolor{keywordtype}{float}\ v);\ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCircle_a153414f3e1da69bd2d4dafab39821774}{setRColor}}(\textcolor{keywordtype}{int}\ r);\ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCircle_aa7b934d39b78c40b2784e76d778b6641}{setGColor}}(\textcolor{keywordtype}{int}\ g);\ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCircle_a2d0a12433b8e071c3fb8263642f36c02}{setBColor}}(\textcolor{keywordtype}{int}\ b);\ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00074\ \ \ std::string\ \mbox{\hyperlink{classCircle_a8532d048164b60dbf0c5b60b7dc8fe26}{getName}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00075\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCircle_ac73f5717b11dd0b93d17653d8c602c92}{getRender}}()\ \textcolor{keyword}{const};\ \ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classCircle_a95b7dc25d2e9b1e40a189cd83386a12e}{getRadius}}()\ \textcolor{keyword}{const};\ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classCircle_a49bd8e27cbd4677bfe44738bbe854c54}{getMass}}()\ \textcolor{keyword}{const};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classCircle_a57a962a92b83f003debd33b1198468d5}{getXPos}}()\ \textcolor{keyword}{const};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classCircle_a20b6bc70bb22a78062f3b06b0bec4c5f}{getYPos}}()\ \textcolor{keyword}{const};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classCircle_a14fc9c404b1d6933550bf53d6b706d9b}{getXVel}}()\ \textcolor{keyword}{const};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00081\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classCircle_a0ea79556c4e7e734cd36f3a07d6d0cfd}{getYVel}}()\ \textcolor{keyword}{const};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCircle_a20a3423a61262cf229db5ac53eb4c6c3}{getRColor}}()\ \textcolor{keyword}{const};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCircle_a8fe1427e33c3a91e08b565562a947083}{getGColor}}()\ \textcolor{keyword}{const};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCircle_aee1b0bc904840aabe6120e7cbcf3654a}{getBColor}}()\ \textcolor{keyword}{const};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00086\ \};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CIRCLE\_H}}
+\DoxyCodeLine{00089\ \ \textcolor{comment}{//\ end\ of\ CircleModule}}
+
+\end{DoxyCode}
