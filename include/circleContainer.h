@@ -23,6 +23,7 @@ public:
 
   // Methods
   void addCircle(const Circle &c);
+  void addCirclesFromVector(const std::vector<Circle> v);
   void delCircle(const std::string &circleName);
   int getSize() const;
 };

@@ -32,6 +32,7 @@ public:
   bool processQuery(sqlite3_stmt *stmt, std::string msg);
   void insertCircle(Circle circle);
   void deleteCircle(Circle circle);
+  std::vector<Circle> getAllCircles();
 };
 
 #endif // DATABASE_H

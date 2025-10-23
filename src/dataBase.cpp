@@ -196,3 +196,46 @@ void DataBase::deleteCircle(Circle c) {
   processQuery(stmt, "Deleted Circle successfully!");
   closeDb();
 }
+
+std::vector<Circle> DataBase::getAllCircles() {
+  std::vector<Circle> circles;
+
+  if (!openDb()) {
+    std::cerr << "Can't open BD!" << sqlite3_errmsg(db) << std::endl;
+    return {};
+  }
+
+  const char *sql = R"(
+        SELECT name, render, radius, mass, xPos, yPos, xVel, yVel, r, g, b FROM CIRCLES;
+    )";
+
+  sqlite3_stmt *stmt = prepareStatement(sql);
+  if (!stmt) {
+    closeDb();
+    std::cerr << "Can't prepare statement!" << sqlite3_errmsg(db);
+    return {};
+  }
+
+  while (sqlite3_step(stmt) == SQLITE_ROW) {
+    std::string name =
+        reinterpret_cast<const char *>(sqlite3_column_text(stmt, 0));
+    bool render = sqlite3_column_int(stmt, 1);
+    float radius = static_cast<float>(sqlite3_column_double(stmt, 2));
+    float mass = static_cast<float>(sqlite3_column_double(stmt, 3));
+    float xPos = static_cast<float>(sqlite3_column_double(stmt, 4));
+    float yPos = static_cast<float>(sqlite3_column_double(stmt, 5));
+    float xVel = static_cast<float>(sqlite3_column_double(stmt, 6));
+    float yVel = static_cast<float>(sqlite3_column_double(stmt, 7));
+    int r = sqlite3_column_int(stmt, 8);
+    int g = sqlite3_column_int(stmt, 9);
+    int b = sqlite3_column_int(stmt, 10);
+
+    Circle c(name, render, radius, mass, xPos, yPos, xVel, yVel, r, g, b);
+    circles.push_back(c);
+  }
+
+  sqlite3_finalize(stmt);
+  closeDb();
+
+  return circles;
+}

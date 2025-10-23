@@ -21,6 +21,18 @@ void CircleContainer::addCircle(const Circle &c) {
   container[c.getName()] = shape;
 }
 
+void CircleContainer::addCirclesFromVector(const std::vector<Circle> v) {
+  sf::CircleShape shape;
+  for (const auto &c : v) {
+    shape.setRadius(c.getRadius());
+    shape.setFillColor(sf::Color(c.getRColor(), c.getGColor(), c.getBColor()));
+    shape.setOrigin({c.getRadius(), c.getRadius()});
+    shape.setPosition({c.getXPos(), c.getYPos()});
+
+    container[c.getName()] = shape;
+  }
+}
+
 void CircleContainer::delCircle(const std::string &circleName) {
   container.erase(circleName);
 }
