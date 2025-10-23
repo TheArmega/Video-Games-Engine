@@ -11,11 +11,20 @@ extern const std::string TABLE_CREATION_QUERY;
 
 class DataBase {
 private:
-  sqlite3 *db;
+  sqlite3 *db = nullptr;
   std::string dbFile;
 
 public:
   DataBase(const std::string _dbFile);
+  ~DataBase();
+
+  // Avoid copying (we don't want two objects handling the same connection)
+  DataBase(const DataBase &) = delete;
+  DataBase &operator=(const DataBase &) = delete;
+
+  // Allow transfer move
+  DataBase(DataBase &&other) noexcept;
+  DataBase &operator=(DataBase &&other) noexcept;
 
   // Setters
   void setDbFile(std::string f);
