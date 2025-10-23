@@ -1,0 +1,221 @@
+\doxysection{Im\+Font\+Atlas Struct Reference}
+\hypertarget{structImFontAtlas}{}\label{structImFontAtlas}\index{ImFontAtlas@{ImFontAtlas}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structImFontAtlas_ad01c0f19a95d37a9e5ebab1e54525625}\label{structImFontAtlas_ad01c0f19a95d37a9e5ebab1e54525625} 
+IMGUI\+\_\+\+API \mbox{\hyperlink{structImFont}{Im\+Font}} \texorpdfstring{$\ast$}{*} {\bfseries Add\+Font} (const \mbox{\hyperlink{structImFontConfig}{Im\+Font\+Config}} \texorpdfstring{$\ast$}{*}font\+\_\+cfg)
+\item 
+\Hypertarget{structImFontAtlas_a9d2b4a94579bf603a0d2662cd8348cbd}\label{structImFontAtlas_a9d2b4a94579bf603a0d2662cd8348cbd} 
+IMGUI\+\_\+\+API \mbox{\hyperlink{structImFont}{Im\+Font}} \texorpdfstring{$\ast$}{*} {\bfseries Add\+Font\+Default} (const \mbox{\hyperlink{structImFontConfig}{Im\+Font\+Config}} \texorpdfstring{$\ast$}{*}font\+\_\+cfg=NULL)
+\item 
+\Hypertarget{structImFontAtlas_a4c6bafad7f84b9de141e70b549b3601c}\label{structImFontAtlas_a4c6bafad7f84b9de141e70b549b3601c} 
+IMGUI\+\_\+\+API \mbox{\hyperlink{structImFont}{Im\+Font}} \texorpdfstring{$\ast$}{*} {\bfseries Add\+Font\+From\+File\+TTF} (const char \texorpdfstring{$\ast$}{*}filename, float size\+\_\+pixels=0.\+0f, const \mbox{\hyperlink{structImFontConfig}{Im\+Font\+Config}} \texorpdfstring{$\ast$}{*}font\+\_\+cfg=NULL, const Im\+Wchar \texorpdfstring{$\ast$}{*}glyph\+\_\+ranges=NULL)
+\item 
+\Hypertarget{structImFontAtlas_ad7e1ae24061d41f667546626dc39ef09}\label{structImFontAtlas_ad7e1ae24061d41f667546626dc39ef09} 
+IMGUI\+\_\+\+API \mbox{\hyperlink{structImFont}{Im\+Font}} \texorpdfstring{$\ast$}{*} {\bfseries Add\+Font\+From\+Memory\+TTF} (void \texorpdfstring{$\ast$}{*}font\+\_\+data, int font\+\_\+data\+\_\+size, float size\+\_\+pixels=0.\+0f, const \mbox{\hyperlink{structImFontConfig}{Im\+Font\+Config}} \texorpdfstring{$\ast$}{*}font\+\_\+cfg=NULL, const Im\+Wchar \texorpdfstring{$\ast$}{*}glyph\+\_\+ranges=NULL)
+\item 
+\Hypertarget{structImFontAtlas_a7da214e3b090724bbc43e77ee254870d}\label{structImFontAtlas_a7da214e3b090724bbc43e77ee254870d} 
+IMGUI\+\_\+\+API \mbox{\hyperlink{structImFont}{Im\+Font}} \texorpdfstring{$\ast$}{*} {\bfseries Add\+Font\+From\+Memory\+Compressed\+TTF} (const void \texorpdfstring{$\ast$}{*}compressed\+\_\+font\+\_\+data, int compressed\+\_\+font\+\_\+data\+\_\+size, float size\+\_\+pixels=0.\+0f, const \mbox{\hyperlink{structImFontConfig}{Im\+Font\+Config}} \texorpdfstring{$\ast$}{*}font\+\_\+cfg=NULL, const Im\+Wchar \texorpdfstring{$\ast$}{*}glyph\+\_\+ranges=NULL)
+\item 
+\Hypertarget{structImFontAtlas_a00b44a4a4d7b2d5b66f83e8b92d0f5e7}\label{structImFontAtlas_a00b44a4a4d7b2d5b66f83e8b92d0f5e7} 
+IMGUI\+\_\+\+API \mbox{\hyperlink{structImFont}{Im\+Font}} \texorpdfstring{$\ast$}{*} {\bfseries Add\+Font\+From\+Memory\+Compressed\+Base85\+TTF} (const char \texorpdfstring{$\ast$}{*}compressed\+\_\+font\+\_\+data\+\_\+base85, float size\+\_\+pixels=0.\+0f, const \mbox{\hyperlink{structImFontConfig}{Im\+Font\+Config}} \texorpdfstring{$\ast$}{*}font\+\_\+cfg=NULL, const Im\+Wchar \texorpdfstring{$\ast$}{*}glyph\+\_\+ranges=NULL)
+\item 
+\Hypertarget{structImFontAtlas_a71526ed4eb1d42e53a1335e84c779268}\label{structImFontAtlas_a71526ed4eb1d42e53a1335e84c779268} 
+IMGUI\+\_\+\+API void {\bfseries Remove\+Font} (\mbox{\hyperlink{structImFont}{Im\+Font}} \texorpdfstring{$\ast$}{*}font)
+\item 
+\Hypertarget{structImFontAtlas_a8f6d01c671d8670f991ba651bbaf7e77}\label{structImFontAtlas_a8f6d01c671d8670f991ba651bbaf7e77} 
+IMGUI\+\_\+\+API void {\bfseries Clear} ()
+\item 
+\Hypertarget{structImFontAtlas_a617f379b512d62e83a395516a555f3c5}\label{structImFontAtlas_a617f379b512d62e83a395516a555f3c5} 
+IMGUI\+\_\+\+API void {\bfseries Compact\+Cache} ()
+\item 
+\Hypertarget{structImFontAtlas_abeefaa367a36b73d215b1578b5ab1c70}\label{structImFontAtlas_abeefaa367a36b73d215b1578b5ab1c70} 
+IMGUI\+\_\+\+API void {\bfseries Set\+Font\+Loader} (const \mbox{\hyperlink{structImFontLoader}{Im\+Font\+Loader}} \texorpdfstring{$\ast$}{*}font\+\_\+loader)
+\item 
+\Hypertarget{structImFontAtlas_a3f5bcbb7a2683b1af106fcf4e1217662}\label{structImFontAtlas_a3f5bcbb7a2683b1af106fcf4e1217662} 
+IMGUI\+\_\+\+API void {\bfseries Clear\+Input\+Data} ()
+\item 
+\Hypertarget{structImFontAtlas_ad5c2560d708bd0c389e9bd9da2d9b055}\label{structImFontAtlas_ad5c2560d708bd0c389e9bd9da2d9b055} 
+IMGUI\+\_\+\+API void {\bfseries Clear\+Fonts} ()
+\item 
+\Hypertarget{structImFontAtlas_a3ede4bd513bec044c77ac392ad9c6e86}\label{structImFontAtlas_a3ede4bd513bec044c77ac392ad9c6e86} 
+IMGUI\+\_\+\+API void {\bfseries Clear\+Tex\+Data} ()
+\item 
+\Hypertarget{structImFontAtlas_a81e39e30dffa4dd7e458a53297451e27}\label{structImFontAtlas_a81e39e30dffa4dd7e458a53297451e27} 
+IMGUI\+\_\+\+API bool {\bfseries Build} ()
+\item 
+\Hypertarget{structImFontAtlas_aeff1a1044a1ab68d8f27bb2819cd9f44}\label{structImFontAtlas_aeff1a1044a1ab68d8f27bb2819cd9f44} 
+IMGUI\+\_\+\+API void {\bfseries Get\+Tex\+Data\+As\+Alpha8} (unsigned char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}out\+\_\+pixels, int \texorpdfstring{$\ast$}{*}out\+\_\+width, int \texorpdfstring{$\ast$}{*}out\+\_\+height, int \texorpdfstring{$\ast$}{*}out\+\_\+bytes\+\_\+per\+\_\+pixel=NULL)
+\item 
+\Hypertarget{structImFontAtlas_a8abb0c4e67ebb38249d4df71218c4eec}\label{structImFontAtlas_a8abb0c4e67ebb38249d4df71218c4eec} 
+IMGUI\+\_\+\+API void {\bfseries Get\+Tex\+Data\+As\+RGBA32} (unsigned char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}out\+\_\+pixels, int \texorpdfstring{$\ast$}{*}out\+\_\+width, int \texorpdfstring{$\ast$}{*}out\+\_\+height, int \texorpdfstring{$\ast$}{*}out\+\_\+bytes\+\_\+per\+\_\+pixel=NULL)
+\item 
+\Hypertarget{structImFontAtlas_a96ffd1956c11dac4f79b43c095828445}\label{structImFontAtlas_a96ffd1956c11dac4f79b43c095828445} 
+void {\bfseries Set\+Tex\+ID} (Im\+Texture\+ID id)
+\item 
+\Hypertarget{structImFontAtlas_a7dccdd0ba6243b8b4b95e234ef1a2359}\label{structImFontAtlas_a7dccdd0ba6243b8b4b95e234ef1a2359} 
+void {\bfseries Set\+Tex\+ID} (\mbox{\hyperlink{structImTextureRef}{Im\+Texture\+Ref}} id)
+\item 
+\Hypertarget{structImFontAtlas_a142ba1470099bbd4b67bdb47be92d475}\label{structImFontAtlas_a142ba1470099bbd4b67bdb47be92d475} 
+bool {\bfseries Is\+Built} () const
+\item 
+\Hypertarget{structImFontAtlas_adec0df140eb1dc01c2a22a5253d62820}\label{structImFontAtlas_adec0df140eb1dc01c2a22a5253d62820} 
+IMGUI\+\_\+\+API const Im\+Wchar \texorpdfstring{$\ast$}{*} {\bfseries Get\+Glyph\+Ranges\+Default} ()
+\item 
+\Hypertarget{structImFontAtlas_a46d65b05462b548396d3a8ee6644f3ee}\label{structImFontAtlas_a46d65b05462b548396d3a8ee6644f3ee} 
+IMGUI\+\_\+\+API const Im\+Wchar \texorpdfstring{$\ast$}{*} {\bfseries Get\+Glyph\+Ranges\+Greek} ()
+\item 
+\Hypertarget{structImFontAtlas_ac70e07bd35913661c8fc50413b3bf969}\label{structImFontAtlas_ac70e07bd35913661c8fc50413b3bf969} 
+IMGUI\+\_\+\+API const Im\+Wchar \texorpdfstring{$\ast$}{*} {\bfseries Get\+Glyph\+Ranges\+Korean} ()
+\item 
+\Hypertarget{structImFontAtlas_a2654afbbf73835bf08278cdc6c181a96}\label{structImFontAtlas_a2654afbbf73835bf08278cdc6c181a96} 
+IMGUI\+\_\+\+API const Im\+Wchar \texorpdfstring{$\ast$}{*} {\bfseries Get\+Glyph\+Ranges\+Japanese} ()
+\item 
+\Hypertarget{structImFontAtlas_ab32e8e79cc4f3b36ef447f70034e7c57}\label{structImFontAtlas_ab32e8e79cc4f3b36ef447f70034e7c57} 
+IMGUI\+\_\+\+API const Im\+Wchar \texorpdfstring{$\ast$}{*} {\bfseries Get\+Glyph\+Ranges\+Chinese\+Full} ()
+\item 
+\Hypertarget{structImFontAtlas_a3a6b1a8afb01ba5e7c4d86957d6d2625}\label{structImFontAtlas_a3a6b1a8afb01ba5e7c4d86957d6d2625} 
+IMGUI\+\_\+\+API const Im\+Wchar \texorpdfstring{$\ast$}{*} {\bfseries Get\+Glyph\+Ranges\+Chinese\+Simplified\+Common} ()
+\item 
+\Hypertarget{structImFontAtlas_a5aaff3357d9ed401ce451c39942e869e}\label{structImFontAtlas_a5aaff3357d9ed401ce451c39942e869e} 
+IMGUI\+\_\+\+API const Im\+Wchar \texorpdfstring{$\ast$}{*} {\bfseries Get\+Glyph\+Ranges\+Cyrillic} ()
+\item 
+\Hypertarget{structImFontAtlas_a4985c51d8a5270ff027f13fa44a14371}\label{structImFontAtlas_a4985c51d8a5270ff027f13fa44a14371} 
+IMGUI\+\_\+\+API const Im\+Wchar \texorpdfstring{$\ast$}{*} {\bfseries Get\+Glyph\+Ranges\+Thai} ()
+\item 
+\Hypertarget{structImFontAtlas_acc0e66fd4637600ad344c2f415a0ef60}\label{structImFontAtlas_acc0e66fd4637600ad344c2f415a0ef60} 
+IMGUI\+\_\+\+API const Im\+Wchar \texorpdfstring{$\ast$}{*} {\bfseries Get\+Glyph\+Ranges\+Vietnamese} ()
+\item 
+\Hypertarget{structImFontAtlas_ab4660128958e0c30577056975ef8dc29}\label{structImFontAtlas_ab4660128958e0c30577056975ef8dc29} 
+IMGUI\+\_\+\+API Im\+Font\+Atlas\+Rect\+Id {\bfseries Add\+Custom\+Rect} (int width, int height, \mbox{\hyperlink{structImFontAtlasRect}{Im\+Font\+Atlas\+Rect}} \texorpdfstring{$\ast$}{*}out\+\_\+r=NULL)
+\item 
+\Hypertarget{structImFontAtlas_a1fd42ec0b657ff4a1447290894c331de}\label{structImFontAtlas_a1fd42ec0b657ff4a1447290894c331de} 
+IMGUI\+\_\+\+API void {\bfseries Remove\+Custom\+Rect} (Im\+Font\+Atlas\+Rect\+Id id)
+\item 
+\Hypertarget{structImFontAtlas_a4b2f96a0b67dd06c69547e93ccd4652f}\label{structImFontAtlas_a4b2f96a0b67dd06c69547e93ccd4652f} 
+IMGUI\+\_\+\+API bool {\bfseries Get\+Custom\+Rect} (Im\+Font\+Atlas\+Rect\+Id id, \mbox{\hyperlink{structImFontAtlasRect}{Im\+Font\+Atlas\+Rect}} \texorpdfstring{$\ast$}{*}out\+\_\+r) const
+\item 
+\Hypertarget{structImFontAtlas_a94f8ea65c83f65b79a9cd72d9642b949}\label{structImFontAtlas_a94f8ea65c83f65b79a9cd72d9642b949} 
+Im\+Font\+Atlas\+Rect\+Id {\bfseries Add\+Custom\+Rect\+Regular} (int w, int h)
+\item 
+\Hypertarget{structImFontAtlas_a6ad7a3848fb7e941d0ce35c3bf182043}\label{structImFontAtlas_a6ad7a3848fb7e941d0ce35c3bf182043} 
+const \mbox{\hyperlink{structImFontAtlasRect}{Im\+Font\+Atlas\+Rect}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+Custom\+Rect\+By\+Index} (Im\+Font\+Atlas\+Rect\+Id id)
+\item 
+\Hypertarget{structImFontAtlas_a303f481f2422d624481853ff135c47bb}\label{structImFontAtlas_a303f481f2422d624481853ff135c47bb} 
+void {\bfseries Calc\+Custom\+Rect\+UV} (const \mbox{\hyperlink{structImFontAtlasRect}{Im\+Font\+Atlas\+Rect}} \texorpdfstring{$\ast$}{*}r, \mbox{\hyperlink{structImVec2}{Im\+Vec2}} \texorpdfstring{$\ast$}{*}out\+\_\+uv\+\_\+min, \mbox{\hyperlink{structImVec2}{Im\+Vec2}} \texorpdfstring{$\ast$}{*}out\+\_\+uv\+\_\+max) const
+\item 
+\Hypertarget{structImFontAtlas_ab5427b1134dc2d82fefb4595054f1a04}\label{structImFontAtlas_ab5427b1134dc2d82fefb4595054f1a04} 
+IMGUI\+\_\+\+API Im\+Font\+Atlas\+Rect\+Id {\bfseries Add\+Custom\+Rect\+Font\+Glyph} (\mbox{\hyperlink{structImFont}{Im\+Font}} \texorpdfstring{$\ast$}{*}font, Im\+Wchar codepoint, int w, int h, float advance\+\_\+x, const \mbox{\hyperlink{structImVec2}{Im\+Vec2}} \&offset=\mbox{\hyperlink{structImVec2}{Im\+Vec2}}(0, 0))
+\item 
+\Hypertarget{structImFontAtlas_a7b5b4e1374b9ee8ad3cdf624f6ca0ea6}\label{structImFontAtlas_a7b5b4e1374b9ee8ad3cdf624f6ca0ea6} 
+IMGUI\+\_\+\+API Im\+Font\+Atlas\+Rect\+Id {\bfseries Add\+Custom\+Rect\+Font\+Glyph\+For\+Size} (\mbox{\hyperlink{structImFont}{Im\+Font}} \texorpdfstring{$\ast$}{*}font, float font\+\_\+size, Im\+Wchar codepoint, int w, int h, float advance\+\_\+x, const \mbox{\hyperlink{structImVec2}{Im\+Vec2}} \&offset=\mbox{\hyperlink{structImVec2}{Im\+Vec2}}(0, 0))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structImFontAtlas_adf2f2d04b46911ad01cfbef0f59e1f11}\label{structImFontAtlas_adf2f2d04b46911ad01cfbef0f59e1f11} 
+Im\+Font\+Atlas\+Flags {\bfseries Flags}
+\item 
+\Hypertarget{structImFontAtlas_a061a5592cda9bd45716fe47759ad459b}\label{structImFontAtlas_a061a5592cda9bd45716fe47759ad459b} 
+Im\+Texture\+Format {\bfseries Tex\+Desired\+Format}
+\item 
+\Hypertarget{structImFontAtlas_a32034b2aac4616d8c27ee666a1fd1b62}\label{structImFontAtlas_a32034b2aac4616d8c27ee666a1fd1b62} 
+int {\bfseries Tex\+Glyph\+Padding}
+\item 
+\Hypertarget{structImFontAtlas_aaa6a7a073acc16ab6b71c20f5731b869}\label{structImFontAtlas_aaa6a7a073acc16ab6b71c20f5731b869} 
+int {\bfseries Tex\+Min\+Width}
+\item 
+\Hypertarget{structImFontAtlas_a11b1dbe33c539cd7459d4ff7113bc5e7}\label{structImFontAtlas_a11b1dbe33c539cd7459d4ff7113bc5e7} 
+int {\bfseries Tex\+Min\+Height}
+\item 
+\Hypertarget{structImFontAtlas_a09014b1948584a6758525b296bcee1c5}\label{structImFontAtlas_a09014b1948584a6758525b296bcee1c5} 
+int {\bfseries Tex\+Max\+Width}
+\item 
+\Hypertarget{structImFontAtlas_aa7c00e11f33ec6d7c3882ba85e069ed9}\label{structImFontAtlas_aa7c00e11f33ec6d7c3882ba85e069ed9} 
+int {\bfseries Tex\+Max\+Height}
+\item 
+\Hypertarget{structImFontAtlas_ac848a29825d36edf8629b31b419dc21e}\label{structImFontAtlas_ac848a29825d36edf8629b31b419dc21e} 
+void \texorpdfstring{$\ast$}{*} {\bfseries User\+Data}
+\item 
+\Hypertarget{structImFontAtlas_af89102add1cd2968d78d1e106bd3e7ae}\label{structImFontAtlas_af89102add1cd2968d78d1e106bd3e7ae} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\mbox{\hyperlink{structImTextureRef}{ImTextureRef}} {\bfseries TexRef}\\
+\>\mbox{\hyperlink{structImTextureRef}{ImTextureRef}} {\bfseries TexID}\\
+\}; \\
+
+\end{tabbing}\item 
+\Hypertarget{structImFontAtlas_a50ed9e3876d8925f3cb6095ab5b29597}\label{structImFontAtlas_a50ed9e3876d8925f3cb6095ab5b29597} 
+\mbox{\hyperlink{structImTextureData}{Im\+Texture\+Data}} \texorpdfstring{$\ast$}{*} {\bfseries Tex\+Data}
+\item 
+\Hypertarget{structImFontAtlas_ac1c117cb8e7fd3a17807a0f45cd66015}\label{structImFontAtlas_ac1c117cb8e7fd3a17807a0f45cd66015} 
+\mbox{\hyperlink{structImVector}{Im\+Vector}}$<$ \mbox{\hyperlink{structImTextureData}{Im\+Texture\+Data}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries Tex\+List}
+\item 
+\Hypertarget{structImFontAtlas_a2222ff64ba974a8ee7a286617f879f9b}\label{structImFontAtlas_a2222ff64ba974a8ee7a286617f879f9b} 
+bool {\bfseries Locked}
+\item 
+\Hypertarget{structImFontAtlas_a372705ad731c22d900b2954c55b651d2}\label{structImFontAtlas_a372705ad731c22d900b2954c55b651d2} 
+bool {\bfseries Renderer\+Has\+Textures}
+\item 
+\Hypertarget{structImFontAtlas_a27db97cda88515133740efd42cdb6379}\label{structImFontAtlas_a27db97cda88515133740efd42cdb6379} 
+bool {\bfseries Tex\+Is\+Built}
+\item 
+\Hypertarget{structImFontAtlas_a4bc426a6a9c2fd3ab1ad3893142613ff}\label{structImFontAtlas_a4bc426a6a9c2fd3ab1ad3893142613ff} 
+bool {\bfseries Tex\+Pixels\+Use\+Colors}
+\item 
+\Hypertarget{structImFontAtlas_adbe3a6b1fd501108649fe04f882b8664}\label{structImFontAtlas_adbe3a6b1fd501108649fe04f882b8664} 
+\mbox{\hyperlink{structImVec2}{Im\+Vec2}} {\bfseries Tex\+Uv\+Scale}
+\item 
+\Hypertarget{structImFontAtlas_af1d05221e9a1607d7f625df92a4f9b7e}\label{structImFontAtlas_af1d05221e9a1607d7f625df92a4f9b7e} 
+\mbox{\hyperlink{structImVec2}{Im\+Vec2}} {\bfseries Tex\+Uv\+White\+Pixel}
+\item 
+\Hypertarget{structImFontAtlas_a0198aeb17ef8bb810ccc8db103b93b1f}\label{structImFontAtlas_a0198aeb17ef8bb810ccc8db103b93b1f} 
+\mbox{\hyperlink{structImVector}{Im\+Vector}}$<$ \mbox{\hyperlink{structImFont}{Im\+Font}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries Fonts}
+\item 
+\Hypertarget{structImFontAtlas_a6a40825144c73f5a4518752faeb6d865}\label{structImFontAtlas_a6a40825144c73f5a4518752faeb6d865} 
+\mbox{\hyperlink{structImVector}{Im\+Vector}}$<$ \mbox{\hyperlink{structImFontConfig}{Im\+Font\+Config}} $>$ {\bfseries Sources}
+\item 
+\Hypertarget{structImFontAtlas_abf794895d5fb9597bf2a96ab68eb7048}\label{structImFontAtlas_abf794895d5fb9597bf2a96ab68eb7048} 
+\mbox{\hyperlink{structImVec4}{Im\+Vec4}} {\bfseries Tex\+Uv\+Lines} \mbox{[}IM\+\_\+\+DRAWLIST\+\_\+\+TEX\+\_\+\+LINES\+\_\+\+WIDTH\+\_\+\+MAX+1\mbox{]}
+\item 
+\Hypertarget{structImFontAtlas_af52b574c8cbffe5e1a44e9376e4857bd}\label{structImFontAtlas_af52b574c8cbffe5e1a44e9376e4857bd} 
+int {\bfseries Tex\+Next\+Unique\+ID}
+\item 
+\Hypertarget{structImFontAtlas_ab0904855667181fb971ad3a2ab4bbc40}\label{structImFontAtlas_ab0904855667181fb971ad3a2ab4bbc40} 
+int {\bfseries Font\+Next\+Unique\+ID}
+\item 
+\Hypertarget{structImFontAtlas_a01c9c26f889cc10b89411d0196572671}\label{structImFontAtlas_a01c9c26f889cc10b89411d0196572671} 
+\mbox{\hyperlink{structImVector}{Im\+Vector}}$<$ \mbox{\hyperlink{structImDrawListSharedData}{Im\+Draw\+List\+Shared\+Data}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries Draw\+List\+Shared\+Datas}
+\item 
+\Hypertarget{structImFontAtlas_a2e40d1758b423c5997a3f3ba679e8dc4}\label{structImFontAtlas_a2e40d1758b423c5997a3f3ba679e8dc4} 
+\mbox{\hyperlink{structImFontAtlasBuilder}{Im\+Font\+Atlas\+Builder}} \texorpdfstring{$\ast$}{*} {\bfseries Builder}
+\item 
+\Hypertarget{structImFontAtlas_ae31cf9678a27063a9568b413f126ee67}\label{structImFontAtlas_ae31cf9678a27063a9568b413f126ee67} 
+const \mbox{\hyperlink{structImFontLoader}{Im\+Font\+Loader}} \texorpdfstring{$\ast$}{*} {\bfseries Font\+Loader}
+\item 
+\Hypertarget{structImFontAtlas_aa4f6c54dc7e94af3cdb0758458f48e00}\label{structImFontAtlas_aa4f6c54dc7e94af3cdb0758458f48e00} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries Font\+Loader\+Name}
+\item 
+\Hypertarget{structImFontAtlas_a7625c2cd4dea54b78433e8919f4a90ab}\label{structImFontAtlas_a7625c2cd4dea54b78433e8919f4a90ab} 
+void \texorpdfstring{$\ast$}{*} {\bfseries Font\+Loader\+Data}
+\item 
+\Hypertarget{structImFontAtlas_aaad890d8dc4d481e0f2466b12f3e37a6}\label{structImFontAtlas_aaad890d8dc4d481e0f2466b12f3e37a6} 
+unsigned int {\bfseries Font\+Loader\+Flags}
+\item 
+\Hypertarget{structImFontAtlas_a6a06f508571f27eed31bec3a9cb6d07b}\label{structImFontAtlas_a6a06f508571f27eed31bec3a9cb6d07b} 
+int {\bfseries Ref\+Count}
+\item 
+\Hypertarget{structImFontAtlas_aadf1a2c2334dbfc28c431c9b63342efc}\label{structImFontAtlas_aadf1a2c2334dbfc28c431c9b63342efc} 
+\mbox{\hyperlink{structImGuiContext}{Im\+Gui\+Context}} \texorpdfstring{$\ast$}{*} {\bfseries Owner\+Context}
+\item 
+\Hypertarget{structImFontAtlas_ae7602f5c384633476b53d4a4f7375a4d}\label{structImFontAtlas_ae7602f5c384633476b53d4a4f7375a4d} 
+\mbox{\hyperlink{structImFontAtlasRect}{Im\+Font\+Atlas\+Rect}} {\bfseries Temp\+Rect}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/jaimemas/dev/videogames/\+Video-\/\+Games-\/\+Engine/imgui/imgui.\+h\item 
+/home/jaimemas/dev/videogames/\+Video-\/\+Games-\/\+Engine/imgui/imgui\+\_\+draw.\+cpp\end{DoxyCompactItemize}

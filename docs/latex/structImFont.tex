@@ -1,0 +1,89 @@
+\doxysection{Im\+Font Struct Reference}
+\hypertarget{structImFont}{}\label{structImFont}\index{ImFont@{ImFont}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structImFont_ac37e71656ec9f8cc4b83214e744bf665}\label{structImFont_ac37e71656ec9f8cc4b83214e744bf665} 
+IMGUI\+\_\+\+API bool {\bfseries Is\+Glyph\+In\+Font} (Im\+Wchar c)
+\item 
+\Hypertarget{structImFont_a97dafa61cc94e84be396d69b0d42b1ce}\label{structImFont_a97dafa61cc94e84be396d69b0d42b1ce} 
+bool {\bfseries Is\+Loaded} () const
+\item 
+\Hypertarget{structImFont_a51ebaa238a7efd72875b270cbd813590}\label{structImFont_a51ebaa238a7efd72875b270cbd813590} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries Get\+Debug\+Name} () const
+\item 
+\Hypertarget{structImFont_a8adbf587ae41bedc3084d9924733b4c3}\label{structImFont_a8adbf587ae41bedc3084d9924733b4c3} 
+IMGUI\+\_\+\+API \mbox{\hyperlink{structImFontBaked}{Im\+Font\+Baked}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+Font\+Baked} (float font\+\_\+size, float density=-\/1.\+0f)
+\item 
+\Hypertarget{structImFont_af9ba6821607e405e3ec2add24b4f17a4}\label{structImFont_af9ba6821607e405e3ec2add24b4f17a4} 
+IMGUI\+\_\+\+API \mbox{\hyperlink{structImVec2}{Im\+Vec2}} {\bfseries Calc\+Text\+SizeA} (float size, float max\+\_\+width, float wrap\+\_\+width, const char \texorpdfstring{$\ast$}{*}text\+\_\+begin, const char \texorpdfstring{$\ast$}{*}text\+\_\+end=NULL, const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}out\+\_\+remaining=NULL)
+\item 
+\Hypertarget{structImFont_ad0d0e93b46d055601db121e298cc64d8}\label{structImFont_ad0d0e93b46d055601db121e298cc64d8} 
+IMGUI\+\_\+\+API const char \texorpdfstring{$\ast$}{*} {\bfseries Calc\+Word\+Wrap\+Position} (float size, const char \texorpdfstring{$\ast$}{*}text, const char \texorpdfstring{$\ast$}{*}text\+\_\+end, float wrap\+\_\+width)
+\item 
+\Hypertarget{structImFont_a8035b4eee654c1f1799ae435337936d7}\label{structImFont_a8035b4eee654c1f1799ae435337936d7} 
+IMGUI\+\_\+\+API void {\bfseries Render\+Char} (\mbox{\hyperlink{structImDrawList}{Im\+Draw\+List}} \texorpdfstring{$\ast$}{*}draw\+\_\+list, float size, const \mbox{\hyperlink{structImVec2}{Im\+Vec2}} \&pos, Im\+U32 col, Im\+Wchar c, const \mbox{\hyperlink{structImVec4}{Im\+Vec4}} \texorpdfstring{$\ast$}{*}cpu\+\_\+fine\+\_\+clip=NULL)
+\item 
+\Hypertarget{structImFont_a47b4aabfba670cc965507d356e8faf5b}\label{structImFont_a47b4aabfba670cc965507d356e8faf5b} 
+IMGUI\+\_\+\+API void {\bfseries Render\+Text} (\mbox{\hyperlink{structImDrawList}{Im\+Draw\+List}} \texorpdfstring{$\ast$}{*}draw\+\_\+list, float size, const \mbox{\hyperlink{structImVec2}{Im\+Vec2}} \&pos, Im\+U32 col, const \mbox{\hyperlink{structImVec4}{Im\+Vec4}} \&clip\+\_\+rect, const char \texorpdfstring{$\ast$}{*}text\+\_\+begin, const char \texorpdfstring{$\ast$}{*}text\+\_\+end, float wrap\+\_\+width=0.\+0f, Im\+Draw\+Text\+Flags flags=0)
+\item 
+\Hypertarget{structImFont_a52c13554b8b4b4570451b8d4843c6f30}\label{structImFont_a52c13554b8b4b4570451b8d4843c6f30} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries Calc\+Word\+Wrap\+PositionA} (float scale, const char \texorpdfstring{$\ast$}{*}text, const char \texorpdfstring{$\ast$}{*}text\+\_\+end, float wrap\+\_\+width)
+\item 
+\Hypertarget{structImFont_aecf7773b1c40b433f91ee245f463de12}\label{structImFont_aecf7773b1c40b433f91ee245f463de12} 
+IMGUI\+\_\+\+API void {\bfseries Clear\+Output\+Data} ()
+\item 
+\Hypertarget{structImFont_afb70d5be01dd44905902d904c88b57bc}\label{structImFont_afb70d5be01dd44905902d904c88b57bc} 
+IMGUI\+\_\+\+API void {\bfseries Add\+Remap\+Char} (Im\+Wchar from\+\_\+codepoint, Im\+Wchar to\+\_\+codepoint)
+\item 
+\Hypertarget{structImFont_a4374ffca4f2d9a23599aac21c57e2a66}\label{structImFont_a4374ffca4f2d9a23599aac21c57e2a66} 
+IMGUI\+\_\+\+API bool {\bfseries Is\+Glyph\+Range\+Unused} (unsigned int c\+\_\+begin, unsigned int c\+\_\+last)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structImFont_a6ea6d0ecba5fed34f26b8873b3037350}\label{structImFont_a6ea6d0ecba5fed34f26b8873b3037350} 
+\mbox{\hyperlink{structImFontBaked}{Im\+Font\+Baked}} \texorpdfstring{$\ast$}{*} {\bfseries Last\+Baked}
+\item 
+\Hypertarget{structImFont_a8a5e0df6be5e3cabe91ae830524db960}\label{structImFont_a8a5e0df6be5e3cabe91ae830524db960} 
+\mbox{\hyperlink{structImFontAtlas}{Im\+Font\+Atlas}} \texorpdfstring{$\ast$}{*} {\bfseries Container\+Atlas}
+\item 
+\Hypertarget{structImFont_a97928fc17a5e07f7179f53b4e0aac050}\label{structImFont_a97928fc17a5e07f7179f53b4e0aac050} 
+Im\+Font\+Flags {\bfseries Flags}
+\item 
+\Hypertarget{structImFont_a6be0581297c0c5fbf7a4953e6c49c5cc}\label{structImFont_a6be0581297c0c5fbf7a4953e6c49c5cc} 
+float {\bfseries Current\+Rasterizer\+Density}
+\item 
+\Hypertarget{structImFont_aad7066950d6ed23d5b600bd796a355c1}\label{structImFont_aad7066950d6ed23d5b600bd796a355c1} 
+Im\+Gui\+ID {\bfseries Font\+Id}
+\item 
+\Hypertarget{structImFont_af41e6a70caa485330b14009e0e80b01a}\label{structImFont_af41e6a70caa485330b14009e0e80b01a} 
+float {\bfseries Legacy\+Size}
+\item 
+\Hypertarget{structImFont_a6e809ddcafecc3e1cceeebd2f4842ee7}\label{structImFont_a6e809ddcafecc3e1cceeebd2f4842ee7} 
+\mbox{\hyperlink{structImVector}{Im\+Vector}}$<$ \mbox{\hyperlink{structImFontConfig}{Im\+Font\+Config}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries Sources}
+\item 
+\Hypertarget{structImFont_a51df9d341917235207db60e775b11621}\label{structImFont_a51df9d341917235207db60e775b11621} 
+Im\+Wchar {\bfseries Ellipsis\+Char}
+\item 
+\Hypertarget{structImFont_ae54c2c4184bfcbc7b8f6da9cbc4f93c0}\label{structImFont_ae54c2c4184bfcbc7b8f6da9cbc4f93c0} 
+Im\+Wchar {\bfseries Fallback\+Char}
+\item 
+\Hypertarget{structImFont_a844f668c86ec15795f9598720052a1c4}\label{structImFont_a844f668c86ec15795f9598720052a1c4} 
+Im\+U8 {\bfseries Used8k\+Pages\+Map} \mbox{[}(IM\+\_\+\+UNICODE\+\_\+\+CODEPOINT\+\_\+\+MAX+1)/8192/8\mbox{]}
+\item 
+\Hypertarget{structImFont_a1c2a7ed2d08e08465b884e1092798077}\label{structImFont_a1c2a7ed2d08e08465b884e1092798077} 
+bool {\bfseries Ellipsis\+Auto\+Bake}
+\item 
+\Hypertarget{structImFont_a6711a4b2ee65bd8ec791543d6083ef1e}\label{structImFont_a6711a4b2ee65bd8ec791543d6083ef1e} 
+\mbox{\hyperlink{structImGuiStorage}{Im\+Gui\+Storage}} {\bfseries Remap\+Pairs}
+\item 
+\Hypertarget{structImFont_ae98fb07fd8862a7243d77b11f38bba19}\label{structImFont_ae98fb07fd8862a7243d77b11f38bba19} 
+float {\bfseries Scale}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/jaimemas/dev/videogames/\+Video-\/\+Games-\/\+Engine/imgui/imgui.\+h\item 
+/home/jaimemas/dev/videogames/\+Video-\/\+Games-\/\+Engine/imgui/imgui\+\_\+draw.\+cpp\end{DoxyCompactItemize}

@@ -1,3 +1,12 @@
+/**
+ * @file dataBase.cpp
+ * @brief DataBase class implementation
+ * @ingroup DataBaseModule
+ *
+ * Implements the DataBase constructor, destructor, move semantics,
+ * setters, getters, and database methods.
+ */
+
 #include "dataBase.h"
 #include <cstddef>
 #include <iostream>
@@ -19,12 +28,18 @@ const std::string TABLE_CREATION_QUERY = R"(
     );
 )";
 
+// =======================
+// Constructor / Destructor
+// =======================
 DataBase::DataBase(std::string _dbFile) : dbFile(_dbFile) {
   checkDbExist(dbFile);
 }
 
 DataBase::~DataBase() { closeDb(); }
 
+// =======================
+// Move semantics
+// =======================
 DataBase::DataBase(DataBase &&other) noexcept
     : db(other.db), dbFile(std::move(other.dbFile)) {
   other.db = nullptr;
@@ -40,13 +55,19 @@ DataBase &DataBase::operator=(DataBase &&other) noexcept {
   return *this;
 }
 
+// =======================
 // Setters
+// =======================
 void DataBase::setDbFile(std::string f) { dbFile = f; }
 
+// =======================
 // Getters
+// =======================
 std::string DataBase::getDbFile() { return dbFile; }
 
+// =======================
 // Methods
+// =======================
 bool DataBase::openDb() {
   int exit = sqlite3_open(dbFile.c_str(), &db);
   if (exit != SQLITE_OK) {
@@ -93,12 +114,11 @@ sqlite3_stmt *DataBase::prepareStatement(const char *sql) {
     std::cerr << "Error while preparing statement: " << sqlite3_errmsg(db)
               << std::endl;
     return nullptr;
-  } else
-    return stmt;
+  }
+  return stmt;
 }
 
 bool DataBase::processQuery(sqlite3_stmt *stmt, std::string msg) {
-
   int exit = sqlite3_step(stmt);
 
   if (exit != SQLITE_DONE) {
@@ -118,9 +138,7 @@ void DataBase::insertCircle(Circle c) {
     return;
 
   std::vector<std::string> circlesNames;
-  const char *sql = R"(
-      SELECT name FROM CIRCLES;
-  )";
+  const char *sql = "SELECT name FROM CIRCLES;";
 
   sqlite3_stmt *stmt = prepareStatement(sql);
   if (!stmt) {
@@ -130,23 +148,22 @@ void DataBase::insertCircle(Circle c) {
 
   while (sqlite3_step(stmt) == SQLITE_ROW) {
     const unsigned char *name = sqlite3_column_text(stmt, 0);
-    if (name) {
+    if (name)
       circlesNames.push_back(std::string(reinterpret_cast<const char *>(name)));
-    }
   }
   sqlite3_finalize(stmt);
 
   if (std::find(circlesNames.begin(), circlesNames.end(), c.getName()) !=
       circlesNames.end()) {
-    std::cout << "Circle already in BD" << std::endl;
+    std::cout << "Circle already in DB" << std::endl;
     closeDb();
     return;
   }
 
   sql = R"(
-      INSERT INTO CIRCLES (name, render, radius, mass, xPos, yPos, xVel, yVel, r, g, b)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
-  )";
+        INSERT INTO CIRCLES (name, render, radius, mass, xPos, yPos, xVel, yVel, r, g, b)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+    )";
 
   stmt = prepareStatement(sql);
   if (!stmt) {
@@ -174,9 +191,7 @@ void DataBase::deleteCircle(Circle c) {
   if (!openDb())
     return;
 
-  const char *sql = R"(
-      SELECT name FROM CIRCLES;
-    )";
+  const char *sql = "SELECT name FROM CIRCLES;";
 
   sqlite3_stmt *stmt = prepareStatement(sql);
   if (!stmt) {
@@ -187,22 +202,19 @@ void DataBase::deleteCircle(Circle c) {
   std::vector<std::string> circlesNames;
   while (sqlite3_step(stmt) == SQLITE_ROW) {
     const unsigned char *name = sqlite3_column_text(stmt, 0);
-    if (name) {
+    if (name)
       circlesNames.push_back(std::string(reinterpret_cast<const char *>(name)));
-    }
   }
   sqlite3_finalize(stmt);
 
   if (std::find(circlesNames.begin(), circlesNames.end(), c.getName()) ==
       circlesNames.end()) {
-    std::cout << "Circle not in BD!" << std::endl;
+    std::cout << "Circle not in DB!" << std::endl;
     closeDb();
     return;
   }
 
-  sql = R"(
-      DELETE FROM CIRCLES WHERE name = ?; 
-    )";
+  sql = "DELETE FROM CIRCLES WHERE name = ?;";
 
   stmt = prepareStatement(sql);
   if (!stmt) {
@@ -220,7 +232,7 @@ std::vector<Circle> DataBase::getAllCircles() {
   std::vector<Circle> circles;
 
   if (!openDb()) {
-    std::cerr << "Can't open BD!" << sqlite3_errmsg(db) << std::endl;
+    std::cerr << "Can't open DB!" << sqlite3_errmsg(db) << std::endl;
     return {};
   }
 

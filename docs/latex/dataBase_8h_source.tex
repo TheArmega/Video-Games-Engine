@@ -1,0 +1,68 @@
+\doxysection{data\+Base.\+h}
+\hypertarget{dataBase_8h_source}{}\label{dataBase_8h_source}\index{/home/jaimemas/dev/videogames/Video-\/Games-\/Engine/include/dataBase.h@{/home/jaimemas/dev/videogames/Video-\/Games-\/Engine/include/dataBase.h}}
+\mbox{\hyperlink{dataBase_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ DATABASE\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ DATABASE\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <sqlite3.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{circle_8h}{circle.h}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{group__DataBaseModule_ga8e52eeee35217efae0925213f13b71da}{TABLE\_CREATION\_QUERY}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDataBase_a58a2923557d633eee813ae5eaccb4c4d}{DataBase}}\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ sqlite3\ *db\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00036\ \ \ std::string\ dbFile;\ \ \ \ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{classDataBase_a58a2923557d633eee813ae5eaccb4c4d}{DataBase}}(\textcolor{keyword}{const}\ std::string\ \_dbFile);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \ \ \mbox{\hyperlink{classDataBase_a9d4629e705ccaa4897e9650222a2a648}{\string~DataBase}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \textcolor{comment}{//\ =======================}}
+\DoxyCodeLine{00051\ \ \ \textcolor{comment}{//\ Delete\ copy}}
+\DoxyCodeLine{00052\ \ \ \textcolor{comment}{//\ =======================}}
+\DoxyCodeLine{00053\ \ \ \mbox{\hyperlink{classDataBase_acefc49bd510e54deb771c360ad6432fe}{DataBase}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDataBase_a58a2923557d633eee813ae5eaccb4c4d}{DataBase}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00054\ \ \ \mbox{\hyperlink{classDataBase_a58a2923557d633eee813ae5eaccb4c4d}{DataBase}}\ \&\mbox{\hyperlink{classDataBase_aec68e0654a3e5f2bdd630f35a38d529c}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDataBase_a58a2923557d633eee813ae5eaccb4c4d}{DataBase}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \textcolor{comment}{//\ =======================}}
+\DoxyCodeLine{00057\ \ \ \textcolor{comment}{//\ Move\ semantics}}
+\DoxyCodeLine{00058\ \ \ \textcolor{comment}{//\ =======================}}
+\DoxyCodeLine{00059\ \ \ \mbox{\hyperlink{classDataBase_a58a2923557d633eee813ae5eaccb4c4d}{DataBase}}(\mbox{\hyperlink{classDataBase_a58a2923557d633eee813ae5eaccb4c4d}{DataBase}}\ \&\&other)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{classDataBase_a58a2923557d633eee813ae5eaccb4c4d}{DataBase}}\ \&\mbox{\hyperlink{classDataBase_aec68e0654a3e5f2bdd630f35a38d529c}{operator=}}(\mbox{\hyperlink{classDataBase_a58a2923557d633eee813ae5eaccb4c4d}{DataBase}}\ \&\&other)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00064\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDataBase_a865f35aab6567328bfeba1093edc10c2}{setDbFile}}(std::string\ f);\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00069\ \ \ std::string\ \mbox{\hyperlink{classDataBase_aa08eb15c317c43367af63c0f23bb83db}{getDbFile}}();\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDataBase_a8774b0989ee6fe253803e1b25f23f8cc}{openDb}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00083\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDataBase_a5ae5a957f63e07dbb326a2f08a8e2757}{closeDb}}();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00089\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDataBase_a1f6a8360f23f0fe135566f6329c70bd0}{checkDbExist}}(std::string\ f);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00095\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDataBase_a759f781cbeae1ed8924a923193eaaf7c}{createTable}}(std::string\ t\ =\ \mbox{\hyperlink{group__DataBaseModule_ga8e52eeee35217efae0925213f13b71da}{TABLE\_CREATION\_QUERY}});}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00104\ \ \ sqlite3\_stmt\ *\mbox{\hyperlink{classDataBase_adcf7e3433dd200d8f709eca1b55fe2c0}{prepareStatement}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *sql);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00112\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDataBase_ac037b0e760165f24f790f2e06c12e8d6}{processQuery}}(sqlite3\_stmt\ *stmt,\ std::string\ msg);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00118\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDataBase_a95e6568a7cc00d214111282e333aa8f8}{insertCircle}}(\mbox{\hyperlink{classCircle}{Circle}}\ circle);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00124\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDataBase_a7f796b9dbe216737994ac772d8a22489}{deleteCircle}}(\mbox{\hyperlink{classCircle}{Circle}}\ circle);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00130\ \ \ std::vector<Circle>\ \mbox{\hyperlink{classDataBase_ac259376ed5277573ed728512337b959f}{getAllCircles}}();}
+\DoxyCodeLine{00132\ \};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATABASE\_H}}
+\DoxyCodeLine{00135\ \ \textcolor{comment}{//\ end\ of\ DataBaseModule}}
+
+\end{DoxyCode}
