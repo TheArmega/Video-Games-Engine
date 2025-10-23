@@ -1,9 +1,0 @@
-<map id="DataBase::getAllCircles" name="DataBase::getAllCircles">
-<area shape="rect" id="Node000001" title="Retrieves all Circles from the database." alt="" coords="5,56,167,83"/>
-<area shape="rect" id="Node000002" href="$classDataBase.html#a5ae5a957f63e07dbb326a2f08a8e2757" title="Closes the database connection." alt="" coords="242,5,378,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,53,232,33,233,39,149,58"/>
-<area shape="rect" id="Node000003" href="$classDataBase.html#a8774b0989ee6fe253803e1b25f23f8cc" title="Opens the database connection." alt="" coords="244,56,376,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="167,67,228,67,228,72,167,72"/>
-<area shape="rect" id="Node000004" href="$classDataBase.html#adcf7e3433dd200d8f709eca1b55fe2c0" title=" " alt="" coords="215,107,405,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="149,81,233,100,232,105,148,86"/>
-</map>
