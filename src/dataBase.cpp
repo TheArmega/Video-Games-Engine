@@ -1,4 +1,5 @@
 #include "dataBase.h"
+#include <cstddef>
 #include <iostream>
 
 const std::string TABLE_CREATION_QUERY = R"(
@@ -22,6 +23,23 @@ DataBase::DataBase(std::string _dbFile) : dbFile(_dbFile) {
   checkDbExist(dbFile);
 }
 
+DataBase::~DataBase() { closeDb(); }
+
+DataBase::DataBase(DataBase &&other) noexcept
+    : db(other.db), dbFile(std::move(other.dbFile)) {
+  other.db = nullptr;
+}
+
+DataBase &DataBase::operator=(DataBase &&other) noexcept {
+  if (this != &other) {
+    closeDb();
+    db = other.db;
+    dbFile = std::move(other.dbFile);
+    other.db = nullptr;
+  }
+  return *this;
+}
+
 // Setters
 void DataBase::setDbFile(std::string f) { dbFile = f; }
 
@@ -33,6 +51,7 @@ bool DataBase::openDb() {
   int exit = sqlite3_open(dbFile.c_str(), &db);
   if (exit != SQLITE_OK) {
     std::cerr << "Error opening DB: " << sqlite3_errmsg(db) << std::endl;
+    db = nullptr;
     return false;
   }
   return true;
