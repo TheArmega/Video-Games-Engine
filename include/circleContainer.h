@@ -37,7 +37,9 @@ public:
    * @brief Constructs a new CircleContainer object
    * @param _name Name of the container (default "container")
    */
-  CircleContainer(std::string _name = "container");
+  CircleContainer(
+      std::string _name = "container",
+      std::unordered_map<std::string, sf::CircleShape> _container = {});
 
   /// @name Setters
   /// @{

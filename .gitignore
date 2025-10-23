@@ -44,8 +44,9 @@ CTestTestfile.cmake
 
 # === Archivos de usuario ===
 *.DS_Store
-Thumbs.db
+*.db
 
 # === Archivos de pruebas ===
+Testing/
 /tests/build/
 /tests/bin/
