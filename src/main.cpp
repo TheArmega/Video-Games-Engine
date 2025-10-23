@@ -3,6 +3,7 @@
 
 #include "circle.h"
 #include "circleContainer.h"
+#include "dataBase.h"
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/CircleShape.hpp>
@@ -23,15 +24,26 @@ int main() {
     return -1;
   }
 
-  CircleContainer container("container");
+  // Open/Create db and create the table if not yet
+  DataBase db("../circles.db");
+  db.createTable();
+
+  // Create example circles and add them to the db
   Circle circle1("circle1", true, 100.f, 10.f, 200.f, 300.f, 1.f, 1.f, 138, 206,
                  255);
-  container.addCircle(circle1);
+  db.insertCircle(circle1);
+
   Circle circle2("circle2", true, 100.f, 10.f, 400.f, 600.f, 1.f, 1.f, 170, 51,
                  235);
-  container.addCircle(circle2);
+  db.insertCircle(circle2);
 
-  // container.delCircle(circle2.getName());
+  Circle circle3("circle3", true, 50.f, 10.f, 100.f, 700.f, 1.f, 1.f, 200, 100,
+                 177);
+  db.insertCircle(circle3);
+
+  // Load data from db and insert it in circle container
+  CircleContainer container("container");
+  container.addCirclesFromVector(db.getAllCircles());
 
   sf::Clock deltaClock;
 
