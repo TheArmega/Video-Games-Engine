@@ -14,54 +14,56 @@
 // =======================
 // Constructor
 // =======================
-CircleContainer::CircleContainer(
-    std::string _name,
-    std::unordered_map<std::string, sf::CircleShape> _container)
+CircleContainer::CircleContainer(std::string _name,
+                                 std::vector<Circle> _container)
     : name(_name), container(_container) {}
 
 // =======================
 // Setters
 // =======================
 void CircleContainer::setName(std::string n) { name = n; }
+void CircleContainer::setContainer(std::vector<Circle> c) { container = c; }
 
 // =======================
 // Getters
 // =======================
 std::string CircleContainer::getName() const { return name; }
-
-const std::unordered_map<std::string, sf::CircleShape> &
-CircleContainer::getContainer() const {
+const std::vector<Circle> &CircleContainer::getContainer() const {
   return container;
 }
 
 // =======================
 // Methods
 // =======================
-void CircleContainer::addCircle(const Circle &c) {
-  sf::CircleShape shape(c.getRadius());
-  shape.setFillColor(sf::Color(c.getRColor(), c.getGColor(), c.getBColor()));
-  shape.setOrigin({c.getRadius(), c.getRadius()});
-  shape.setPosition({c.getXPos(), c.getYPos()});
+void CircleContainer::addCircle(const Circle &c) { container.push_back(c); }
 
-  container[c.getName()] = shape;
+void CircleContainer::delCircle(const std::string &circleName) {
+  std::erase_if(container,
+                [&](Circle &c) { return c.getName() == circleName; });
 }
 
-void CircleContainer::addCirclesFromVector(const std::vector<Circle> v) {
+int CircleContainer::getSize() const { return container.size(); }
+
+std::vector<sf::CircleShape> CircleContainer::circlesToShape() {
   sf::CircleShape shape;
-  for (const auto &c : v) {
+  std::vector<sf::CircleShape> v;
+
+  for (const auto &c : container) {
     shape.setRadius(c.getRadius());
+    shape.setPointCount(100);
     shape.setFillColor(sf::Color(c.getRColor(), c.getGColor(), c.getBColor()));
     shape.setOrigin({c.getRadius(), c.getRadius()});
     shape.setPosition({c.getXPos(), c.getYPos()});
 
-    container[c.getName()] = shape;
+    v.push_back(shape);
   }
+
+  return v;
 }
 
-void CircleContainer::delCircle(const std::string &circleName) {
-  container.erase(circleName);
-}
-
-int CircleContainer::getSize() const {
-  return static_cast<int>(container.size());
+void CircleContainer::updateCirclesState() {
+  for (auto &c : container) {
+    c.setXPos(c.getXPos() + c.getXVel());
+    c.setYPos(c.getYPos() + c.getYVel());
+  }
 }
