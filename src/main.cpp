@@ -95,7 +95,7 @@ int main() {
     window.clear();
 
     // Update state of circles
-    container.updateCirclesState();
+    container.updateCirclesState(width, height);
 
     // Draw all circles from the container
     shapes = container.circlesToShape();

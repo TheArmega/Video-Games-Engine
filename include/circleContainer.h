@@ -78,9 +78,9 @@ public:
   std::vector<sf::CircleShape> circlesToShape();
 
   /**
-   * @brief Updates state of all circles
+   * @brief Updates state of all circles, position, speed and check collisions
    */
-  void updateCirclesState();
+  void updateCirclesState(int width, int height);
 };
 
 #endif // CIRCLECONTAINER_H
