@@ -9,11 +9,15 @@
 
 #include "circleContainer.h"
 #include <SFML/Graphics/CircleShape.hpp>
+#include <unordered_map>
 
 // =======================
 // Constructor
 // =======================
-CircleContainer::CircleContainer(std::string _name) : name(_name) {}
+CircleContainer::CircleContainer(
+    std::string _name,
+    std::unordered_map<std::string, sf::CircleShape> _container)
+    : name(_name), container(_container) {}
 
 // =======================
 // Setters
