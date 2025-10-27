@@ -9,6 +9,8 @@
 
 #include "circleContainer.h"
 #include <SFML/Graphics/CircleShape.hpp>
+#include <algorithm>
+#include <filesystem>
 #include <unordered_map>
 
 // =======================
@@ -61,9 +63,34 @@ std::vector<sf::CircleShape> CircleContainer::circlesToShape() {
   return v;
 }
 
-void CircleContainer::updateCirclesState() {
+void CircleContainer::updateCirclesState(int width, int height) {
+
+  float x, y, vx, vy, r;
+
   for (auto &c : container) {
-    c.setXPos(c.getXPos() + c.getXVel());
-    c.setYPos(c.getYPos() + c.getYVel());
+
+    float x = c.getXPos();
+    float y = c.getYPos();
+    float vx = c.getXVel();
+    float vy = c.getYVel();
+    float r = c.getRadius();
+
+    x += vx;
+    y += vy;
+
+    if (x + r >= width || x - r <= 0) {
+      vx = -vx;
+      x = std::clamp(x, r, static_cast<float>(width) - r);
+    }
+
+    if (y + r >= height || y - r <= 0) {
+      vy = -vy;
+      y = std::clamp(y, r, static_cast<float>(height) - r);
+    }
+
+    c.setXPos(x);
+    c.setYPos(y);
+    c.setXVel(vx);
+    c.setYVel(vy);
   }
 }
