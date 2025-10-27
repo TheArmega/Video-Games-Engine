@@ -28,29 +28,27 @@
  */
 class CircleContainer {
 private:
-  std::string name; ///< Name of the container
-  std::unordered_map<std::string, sf::CircleShape>
-      container; ///< Map of CircleShapes by name
+  std::string name = "container";
+  std::vector<Circle> container = {}; ///< Vector with cirles
 
 public:
   /**
    * @brief Constructs a new CircleContainer object
    * @param _name Name of the container (default "container")
    */
-  CircleContainer(
-      std::string _name = "container",
-      std::unordered_map<std::string, sf::CircleShape> _container = {});
+  CircleContainer(std::string _name = "container",
+                  std::vector<Circle> _container = {});
 
   /// @name Setters
   /// @{
-  void setName(std::string n); ///< Sets the container's name
+  void setName(std::string n);              ///< Sets the name of the container
+  void setContainer(std::vector<Circle> c); ///< Sets the container
   /// @}
 
   /// @name Getters
   /// @{
-  std::string getName() const; ///< Returns the container's name
-  const std::unordered_map<std::string, sf::CircleShape> &
-  getContainer() const; ///< Returns the container
+  std::string getName() const; ///< Returns name of the container
+  const std::vector<Circle> &getContainer() const; ///< Returns the container
   /// @}
 
   /// @name Methods
@@ -60,12 +58,6 @@ public:
    * @param c Circle to add
    */
   void addCircle(const Circle &c);
-
-  /**
-   * @brief Adds multiple Circles from a vector
-   * @param v Vector of Circle objects to add
-   */
-  void addCirclesFromVector(const std::vector<Circle> v);
 
   /**
    * @brief Deletes a Circle from the container by name
@@ -78,7 +70,17 @@ public:
    * @return Number of Circles
    */
   int getSize() const;
-  /// @}
+
+  /**
+   * @brief Returns a vector with the circles transformed to shapes's
+   * @return Vector of shapes
+   */
+  std::vector<sf::CircleShape> circlesToShape();
+
+  /**
+   * @brief Updates state of all circles
+   */
+  void updateCirclesState();
 };
 
 #endif // CIRCLECONTAINER_H

@@ -67,10 +67,11 @@ int main() {
   db.insertCircle(circle3);
 
   // Load data from database and insert it into a CircleContainer
-  CircleContainer container("container");
-  container.addCirclesFromVector(db.getAllCircles());
+  CircleContainer container("container", db.getAllCircles());
 
   sf::Clock deltaClock;
+
+  std::vector<sf::CircleShape> shapes;
 
   // Main render loop
   while (window.isOpen()) {
@@ -85,9 +86,6 @@ int main() {
     // Update ImGui-SFML
     ImGui::SFML::Update(window, deltaClock.restart());
 
-    // Display ImGui demo window
-    ImGui::ShowDemoWindow();
-
     // Example custom ImGui window
     ImGui::Begin("Hello, world!");
     ImGui::Button("Look at this pretty button");
@@ -96,11 +94,14 @@ int main() {
     // Clear window
     window.clear();
 
-    // Draw all circles from the container
-    for (const auto &pair : container.getContainer()) {
-      window.draw(pair.second);
-    }
+    // Update state of circles
+    container.updateCirclesState();
 
+    // Draw all circles from the container
+    shapes = container.circlesToShape();
+    for (const auto &c : shapes) {
+      window.draw(c);
+    }
     // Render ImGui and display
     ImGui::SFML::Render(window);
     window.display();
