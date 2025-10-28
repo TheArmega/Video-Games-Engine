@@ -15,8 +15,10 @@
 
 #include "circle.h"
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Window/Window.hpp>
+#include <cmath>
 #include <string>
-#include <unordered_map>
 #include <vector>
 
 /**
@@ -28,8 +30,10 @@
  */
 class CircleContainer {
 private:
-  std::string name = "container";
+  std::string name = "container";     ///< Container name
   std::vector<Circle> container = {}; ///< Vector with cirles
+  Circle *activeCircle = nullptr;
+  float lineDistance = 0.f;
 
 public:
   /**
@@ -37,18 +41,23 @@ public:
    * @param _name Name of the container (default "container")
    */
   CircleContainer(std::string _name = "container",
-                  std::vector<Circle> _container = {});
+                  std::vector<Circle> _container = {},
+                  Circle *_activeCircle = nullptr, float _lineDistance = 0.f);
 
   /// @name Setters
   /// @{
   void setName(std::string n);              ///< Sets the name of the container
   void setContainer(std::vector<Circle> c); ///< Sets the container
+  void setActiveCircle(Circle *c);          ///< Sets active circle
+  void setLineDistance(float d);            ///< Sets line distance
   /// @}
 
   /// @name Getters
   /// @{
   std::string getName() const; ///< Returns name of the container
   const std::vector<Circle> &getContainer() const; ///< Returns the container
+  Circle *getActiveCircle() const;                 ///< Returns active circle
+  float getLineDistance() const;                   ///< Returns line distance
   /// @}
 
   /// @name Methods
@@ -75,12 +84,17 @@ public:
    * @brief Returns a vector with the circles transformed to shapes's
    * @return Vector of shapes
    */
-  std::vector<sf::CircleShape> circlesToShape();
+  void circlesToShape(sf::RenderWindow &w);
 
   /**
    * @brief Updates state of all circles, position, speed and check collisions
    */
   void updateCirclesState(int width, int height);
+
+  /**
+   * @brief Check if mouse pointer inside a circle
+   */
+  void clickOnCircle(sf::RenderWindow &w, bool &keepPushing);
 };
 
 #endif // CIRCLECONTAINER_H
