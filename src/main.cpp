@@ -22,6 +22,7 @@
 #include <SFML/Graphics/CircleShape.hpp>
 #include <SFML/Graphics/Color.hpp>
 
+#include <SFML/Window/Mouse.hpp>
 #include <iostream>
 
 /**
@@ -54,15 +55,15 @@ int main() {
   db.createTable();
 
   // Create example Circle objects
-  Circle circle1("circle1", true, 100.f, 10.f, 200.f, 300.f, 1.f, 1.f, 138, 206,
+  Circle circle1("circle1", true, 100.f, 10.f, 200.f, 300.f, 0.f, 0.f, 138, 206,
                  255);
   db.insertCircle(circle1);
 
-  Circle circle2("circle2", true, 100.f, 10.f, 400.f, 600.f, 1.f, 1.f, 170, 51,
+  Circle circle2("circle2", true, 100.f, 10.f, 400.f, 600.f, 0.f, 0.f, 170, 51,
                  235);
   db.insertCircle(circle2);
 
-  Circle circle3("circle3", true, 50.f, 10.f, 100.f, 700.f, 1.f, 1.f, 200, 100,
+  Circle circle3("circle3", true, 50.f, 10.f, 100.f, 700.f, 0.f, 0.f, 200, 100,
                  177);
   db.insertCircle(circle3);
 
@@ -72,6 +73,8 @@ int main() {
   sf::Clock deltaClock;
 
   std::vector<sf::CircleShape> shapes;
+
+  bool keepPushingMouse = false;
 
   // Main render loop
   while (window.isOpen()) {
@@ -98,10 +101,15 @@ int main() {
     container.updateCirclesState(width, height);
 
     // Draw all circles from the container
-    shapes = container.circlesToShape();
-    for (const auto &c : shapes) {
-      window.draw(c);
+    container.circlesToShape(window);
+
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
+      container.clickOnCircle(window, keepPushingMouse);
+    } else {
+      keepPushingMouse = false;
+      container.setActiveCircle(nullptr);
     }
+
     // Render ImGui and display
     ImGui::SFML::Render(window);
     window.display();
