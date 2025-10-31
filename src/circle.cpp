@@ -16,7 +16,10 @@ Circle::Circle(std::string _name, bool _render, float _radius, float _mass,
                int _gColor, int _bColor)
     : name(_name), render(_render), radius(_radius), mass(_mass), xPos(_xPos),
       yPos(_yPos), xVel(_xVel), yVel(_yVel), rColor(_rColor), gColor(_gColor),
-      bColor(_bColor) {}
+      bColor(_bColor) {
+
+  mass = radius / 10;
+}
 
 // =======================
 // Setters

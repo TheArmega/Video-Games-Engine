@@ -21,18 +21,14 @@
 // Constructor
 // =======================
 CircleContainer::CircleContainer(std::string _name,
-                                 std::vector<Circle> _container,
-                                 Circle *_activeCircle, float _lineDistance)
-    : name(_name), container(_container), activeCircle(_activeCircle),
-      lineDistance(_lineDistance) {}
+                                 std::vector<Circle> _container)
+    : name(_name), container(_container) {}
 
 // =======================
 // Setters
 // =======================
 void CircleContainer::setName(std::string n) { name = n; }
 void CircleContainer::setContainer(std::vector<Circle> c) { container = c; }
-void CircleContainer::setActiveCircle(Circle *c) { activeCircle = c; }
-void CircleContainer::setLineDistance(float d) { lineDistance = d; }
 
 // =======================
 // Getters
@@ -41,8 +37,7 @@ std::string CircleContainer::getName() const { return name; }
 const std::vector<Circle> &CircleContainer::getContainer() const {
   return container;
 }
-Circle *CircleContainer::getActiveCircle() const { return activeCircle; }
-float CircleContainer::getLineDistance() const { return lineDistance; }
+std::vector<Circle> &CircleContainer::getContainer() { return container; }
 
 // =======================
 // Methods
@@ -99,38 +94,5 @@ void CircleContainer::updateCirclesState(int width, int height) {
     c.setYPos(y);
     c.setXVel(vx);
     c.setYVel(vy);
-  }
-}
-
-void CircleContainer::clickOnCircle(sf::RenderWindow &w, bool &keepPushing) {
-
-  sf::Vector2i mousePosition = sf::Mouse::getPosition(w);
-  float x = mousePosition.x;
-  float y = mousePosition.y;
-
-  for (auto &c : container) {
-
-    float dx = x - c.getXPos();
-    float dy = y - c.getYPos();
-    float r = c.getRadius();
-
-    if ((dx * dx + dy * dy < r * r)) {
-      keepPushing = true;
-      if (activeCircle == nullptr)
-        activeCircle = &c;
-      break;
-    }
-  }
-
-  if (keepPushing || activeCircle != nullptr) {
-
-    float x_c = activeCircle->getXPos();
-    float y_c = activeCircle->getYPos();
-    std::array line = {sf::Vertex{sf::Vector2f(x_c, y_c)},
-                       sf::Vertex{sf::Vector2f(x, y)}};
-
-    lineDistance = std::sqrt(std::pow(x - x_c, 2) + std::pow(y - y_c, 2));
-
-    w.draw(line.data(), 2, sf::PrimitiveType::Lines);
   }
 }

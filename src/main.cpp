@@ -17,6 +17,7 @@
 #include "circle.h"
 #include "circleContainer.h"
 #include "dataBase.h"
+#include "physicsEngine.h"
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/CircleShape.hpp>
@@ -70,11 +71,15 @@ int main() {
   // Load data from database and insert it into a CircleContainer
   CircleContainer container("container", db.getAllCircles());
 
+  // Create PhysicsEngine
+  PhysicsEngine engine("Engine");
+
   sf::Clock deltaClock;
 
-  std::vector<sf::CircleShape> shapes;
-
   bool keepPushingMouse = false;
+
+  sf::CircleShape Ipoint(10.f);
+  Ipoint.setPosition({0, 0});
 
   // Main render loop
   while (window.isOpen()) {
@@ -103,11 +108,16 @@ int main() {
     // Draw all circles from the container
     container.circlesToShape(window);
 
+    window.draw(Ipoint);
+
     if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
-      container.clickOnCircle(window, keepPushingMouse);
+      engine.drawLineWithMouse(window, container, keepPushingMouse);
     } else {
+      if (keepPushingMouse) {
+        engine.pushCircleWhenRelease(window, Ipoint);
+      }
       keepPushingMouse = false;
-      container.setActiveCircle(nullptr);
+      engine.setActiveCircle(nullptr);
     }
 
     // Render ImGui and display
