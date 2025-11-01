@@ -39,7 +39,7 @@ public:
    */
   void drawLineWithMouse(sf::RenderWindow &w, CircleContainer &container,
                          bool &keepPushing);
-  void pushCircleWhenRelease(sf::RenderWindow &w, sf::CircleShape &Ipoint);
+  void pushCircleWhenRelease(sf::RenderWindow &w);
   // }
 };
 

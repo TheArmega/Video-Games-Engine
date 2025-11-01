@@ -78,9 +78,6 @@ int main() {
 
   bool keepPushingMouse = false;
 
-  sf::CircleShape Ipoint(10.f);
-  Ipoint.setPosition({0, 0});
-
   // Main render loop
   while (window.isOpen()) {
     while (const std::optional event = window.pollEvent()) {
@@ -108,13 +105,11 @@ int main() {
     // Draw all circles from the container
     container.circlesToShape(window);
 
-    window.draw(Ipoint);
-
     if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
       engine.drawLineWithMouse(window, container, keepPushingMouse);
     } else {
       if (keepPushingMouse) {
-        engine.pushCircleWhenRelease(window, Ipoint);
+        engine.pushCircleWhenRelease(window);
       }
       keepPushingMouse = false;
       engine.setActiveCircle(nullptr);

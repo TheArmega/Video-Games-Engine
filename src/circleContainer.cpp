@@ -77,22 +77,30 @@ void CircleContainer::updateCirclesState(int width, int height) {
     float vy = c.getYVel();
     float r = c.getRadius();
 
-    x += vx;
-    y += vy;
+    if (vx != 0 || vy != 0) {
+      x += vx;
+      y += vy;
 
-    if (x + r >= width || x - r <= 0) {
-      vx = -vx;
-      x = std::clamp(x, r, static_cast<float>(width) - r);
+      if (x + r >= width || x - r <= 0) {
+        vx = -vx;
+        x = std::clamp(x, r, static_cast<float>(width) - r);
+      }
+
+      if (y + r >= height || y - r <= 0) {
+        vy = -vy;
+        y = std::clamp(y, r, static_cast<float>(height) - r);
+      }
+
+      c.setXPos(x);
+      c.setYPos(y);
+      if (vx > 0) {
+        c.setXVel(vx - 0.1);
+      } else
+        c.setXVel(vx + 0.1);
+      if (vy > 0) {
+        c.setYVel(vy - 0.1);
+      } else
+        c.setYVel(vy + 0.1);
     }
-
-    if (y + r >= height || y - r <= 0) {
-      vy = -vy;
-      y = std::clamp(y, r, static_cast<float>(height) - r);
-    }
-
-    c.setXPos(x);
-    c.setYPos(y);
-    c.setXVel(vx);
-    c.setYVel(vy);
   }
 }

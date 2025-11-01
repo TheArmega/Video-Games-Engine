@@ -70,8 +70,7 @@ void PhysicsEngine::drawLineWithMouse(sf::RenderWindow &w,
   }
 }
 
-void PhysicsEngine::pushCircleWhenRelease(sf::RenderWindow &w,
-                                          sf::CircleShape &Ipoint) {
+void PhysicsEngine::pushCircleWhenRelease(sf::RenderWindow &w) {
   float Cx = activeCircle->getXPos();
   float Cy = activeCircle->getYPos();
   float Cr = activeCircle->getRadius();
