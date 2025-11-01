@@ -17,6 +17,7 @@
 #include "circle.h"
 #include "circleContainer.h"
 #include "dataBase.h"
+#include "physicsEngine.h"
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/CircleShape.hpp>
@@ -37,12 +38,10 @@
  */
 int main() {
   // Window dimensions
-  const int width = 1440;
-  const int height = 1080;
 
   // Create the SFML window
-  sf::RenderWindow window(sf::VideoMode({width, height}), "VideoGameEngine");
-  window.setFramerateLimit(60);
+  sf::RenderWindow window(sf::VideoMode({WIDTH, HEIGHT}), "VideoGameEngine");
+  window.setFramerateLimit(FPS);
 
   // Initialize ImGui-SFML
   if (!ImGui::SFML::Init(window)) {
@@ -70,9 +69,10 @@ int main() {
   // Load data from database and insert it into a CircleContainer
   CircleContainer container("container", db.getAllCircles());
 
-  sf::Clock deltaClock;
+  // Create PhysicsEngine
+  PhysicsEngine engine("Engine");
 
-  std::vector<sf::CircleShape> shapes;
+  sf::Clock deltaClock;
 
   bool keepPushingMouse = false;
 
@@ -98,16 +98,19 @@ int main() {
     window.clear();
 
     // Update state of circles
-    container.updateCirclesState(width, height);
+    engine.updateCirclesState(container);
 
     // Draw all circles from the container
     container.circlesToShape(window);
 
     if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
-      container.clickOnCircle(window, keepPushingMouse);
+      engine.drawLineWithMouse(window, container, keepPushingMouse);
     } else {
+      if (keepPushingMouse) {
+        engine.pushCircleWhenRelease(window);
+      }
       keepPushingMouse = false;
-      container.setActiveCircle(nullptr);
+      engine.setActiveCircle(nullptr);
     }
 
     // Render ImGui and display
