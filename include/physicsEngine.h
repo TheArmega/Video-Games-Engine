@@ -13,6 +13,12 @@
 #include <optional>
 #include <vector>
 
+extern const unsigned int WIDTH;
+extern const unsigned int HEIGHT;
+extern const int FPS;
+extern const float FORCE_SCALE;
+extern const float DAMPING_COEFFICIENT;
+
 class PhysicsEngine {
 
 private:
@@ -36,6 +42,16 @@ public:
 
   /// @name Methods
   /// @{
+  /**
+   * @brief Apply friction to a circle speed.
+   * @param Circle object.
+   */
+  void applyFrictionForce(Circle &c);
+  /**
+   * @brief Updates state of all circles, position, speed and check collisions
+   * @param Container with all circles.
+   */
+  void updateCirclesState(CircleContainer &container);
   /**
    * @brief Get the mouse pointer position.
    * @param SFML window.

@@ -38,12 +38,10 @@
  */
 int main() {
   // Window dimensions
-  const int width = 1440;
-  const int height = 1080;
 
   // Create the SFML window
-  sf::RenderWindow window(sf::VideoMode({width, height}), "VideoGameEngine");
-  window.setFramerateLimit(60);
+  sf::RenderWindow window(sf::VideoMode({WIDTH, HEIGHT}), "VideoGameEngine");
+  window.setFramerateLimit(FPS);
 
   // Initialize ImGui-SFML
   if (!ImGui::SFML::Init(window)) {
@@ -100,7 +98,7 @@ int main() {
     window.clear();
 
     // Update state of circles
-    container.updateCirclesState(width, height);
+    engine.updateCirclesState(container);
 
     // Draw all circles from the container
     container.circlesToShape(window);

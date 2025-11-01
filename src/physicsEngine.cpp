@@ -6,10 +6,14 @@
  * Implements the PhysicsEngine class constructor, with several methods
  */
 
+#include "circleContainer.h"
 #include "physicsEngine.h"
-#include <SFML/System/Vector2.hpp>
 
-constexpr float FORCE_SCALE = 0.5f;
+const unsigned int WIDTH = 1440;
+const unsigned int HEIGHT = 1080;
+const int FPS = 60;
+const float FORCE_SCALE = 0.5f;
+const float DAMPING_COEFFICIENT = 5.f;
 
 // ======================
 // Constructor
@@ -32,6 +36,48 @@ Circle PhysicsEngine::getActiveCircle() const { return *activeCircle; }
 // ======================
 // Methods
 // ======================
+void PhysicsEngine::applyFrictionForce(Circle &c) {
+  float factor = exp(-(DAMPING_COEFFICIENT / c.getMass() * 1 / FPS));
+  c.setXVel(c.getXVel() * factor);
+  c.setYVel(c.getYVel() * factor);
+}
+
+void PhysicsEngine::updateCirclesState(CircleContainer &container) {
+
+  float x, y, vx, vy, r;
+
+  for (auto &c : container.getContainer()) {
+
+    applyFrictionForce(c);
+
+    float x = c.getXPos();
+    float y = c.getYPos();
+    float vx = c.getXVel();
+    float vy = c.getYVel();
+    float r = c.getRadius();
+
+    if (vx != 0 || vy != 0) {
+      x += vx;
+      y += vy;
+
+      if (x + r >= WIDTH || x - r <= 0) {
+        vx = -vx;
+        x = std::clamp(x, r, static_cast<float>(WIDTH) - r);
+      }
+
+      if (y + r >= HEIGHT || y - r <= 0) {
+        vy = -vy;
+        y = std::clamp(y, r, static_cast<float>(HEIGHT) - r);
+      }
+
+      c.setXPos(x);
+      c.setYPos(y);
+      c.setXVel(vx);
+      c.setYVel(vy);
+    }
+  }
+}
+
 sf::Vector2f PhysicsEngine::getMousePoint(sf::RenderWindow &w) {
   sf::Vector2i mousePointer = sf::Mouse::getPosition(w);
   return sf::Vector2f{static_cast<float>(mousePointer.x),

@@ -79,11 +79,6 @@ public:
    * @return Vector of shapes
    */
   void circlesToShape(sf::RenderWindow &w);
-
-  /**
-   * @brief Updates state of all circles, position, speed and check collisions
-   */
-  void updateCirclesState(int width, int height);
 };
 
 #endif // CIRCLECONTAINER_H
