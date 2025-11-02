@@ -16,6 +16,7 @@
 extern const unsigned int WIDTH;
 extern const unsigned int HEIGHT;
 extern const int FPS;
+extern bool keepPushingMouseButton;
 extern const float FORCE_SCALE;
 extern const float DAMPING_COEFFICIENT;
 
@@ -75,8 +76,7 @@ public:
    * @brief Draw a line from the border of the circle to the mouse pointer.
    * @param Window of SMFL, container with all the circles and bool checker.
    */
-  void drawLineWithMouse(sf::RenderWindow &w, CircleContainer &container,
-                         bool &keepPushing);
+  void drawLineWithMouse(sf::RenderWindow &w, CircleContainer &container);
 
   /**
    * @brief Push a circle in a direction when release click butom.

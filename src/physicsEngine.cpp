@@ -12,6 +12,7 @@
 const unsigned int WIDTH = 1440;
 const unsigned int HEIGHT = 1080;
 const int FPS = 60;
+bool keepPushingMouseButton = false;
 const float FORCE_SCALE = 0.5f;
 const float DAMPING_COEFFICIENT = 5.f;
 
@@ -110,8 +111,7 @@ PhysicsEngine::getIntersectionPoint(Circle c, sf::Vector2f p) {
 }
 
 void PhysicsEngine::drawLineWithMouse(sf::RenderWindow &w,
-                                      CircleContainer &container,
-                                      bool &keepPushing) {
+                                      CircleContainer &container) {
 
   sf::Vector2f p = getMousePoint(w);
 
@@ -120,14 +120,14 @@ void PhysicsEngine::drawLineWithMouse(sf::RenderWindow &w,
     bool inArea = pointInCircleArea(c, p);
 
     if (inArea) {
-      keepPushing = true;
+      keepPushingMouseButton = true;
       if (activeCircle == nullptr)
         activeCircle = &c;
       break;
     }
   }
 
-  if (keepPushing || activeCircle != nullptr) {
+  if (keepPushingMouseButton || activeCircle != nullptr) {
 
     auto IpOpt = getIntersectionPoint(*activeCircle, p);
 
