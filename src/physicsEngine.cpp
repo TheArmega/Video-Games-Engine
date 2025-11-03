@@ -8,6 +8,10 @@
 
 #include "circleContainer.h"
 #include "physicsEngine.h"
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/Window/Keyboard.hpp>
+#include <cmath>
 
 const unsigned int WIDTH = 1440;
 const unsigned int HEIGHT = 1080;
@@ -15,6 +19,7 @@ const int FPS = 60;
 bool keepPushingMouseButton = false;
 const float FORCE_SCALE = 0.5f;
 const float DAMPING_COEFFICIENT = 5.f;
+const float e = 0.8;
 
 // ======================
 // Constructor
@@ -50,6 +55,7 @@ void PhysicsEngine::updateCirclesState(CircleContainer &container) {
   for (auto &c : container.getContainer()) {
 
     applyFrictionForce(c);
+    computeCollisionsBetweenCircles(container);
 
     float x = c.getXPos();
     float y = c.getYPos();
@@ -159,23 +165,84 @@ void PhysicsEngine::pushCircleWhenRelease(sf::RenderWindow &w) {
     const auto &Ip = IpOpt.value();
 
     // Direction of the force vector (from mouse to circle border)
-    std::vector<float> direction = {Ip.x - P.x, Ip.y - P.y};
+    sf::Vector2f direction = {Ip.x - P.x, Ip.y - P.y};
     // Magnitude of the direction vector
     float module =
-        std::sqrt(direction[0] * direction[0] + direction[1] * direction[1]);
+        std::sqrt(direction.x * direction.x + direction.y * direction.y);
     // Unit Vector
-    std::vector<float> unitVector = {direction[0] / module,
-                                     direction[1] / module};
+    sf::Vector2f unitVector = {direction.x / module, direction.y / module};
 
     // Vector of force
     float f = FORCE_SCALE * distance;
-    std::vector<float> forceVector = {unitVector[0] * f, unitVector[1] * f};
+    sf::Vector2f forceVector = {unitVector.x * f, unitVector.y * f};
 
     // Vector of acceleration
-    std::vector<float> acceVector = {forceVector[0] / activeCircle->getMass(),
-                                     forceVector[1] / activeCircle->getMass()};
+    std::vector<float> acceVector = {forceVector.x / activeCircle->getMass(),
+                                     forceVector.y / activeCircle->getMass()};
 
     activeCircle->setXVel(activeCircle->getXVel() + acceVector[0]);
     activeCircle->setYVel(activeCircle->getYVel() + acceVector[1]);
+  }
+}
+
+float PhysicsEngine::dotProduct(sf::Vector2f &v, sf::Vector2f &_v) {
+  return v.x * _v.x + v.y * _v.y;
+}
+
+float PhysicsEngine::distanceBetweenCircles(Circle &c, Circle &_c) {
+  float Dx = c.getXPos() - _c.getXPos();
+  float Dy = c.getYPos() - _c.getYPos();
+  return sqrt(Dx * Dx + Dy * Dy);
+}
+
+bool PhysicsEngine::circlesCollide(Circle &c, Circle &_c) {
+  if (distanceBetweenCircles(c, _c) <= c.getRadius() + _c.getRadius()) {
+    return true;
+  } else
+    return false;
+}
+
+sf::Vector2f PhysicsEngine::computeDirectionCollisionVector(Circle &c,
+                                                            Circle &_c) {
+  float x = c.getXPos() - _c.getXPos();
+  float y = c.getYPos() - _c.getYPos();
+  float d = distanceBetweenCircles(c, _c);
+
+  return {x / d, y / d};
+}
+
+sf::Vector2f PhysicsEngine::computeRelativeVelocity(Circle &c, Circle &_c) {
+  float xv = c.getXVel() - _c.getXVel();
+  float yv = c.getYVel() - _c.getYVel();
+  return {xv, yv};
+}
+
+void PhysicsEngine::computeCollisionsBetweenCircles(
+    CircleContainer &container) {
+
+  std::vector<Circle> &circles = container.getContainer();
+  int size = container.getSize();
+  sf::Vector2f direction;
+  sf::Vector2f relative_vel;
+
+  for (Circle &c : circles) {
+    for (Circle &_c : circles) {
+      if (circlesCollide(c, _c) && c.getName() != _c.getName()) {
+        direction = computeDirectionCollisionVector(c, _c);
+        relative_vel = computeRelativeVelocity(c, _c);
+
+        float vrel_n = dotProduct(relative_vel, direction);
+        if (vrel_n > 0)
+          continue; // se están separando, no hay choque
+
+        float j = -(1 + e) * vrel_n / (1 / c.getMass() + 1 / _c.getMass());
+
+        c.setXVel(c.getXVel() + (j / c.getMass()) * direction.x);
+        c.setYVel(c.getYVel() + (j / c.getMass()) * direction.y);
+
+        _c.setXVel(_c.getXVel() - (j / _c.getMass()) * direction.x);
+        _c.setYVel(_c.getYVel() - (j / _c.getMass()) * direction.y);
+      }
+    }
   }
 }

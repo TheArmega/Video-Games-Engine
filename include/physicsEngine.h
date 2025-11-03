@@ -19,6 +19,7 @@ extern const int FPS;
 extern bool keepPushingMouseButton;
 extern const float FORCE_SCALE;
 extern const float DAMPING_COEFFICIENT;
+extern const float e;
 
 class PhysicsEngine {
 
@@ -43,28 +44,33 @@ public:
 
   /// @name Methods
   /// @{
+
   /**
    * @brief Apply friction to a circle speed.
    * @param Circle object.
    */
   void applyFrictionForce(Circle &c);
+
   /**
    * @brief Updates state of all circles, position, speed and check collisions
    * @param Container with all circles.
    */
   void updateCirclesState(CircleContainer &container);
+
   /**
    * @brief Get the mouse pointer position.
    * @param SFML window.
    * @return Vector with coordinates of mouse pointer.
    */
   sf::Vector2f getMousePoint(sf::RenderWindow &w);
+
   /**
    * @brief Check if a point is inside a circle area.
    * @param Circle object and point.
    * @return True if point in circle.
    */
   bool pointInCircleArea(const Circle &c, const sf::Vector2f &p);
+
   /**
    * @brief Calculate the intersection point between a point outside the area of
    * the circle and the center of the circle.
@@ -72,17 +78,61 @@ public:
    * @return Intersection point.
    */
   std::optional<sf::Vector2f> getIntersectionPoint(Circle c, sf::Vector2f p);
+
   /**
-   * @brief Draw a line from the border of the circle to the mouse pointer.
+   * @brief Draw a line from the border of the circle to the mouse pointer when
+   * keep pressed mouse left button.
    * @param Window of SMFL, container with all the circles and bool checker.
    */
   void drawLineWithMouse(sf::RenderWindow &w, CircleContainer &container);
 
   /**
-   * @brief Push a circle in a direction when release click butom.
+   * @brief Push a circle in a direction when release click button.
    * @param Window of SMFL.
    */
   void pushCircleWhenRelease(sf::RenderWindow &w);
+
+  /**
+   * @brief Returns the dot product of two vectors.
+   * @param Two vector.
+   * @return The dot product of the vectors.
+   */
+  float dotProduct(sf::Vector2f &v, sf::Vector2f &_v);
+
+  /**
+   * @brief Returns the distance between two circles.
+   * @param Two circles between which you want to calculate the distance.
+   * @return The distance between the circles.
+   */
+  float distanceBetweenCircles(Circle &c, Circle &_c);
+
+  /**
+   * @brief Check if two circles collide.
+   * @param Two circles between which you want to check if collide.
+   * @return A bool that represents if two circles collide.
+   */
+  bool circlesCollide(Circle &c, Circle &_c);
+
+  /**
+   * @brief Compute the direction of the collision vector between two circles.
+   * @param Two circles between which you want claculate the direction vector.
+   * @return A Vector2f with the direction.
+   */
+  sf::Vector2f computeDirectionCollisionVector(Circle &c, Circle &_c);
+
+  /**
+   * @brief Compute the relative velocity of two circles.
+   * @param Two circles between which you want claculate the relative velocity.
+   * @return A Vector2f with the relative velocity.
+   */
+  sf::Vector2f computeRelativeVelocity(Circle &c, Circle &_c);
+
+  /**
+   * @brief Detects and process collisions between two circles.
+   * @param Container with all the circles.
+   */
+  void computeCollisionsBetweenCircles(CircleContainer &container);
+
   // }
 };
 
