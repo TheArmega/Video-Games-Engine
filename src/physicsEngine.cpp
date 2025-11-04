@@ -242,6 +242,17 @@ void PhysicsEngine::computeCollisionsBetweenCircles(
 
         _c.setXVel(_c.getXVel() - (j / _c.getMass()) * direction.x);
         _c.setYVel(_c.getYVel() - (j / _c.getMass()) * direction.y);
+
+        float overlap =
+            (c.getRadius() + _c.getRadius()) - distanceBetweenCircles(c, _c);
+        if (overlap > 0) {
+          float correctionFactor = 0.5f;
+          c.setXPos(c.getXPos() + correctionFactor * overlap * direction.x);
+          c.setYPos(c.getYPos() + correctionFactor * overlap * direction.y);
+
+          _c.setXPos(_c.getXPos() - correctionFactor * overlap * direction.x);
+          _c.setYPos(_c.getYPos() - correctionFactor * overlap * direction.y);
+        }
       }
     }
   }
