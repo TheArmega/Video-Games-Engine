@@ -74,8 +74,6 @@ int main() {
 
   sf::Clock deltaClock;
 
-  bool keepPushingMouse = false;
-
   // Main render loop
   while (window.isOpen()) {
     while (const std::optional event = window.pollEvent()) {
@@ -104,12 +102,12 @@ int main() {
     container.circlesToShape(window);
 
     if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
-      engine.drawLineWithMouse(window, container, keepPushingMouse);
+      engine.drawLineWithMouse(window, container);
     } else {
-      if (keepPushingMouse) {
+      if (keepPushingMouseButton) {
         engine.pushCircleWhenRelease(window);
       }
-      keepPushingMouse = false;
+      keepPushingMouseButton = false;
       engine.setActiveCircle(nullptr);
     }
 
