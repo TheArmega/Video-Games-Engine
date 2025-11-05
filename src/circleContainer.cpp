@@ -8,6 +8,7 @@
  */
 
 #include "circleContainer.h"
+#include "imgui.h"
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/Vertex.hpp>
@@ -42,7 +43,20 @@ std::vector<Circle> &CircleContainer::getContainer() { return container; }
 // =======================
 // Methods
 // =======================
-void CircleContainer::addCircle(const Circle &c) { container.push_back(c); }
+void CircleContainer::addCircle(const Circle &c) {
+  std::string name = c.getName();
+
+  for (auto &_c : container) {
+    if (_c.getName() == name) {
+      ImGui::Begin(
+          "Can't add circle with the same name as other in the program!");
+      ImGui::End();
+
+      return;
+    }
+  }
+  container.push_back(c);
+}
 
 void CircleContainer::delCircle(const std::string &circleName) {
   std::erase_if(container,

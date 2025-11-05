@@ -99,6 +99,16 @@ bool PhysicsEngine::pointInCircleArea(const Circle &c, const sf::Vector2f &p) {
   return (Dx * Dx + Dy * Dy < r * r);
 }
 
+bool PhysicsEngine::circleInWindowArea(const Circle &c) {
+  sf::Vector2f C = {c.getXPos(), c.getYPos()};
+  float r = c.getRadius();
+
+  if (0 <= C.x - r && WIDTH >= C.x + r && 0 <= C.y - r && HEIGHT >= C.y + r) {
+    return true;
+  } else
+    return false;
+}
+
 std::optional<sf::Vector2f>
 PhysicsEngine::getIntersectionPoint(Circle c, sf::Vector2f p) {
 

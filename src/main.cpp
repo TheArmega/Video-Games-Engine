@@ -37,7 +37,18 @@
  * failure)
  */
 int main() {
-  // Window dimensions
+
+  static char name[64] = {0};
+  static float radius = 0.f;
+  static float x = 720;
+  static float y = 540;
+  static float color[3] = {(float)204 / 255, (float)77 / 255, (float)5 / 255};
+
+  bool creationCircleWindow = false;
+
+  sf::CircleShape cPrev;
+  float maxRadius;
+  float xMinValid, xMaxValid, yMinValid, yMaxValid;
 
   // Create the SFML window
   sf::RenderWindow window(sf::VideoMode({WIDTH, HEIGHT}), "VideoGameEngine");
@@ -88,12 +99,73 @@ int main() {
     ImGui::SFML::Update(window, deltaClock.restart());
 
     // Example custom ImGui window
-    ImGui::Begin("Hello, world!");
-    ImGui::Button("Look at this pretty button");
+    ImGui::Begin("Circles Manager");
+    if (ImGui::Button("Create Circle")) {
+      creationCircleWindow = true;
+    }
+    ImGui::Button("Get circle information!");
     ImGui::End();
 
     // Clear window
     window.clear();
+
+    if (creationCircleWindow) {
+
+      ImGui::Begin("Circle Creation Form");
+      ImGui::Separator();
+
+      ImGui::Text("Name:");
+      ImGui::SameLine();
+      ImGui::InputText("##Circle Name", name, IM_ARRAYSIZE(name));
+
+      if (0 <= x - 300.f && WIDTH >= x + 300.f && 0 <= y - 300.f &&
+          HEIGHT >= y + 300.f) {
+        maxRadius = 300.f;
+      } else {
+        maxRadius = std::min({x, WIDTH - x, y, HEIGHT - y});
+      }
+      ImGui::Text("Radius:");
+      ImGui::SameLine();
+      ImGui::SliderFloat("##Radius", &radius, 5.f, maxRadius);
+
+      xMinValid = 0 + radius;
+      xMaxValid = WIDTH - radius;
+      ImGui::Text("X Position:");
+      ImGui::SameLine();
+      ImGui::SliderFloat("##X Position", &x, xMinValid, xMaxValid);
+
+      yMinValid = 0 + radius;
+      yMaxValid = HEIGHT - radius;
+      ImGui::Text("Y Position:");
+      ImGui::SameLine();
+      ImGui::SliderFloat("##Y Position", &y, yMinValid, yMaxValid);
+
+      ImGui::Text("Color");
+      ImGui::SameLine();
+      ImGui::ColorEdit3("##Color", color);
+
+      cPrev.setRadius(radius);
+      cPrev.setPointCount(100);
+      cPrev.setOrigin({cPrev.getRadius(), cPrev.getRadius()});
+      cPrev.setPosition({x, y});
+      cPrev.setFillColor(sf::Color((int)(color[0] * 255), (int)(color[1] * 255),
+                                   (int)(color[2] * 255)));
+      window.draw(cPrev);
+
+      if (ImGui::Button("Create cirlce")) {
+        Circle c(static_cast<std::string>(name), true, radius, 0.f, x, y, 0.f,
+                 0.f, (int)(color[0] * 255), (int)(color[1] * 255),
+                 (int)(color[2] * 255));
+        if (engine.circleInWindowArea(c)) {
+          container.addCircle(c);
+          creationCircleWindow = false;
+        }
+        ImGui::Begin("Circle need to be inside the window!");
+        ImGui::End();
+      }
+
+      ImGui::End();
+    }
 
     // Update state of circles
     engine.updateCirclesState(container);

@@ -72,6 +72,13 @@ public:
   bool pointInCircleArea(const Circle &c, const sf::Vector2f &p);
 
   /**
+   * @brief Check if a circle is inside the window.
+   * @param Circle object.
+   * @return True if circle in window.
+   */
+  bool circleInWindowArea(const Circle &c);
+
+  /**
    * @brief Calculate the intersection point between a point outside the area of
    * the circle and the center of the circle.
    * @param Circle object and point.
