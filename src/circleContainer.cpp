@@ -7,8 +7,10 @@
  * methods.
  */
 
+#include "circle.h"
 #include "circleContainer.h"
 #include "imgui.h"
+#include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/Vertex.hpp>
@@ -17,6 +19,7 @@
 #include <SFML/Window/Window.hpp>
 #include <array>
 #include <cmath>
+#include <iostream>
 
 // =======================
 // Constructor
@@ -68,6 +71,14 @@ int CircleContainer::getSize() const { return container.size(); }
 void CircleContainer::circlesToShape(sf::RenderWindow &w) {
   sf::CircleShape shape;
 
+  static sf::Font font;
+  static bool loaded = font.openFromFile("../resources/OpenSans.ttf");
+  if (!loaded) {
+    std::cerr << "Can't open font file!\n";
+    return;
+  }
+  sf::Text text(font);
+
   for (const auto &c : container) {
     shape.setRadius(c.getRadius());
     shape.setPointCount(100);
@@ -75,6 +86,24 @@ void CircleContainer::circlesToShape(sf::RenderWindow &w) {
     shape.setOrigin({c.getRadius(), c.getRadius()});
     shape.setPosition({c.getXPos(), c.getYPos()});
 
+    text.setString(c.getName());
+    text.setCharacterSize(24);
+    if (c.getRColor() < 80 && c.getGColor() < 80 and c.getBColor() < 80) {
+      text.setFillColor(sf::Color::White);
+    }
+    text.setFillColor(sf::Color::Black);
+
+    sf::FloatRect textBounds = text.getLocalBounds();
+    sf::Vector2f textPos = textBounds.position;
+    sf::Vector2f textSize = textBounds.size;
+
+    // Calcular posición centrada respecto al círculo
+    sf::Vector2f pos = {c.getXPos() - textSize.x / 2.f - textPos.x,
+                        c.getYPos() - textSize.y / 2.f - textPos.y};
+
+    text.setPosition(pos);
+
     w.draw(shape);
+    w.draw(text);
   }
 }
