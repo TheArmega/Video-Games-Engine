@@ -39,7 +39,7 @@
 int main() {
 
   static char name[64] = {0};
-  static float radius = 0.f;
+  static float radius = 10.f;
   static float x = 720;
   static float y = 540;
   static float color[3] = {(float)204 / 255, (float)77 / 255, (float)5 / 255};
@@ -49,6 +49,11 @@ int main() {
   sf::CircleShape cPrev;
   float maxRadius;
   float xMinValid, xMaxValid, yMinValid, yMaxValid;
+
+  // Error msg for popups
+  static std::string popupErrorMsg = "";
+  static bool requestOpenErrorPopup = false;
+  static bool activePopup = false;
 
   // Create the SFML window
   sf::RenderWindow window(sf::VideoMode({WIDTH, HEIGHT}), "VideoGameEngine");
@@ -126,7 +131,7 @@ int main() {
       }
       ImGui::Text("Radius:");
       ImGui::SameLine();
-      ImGui::SliderFloat("##Radius", &radius, 5.f, maxRadius);
+      ImGui::SliderFloat("##Radius", &radius, 10.f, maxRadius);
 
       xMinValid = 0 + radius;
       xMaxValid = WIDTH - radius;
@@ -157,11 +162,17 @@ int main() {
                  0.f, (int)(color[0] * 255), (int)(color[1] * 255),
                  (int)(color[2] * 255));
         if (engine.circleInWindowArea(c)) {
-          container.addCircle(c);
-          creationCircleWindow = false;
+          std::string errMsg = container.addCircle(c);
+          if (!errMsg.empty()) {
+            popupErrorMsg = errMsg;
+            requestOpenErrorPopup = true;
+          }
+        } else {
+          popupErrorMsg = "Circle need to be inside the window!";
+          requestOpenErrorPopup = true;
         }
-        ImGui::Begin("Circle need to be inside the window!");
-        ImGui::End();
+
+        creationCircleWindow = false;
       }
 
       ImGui::End();
@@ -171,9 +182,36 @@ int main() {
     engine.updateCirclesState(container);
 
     // Draw all circles from the container
-    container.circlesToShape(window);
+    std::string errMsg = container.circlesToShape(window);
 
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
+    if (!errMsg.empty()) {
+      popupErrorMsg = errMsg;
+      requestOpenErrorPopup = true;
+    }
+
+    if (requestOpenErrorPopup) {
+      ImGui::OpenPopup("ErrorPopup");
+      requestOpenErrorPopup = false;
+      activePopup = true;
+    }
+    ImGui::SetNextWindowSize(ImVec2(300, 90), ImGuiCond_Always);
+    ImGui::SetNextWindowPos({570, 495});
+    if (ImGui::BeginPopupModal("ErrorPopup", NULL,
+                               ImGuiWindowFlags_AlwaysAutoResize |
+                                   ImGuiWindowFlags_NoResize |
+                                   ImGuiWindowFlags_NoMove)) {
+      ImGui::TextWrapped("%s", popupErrorMsg.c_str());
+      ImGui::Separator();
+
+      if (ImGui::Button("Cerrar")) {
+        activePopup = false;
+        ImGui::CloseCurrentPopup();
+      }
+
+      ImGui::EndPopup();
+    }
+
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && !activePopup) {
       engine.drawLineWithMouse(window, container);
     } else {
       if (keepPushingMouseButton) {

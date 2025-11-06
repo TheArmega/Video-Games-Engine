@@ -60,7 +60,7 @@ public:
    * @brief Adds a Circle to the container
    * @param c Circle to add
    */
-  void addCircle(const Circle &c);
+  std::string addCircle(Circle &c);
 
   /**
    * @brief Deletes a Circle from the container by name
@@ -78,7 +78,7 @@ public:
    * @brief Returns a vector with the circles transformed to shapes's
    * @return Vector of shapes
    */
-  void circlesToShape(sf::RenderWindow &w);
+  std::string circlesToShape(sf::RenderWindow &w);
 };
 
 #endif // CIRCLECONTAINER_H

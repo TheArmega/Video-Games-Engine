@@ -69,7 +69,7 @@ public:
    * @param Circle object and point.
    * @return True if point in circle.
    */
-  bool pointInCircleArea(const Circle &c, const sf::Vector2f &p);
+  static bool pointInCircleArea(const Circle &c, const sf::Vector2f &p);
 
   /**
    * @brief Check if a circle is inside the window.
@@ -111,14 +111,14 @@ public:
    * @param Two circles between which you want to calculate the distance.
    * @return The distance between the circles.
    */
-  float distanceBetweenCircles(Circle &c, Circle &_c);
+  static float distanceBetweenCircles(Circle &c, Circle &_c);
 
   /**
    * @brief Check if two circles collide.
    * @param Two circles between which you want to check if collide.
    * @return A bool that represents if two circles collide.
    */
-  bool circlesCollide(Circle &c, Circle &_c);
+  static bool circlesCollide(Circle &c, Circle &_c);
 
   /**
    * @brief Compute the direction of the collision vector between two circles.
