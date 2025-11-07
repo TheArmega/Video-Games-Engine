@@ -48,7 +48,7 @@ std::vector<Circle> &CircleContainer::getContainer() { return container; }
 // =======================
 // Methods
 // =======================
-std::string CircleContainer::addCircle(Circle &c) {
+std::string CircleContainer::addCircle(const Circle &c) {
   std::string name = c.getName();
 
   for (auto &_c : container) {

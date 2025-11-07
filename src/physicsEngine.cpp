@@ -110,7 +110,7 @@ bool PhysicsEngine::circleInWindowArea(const Circle &c) {
 }
 
 std::optional<sf::Vector2f>
-PhysicsEngine::getIntersectionPoint(Circle c, sf::Vector2f p) {
+PhysicsEngine::getIntersectionPoint(const Circle c, const sf::Vector2f p) {
 
   if (!pointInCircleArea(c, p)) {
     sf::Vector2f Cp = {c.getXPos(), c.getYPos()};
@@ -195,25 +195,25 @@ void PhysicsEngine::pushCircleWhenRelease(sf::RenderWindow &w) {
   }
 }
 
-float PhysicsEngine::dotProduct(sf::Vector2f &v, sf::Vector2f &_v) {
+float PhysicsEngine::dotProduct(const sf::Vector2f &v, const sf::Vector2f &_v) {
   return v.x * _v.x + v.y * _v.y;
 }
 
-float PhysicsEngine::distanceBetweenCircles(Circle &c, Circle &_c) {
+float PhysicsEngine::distanceBetweenCircles(const Circle &c, const Circle &_c) {
   float Dx = c.getXPos() - _c.getXPos();
   float Dy = c.getYPos() - _c.getYPos();
   return sqrt(Dx * Dx + Dy * Dy);
 }
 
-bool PhysicsEngine::circlesCollide(Circle &c, Circle &_c) {
+bool PhysicsEngine::circlesCollide(const Circle &c, const Circle &_c) {
   if (distanceBetweenCircles(c, _c) <= c.getRadius() + _c.getRadius()) {
     return true;
   } else
     return false;
 }
 
-sf::Vector2f PhysicsEngine::computeDirectionCollisionVector(Circle &c,
-                                                            Circle &_c) {
+sf::Vector2f PhysicsEngine::computeDirectionCollisionVector(const Circle &c,
+                                                            const Circle &_c) {
   float x = c.getXPos() - _c.getXPos();
   float y = c.getYPos() - _c.getYPos();
   float d = distanceBetweenCircles(c, _c);
@@ -221,7 +221,8 @@ sf::Vector2f PhysicsEngine::computeDirectionCollisionVector(Circle &c,
   return {x / d, y / d};
 }
 
-sf::Vector2f PhysicsEngine::computeRelativeVelocity(Circle &c, Circle &_c) {
+sf::Vector2f PhysicsEngine::computeRelativeVelocity(const Circle &c,
+                                                    const Circle &_c) {
   float xv = c.getXVel() - _c.getXVel();
   float yv = c.getYVel() - _c.getYVel();
   return {xv, yv};

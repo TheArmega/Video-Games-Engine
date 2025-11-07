@@ -60,7 +60,7 @@ public:
    * @brief Adds a Circle to the container
    * @param c Circle to add
    */
-  std::string addCircle(Circle &c);
+  std::string addCircle(const Circle &c);
 
   /**
    * @brief Deletes a Circle from the container by name
