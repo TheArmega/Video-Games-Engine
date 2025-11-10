@@ -5,10 +5,13 @@
 #include "imgui.h"
 #include "physicsEngine.h"
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/Window/Mouse.hpp>
 
 bool uiBlockingActive = false;
 
 CircleForm circleform;
+CircleInformation circleInformation;
 
 void App::run() {
   // Create the SFML window
@@ -49,18 +52,25 @@ void App::run() {
     // Clear window
     window.clear();
 
+    ImGui::SetNextWindowSize(ImVec2(300, 80), ImGuiCond_Always);
+    ImGui::SetNextWindowPos({35, 35});
     ImGui::Begin("Circles Manager");
     if (ImGui::Button("Create Circle Form")) {
       circleform.renderCircleCreationWindow =
           !circleform.renderCircleCreationWindow;
     }
     if (ImGui::Button("Get circle information!")) {
-      // infoCircleWindow = true;
+      circleInformation.renderCircleInformationWindow =
+          !circleInformation.renderCircleInformationWindow;
     }
     ImGui::End();
 
     if (circleform.renderCircleCreationWindow) {
       App::showCircleCreationWindow(window, engine, container);
+    }
+
+    if (circleInformation.renderCircleInformationWindow) {
+      App::showCircleInformationWindow(window, engine, container);
     }
 
     // Update state of circles
@@ -121,6 +131,8 @@ void App::showImGuiPopupErrorWindow(const std::string popupErrorMsg) {
 void App::showCircleCreationWindow(sf::RenderWindow &w, PhysicsEngine &engine,
                                    CircleContainer &container) {
 
+  ImGui::SetNextWindowSize(ImVec2(350, 200), ImGuiCond_Always);
+  ImGui::SetNextWindowPos({1050, 35});
   ImGui::Begin("Circle Creation Form");
   ImGui::Separator();
 
@@ -195,4 +207,46 @@ void App::showCircleCreationWindow(sf::RenderWindow &w, PhysicsEngine &engine,
   }
 
   showImGuiPopupErrorWindow(circleform.popupErrorMsg);
+}
+
+void App::showCircleInformationWindow(sf::RenderWindow &w,
+                                      PhysicsEngine &engine,
+                                      CircleContainer &container) {
+
+  ImGui::SetNextWindowSize(ImVec2(200, 165), ImGuiCond_Always);
+  ImGui::SetNextWindowPos({700, 35});
+  ImGui::Begin("Circle Information");
+
+  if (circleInformation.activeCircle != nullptr) {
+    Circle &c = *circleInformation.activeCircle;
+
+    ImGui::Text("Name: %s", c.getName().c_str());
+    ImGui::Text("Radius %.2f", c.getRadius());
+    ImGui::Text("X Position %.2f", c.getXPos());
+    ImGui::Text("Y Position %.2f", c.getYPos());
+    ImGui::Text("Velocity: (%.2f, %.2f)", c.getXVel(), c.getYVel());
+
+    ImGui::Text("Color:");
+    ImGui::SameLine();
+    float color[3] = {(float)c.getRColor() / 255, (float)c.getGColor() / 255,
+                      (float)c.getBColor() / 255};
+    ImGui::ColorEdit3("##Color Information", color);
+  }
+
+  if (ImGui::Button("Close")) {
+    circleInformation.renderCircleInformationWindow =
+        !circleInformation.renderCircleInformationWindow;
+  }
+
+  if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
+    sf::Vector2f mousePosition = engine.getMousePoint(w);
+
+    for (auto &c : container.getContainer()) {
+      if (engine.pointInCircleArea(c, mousePosition)) {
+        circleInformation.activeCircle = &c;
+      }
+    }
+  }
+
+  ImGui::End();
 }

@@ -1,12 +1,15 @@
 #ifndef APP_H
 #define APP_H
 
+#include "circleContainer.h"
 #include "physicsEngine.h"
 
 #include "imgui-SFML.h"
 #include "imgui.h"
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/CircleShape.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
 
 extern bool uiBlockingActive;
 
@@ -24,6 +27,11 @@ struct CircleForm {
   std::string popupErrorMsg;
 };
 
+struct CircleInformation {
+  bool renderCircleInformationWindow = false;
+  Circle *activeCircle = nullptr;
+};
+
 class App {
 
 private:
@@ -31,6 +39,9 @@ private:
   static void showCircleCreationWindow(sf::RenderWindow &w,
                                        PhysicsEngine &engine,
                                        CircleContainer &container);
+  static void showCircleInformationWindow(sf::RenderWindow &w,
+                                          PhysicsEngine &engine,
+                                          CircleContainer &container);
 
 public:
   App();
