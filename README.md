@@ -7,4 +7,4 @@ There are also two features implemented using ImGui:
 - Create Circles Window: an interface where you can create new circles.
 - Get Circles Information: an interface where you can select a circle and view its data in real time.
   
-https://github.com/user-attachments/assets/f04eaa0f-92ee-4ae5-838c-a4ff8a7087b8
+https://github.com/user-attachments/assets/6baa9532-d6e2-41bf-b732-50be8a5304bb
