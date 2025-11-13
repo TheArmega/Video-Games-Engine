@@ -1,0 +1,18 @@
+<map id="CircleContainer::getContainer" name="CircleContainer::getContainer">
+<area shape="rect" id="Node000001" title="Returns the container." alt="" coords="737,97,930,124"/>
+<area shape="rect" id="Node000002" href="$group__PhysicsEngineModule.html#ga38bb7c3cafeb9fc2c770d7665f372839" title="Detects and process collisions between two circles." alt="" coords="465,5,689,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="775,95,644,51,645,46,777,90"/>
+<area shape="rect" id="Node000003" href="$group__PhysicsEngineModule.html#gaa5948c1d125c8cc04a08ef138df432d2" title="Updates state of all circles, position, speed and check collisions." alt="" coords="221,45,417,88"/>
+<area shape="poly" id="edge9_Node000001_Node000003" title=" " alt="" coords="721,104,418,78,418,72,722,99"/>
+<area shape="rect" id="Node000006" href="$group__PhysicsEngineModule.html#ga03c3a642bc5e1e1f96f6c9b80e2f1843" title="Draw a line from the border of the circle to the mouse pointer when keep pressed mouse left button." alt="" coords="222,112,417,155"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="721,118,417,132,417,126,721,113"/>
+<area shape="rect" id="Node000007" href="$classDataBase.html#ae1bf33fdfbe680d0d42562dcf8eb3fb8" title="Save the state of the circles in the data base." alt="" coords="491,177,663,204"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="774,132,623,179,622,174,773,127"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="450,49,418,54,418,49,449,44"/>
+<area shape="rect" id="Node000004" href="$group__AppModule.html#gae09dc71078b64c56c673b1ad1d25b5d1" title="Run the main SFML window, load the data from the data base and creates the ImGui window with the butt..." alt="" coords="103,120,173,147"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="239,96,222,102,173,122,171,117,220,98,237,91"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main function of the VideoGameEngine." alt="" coords="5,120,55,147"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="87,136,55,136,55,131,87,131"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="206,136,173,136,173,131,206,131"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="475,195,353,189,286,181,220,169,166,150,168,145,222,164,287,176,353,184,476,190"/>
+</map>

@@ -1,0 +1,607 @@
+\doxysection{Physics\+Engine Class}
+\hypertarget{group__PhysicsEngineModule}{}\label{group__PhysicsEngineModule}\index{PhysicsEngine Class@{PhysicsEngine Class}}
+
+
+A group of methods to simulate physics between circles.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classPhysicsEngine}{Physics\+Engine}}
+\begin{DoxyCompactList}\small\item\em Handles the interaction between circles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__PhysicsEngineModule_ga211813a5da84bc54e02dc9285605744b}{Physics\+Engine\+::\+Physics\+Engine}} (std\+::string \+\_\+name="{}Engine"{}, \mbox{\hyperlink{classCircle}{Circle}} \texorpdfstring{$\ast$}{*}\+\_\+active\+Circle=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned int \mbox{\hyperlink{group__PhysicsEngineModule_gaeb2644d198d289dcf70f3f6c2370612a}{WIDTH}}
+\item 
+const unsigned int \mbox{\hyperlink{group__PhysicsEngineModule_gae232a3821fffbe66d073a909b746c5a8}{HEIGHT}}
+\item 
+const int \mbox{\hyperlink{group__PhysicsEngineModule_gac5090a6568797128b0a5545228bb8b75}{FPS}}
+\item 
+bool \mbox{\hyperlink{group__PhysicsEngineModule_gad2744017c31e49d8915ee266226d18e7}{keep\+Pushing\+Mouse\+Button}}
+\item 
+const float \mbox{\hyperlink{group__PhysicsEngineModule_gaf1e66e52e94246d655be750660d93940}{FORCE\+\_\+\+SCALE}}
+\item 
+const float \mbox{\hyperlink{group__PhysicsEngineModule_gae0b2aa649f5d15501edbc04058782281}{DAMPING\+\_\+\+COEFFICIENT}}
+\item 
+const float \mbox{\hyperlink{group__PhysicsEngineModule_ga4225a7492f7d468ad5b985282c8ee7b1}{e}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Setters}
+@ \{ \begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__PhysicsEngineModule_gaa1b441fdef6aff6c8df1e94e5ce3a60e}{Physics\+Engine\+::set\+Name}} (std\+::string n)
+\item 
+void \mbox{\hyperlink{group__PhysicsEngineModule_ga77e6d1d315416fd244f95b2a9715930a}{Physics\+Engine\+::set\+Active\+Circle}} (\mbox{\hyperlink{classCircle}{Circle}} \texorpdfstring{$\ast$}{*}c)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Getters}
+@ \{ \begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{group__PhysicsEngineModule_ga1f2c7e9484e400e99f98ff097cf2a48c}{Physics\+Engine\+::get\+Name}} () const
+\item 
+\mbox{\hyperlink{classCircle}{Circle}} \mbox{\hyperlink{group__PhysicsEngineModule_gaaed456836975d43ec29a4be24af80a81}{Physics\+Engine\+::get\+Active\+Circle}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Methods}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__PhysicsEngineModule_ga182f57f08770f668b84d5b1a53c627d7}{Physics\+Engine\+::apply\+Friction\+Force}} (\mbox{\hyperlink{classCircle}{Circle}} \&c)
+\begin{DoxyCompactList}\small\item\em Apply friction to a circle speed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__PhysicsEngineModule_gaa5948c1d125c8cc04a08ef138df432d2}{Physics\+Engine\+::update\+Circles\+State}} (\mbox{\hyperlink{classCircleContainer}{Circle\+Container}} \&container)
+\begin{DoxyCompactList}\small\item\em Updates state of all circles, position, speed and check collisions. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{group__PhysicsEngineModule_gaa6afb2ecc0f47c41ff3649330d526fe5}{Physics\+Engine\+::get\+Mouse\+Point}} (sf\+::\+Render\+Window \&w)
+\begin{DoxyCompactList}\small\item\em Get the mouse pointer position. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{group__PhysicsEngineModule_gafb971829673997ec320ca56df6b678da}{Physics\+Engine\+::point\+In\+Circle\+Area}} (const \mbox{\hyperlink{classCircle}{Circle}} \&c, const sf\+::\+Vector2f \&p)
+\begin{DoxyCompactList}\small\item\em Check if a point is inside a circle area. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__PhysicsEngineModule_ga38f003f1f7972aaa56bf53fde14cb0c9}{Physics\+Engine\+::circle\+In\+Window\+Area}} (const \mbox{\hyperlink{classCircle}{Circle}} \&c)
+\begin{DoxyCompactList}\small\item\em Check if a circle is inside the window. \end{DoxyCompactList}\item 
+std\+::optional$<$ sf\+::\+Vector2f $>$ \mbox{\hyperlink{group__PhysicsEngineModule_ga262d46558340951aacd46fd43f90cebc}{Physics\+Engine\+::get\+Intersection\+Point}} (const \mbox{\hyperlink{classCircle}{Circle}} c, const sf\+::\+Vector2f p)
+\begin{DoxyCompactList}\small\item\em Calculate the intersection point between a point outside the area of the circle and the center of the circle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__PhysicsEngineModule_ga03c3a642bc5e1e1f96f6c9b80e2f1843}{Physics\+Engine\+::draw\+Line\+With\+Mouse}} (sf\+::\+Render\+Window \&w, \mbox{\hyperlink{classCircleContainer}{Circle\+Container}} \&container)
+\begin{DoxyCompactList}\small\item\em Draw a line from the border of the circle to the mouse pointer when keep pressed mouse left button. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__PhysicsEngineModule_ga64358270e88ea42914f4d13c933cc324}{Physics\+Engine\+::push\+Circle\+When\+Release}} (sf\+::\+Render\+Window \&w)
+\begin{DoxyCompactList}\small\item\em Push a circle in a direction when release click button. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group__PhysicsEngineModule_gabc214f56cbfdefe7ae9dff00aec092cb}{Physics\+Engine\+::dot\+Product}} (const sf\+::\+Vector2f \&v, const sf\+::\+Vector2f \&\+\_\+v)
+\begin{DoxyCompactList}\small\item\em Returns the dot product of two vectors. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{group__PhysicsEngineModule_ga5e6968d87434cfbba5e1282aeb7bf0c8}{Physics\+Engine\+::distance\+Between\+Circles}} (const \mbox{\hyperlink{classCircle}{Circle}} \&c, const \mbox{\hyperlink{classCircle}{Circle}} \&\+\_\+c)
+\begin{DoxyCompactList}\small\item\em Returns the distance between two circles. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{group__PhysicsEngineModule_gadb0fde17b93edb081f35e13637266b2c}{Physics\+Engine\+::circles\+Collide}} (const \mbox{\hyperlink{classCircle}{Circle}} \&c, const \mbox{\hyperlink{classCircle}{Circle}} \&\+\_\+c)
+\begin{DoxyCompactList}\small\item\em Check if two circles collide. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{group__PhysicsEngineModule_ga4a1eaa1d47c07d0299f161a6acbb73fb}{Physics\+Engine\+::compute\+Direction\+Collision\+Vector}} (const \mbox{\hyperlink{classCircle}{Circle}} \&c, const \mbox{\hyperlink{classCircle}{Circle}} \&\+\_\+c)
+\begin{DoxyCompactList}\small\item\em Compute the direction of the collision vector between two circles. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{group__PhysicsEngineModule_ga0bc41ae68fb9747380e4d9137ee37917}{Physics\+Engine\+::compute\+Relative\+Velocity}} (const \mbox{\hyperlink{classCircle}{Circle}} \&c, const \mbox{\hyperlink{classCircle}{Circle}} \&\+\_\+c)
+\begin{DoxyCompactList}\small\item\em Compute the relative velocity of two circles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__PhysicsEngineModule_ga38bb7c3cafeb9fc2c770d7665f372839}{Physics\+Engine\+::compute\+Collisions\+Between\+Circles}} (\mbox{\hyperlink{classCircleContainer}{Circle\+Container}} \&container)
+\begin{DoxyCompactList}\small\item\em Detects and process collisions between two circles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A group of methods to simulate physics between circles. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__PhysicsEngineModule_ga182f57f08770f668b84d5b1a53c627d7}\index{PhysicsEngine Class@{PhysicsEngine Class}!applyFrictionForce@{applyFrictionForce}}
+\index{applyFrictionForce@{applyFrictionForce}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{applyFrictionForce()}{applyFrictionForce()}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_ga182f57f08770f668b84d5b1a53c627d7} 
+void Physics\+Engine\+::apply\+Friction\+Force (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCircle}{Circle}} \&}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Apply friction to a circle speed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{classCircle}{Circle}} & object. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{group__PhysicsEngineModule_ga182f57f08770f668b84d5b1a53c627d7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_ga182f57f08770f668b84d5b1a53c627d7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__PhysicsEngineModule_ga38f003f1f7972aaa56bf53fde14cb0c9}\index{PhysicsEngine Class@{PhysicsEngine Class}!circleInWindowArea@{circleInWindowArea}}
+\index{circleInWindowArea@{circleInWindowArea}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{circleInWindowArea()}{circleInWindowArea()}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_ga38f003f1f7972aaa56bf53fde14cb0c9} 
+bool Physics\+Engine\+::circle\+In\+Window\+Area (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCircle}{Circle}} \&}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Check if a circle is inside the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{classCircle}{Circle}} & object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if circle in window. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_ga38f003f1f7972aaa56bf53fde14cb0c9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__PhysicsEngineModule_gadb0fde17b93edb081f35e13637266b2c}\index{PhysicsEngine Class@{PhysicsEngine Class}!circlesCollide@{circlesCollide}}
+\index{circlesCollide@{circlesCollide}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{circlesCollide()}{circlesCollide()}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_gadb0fde17b93edb081f35e13637266b2c} 
+bool Physics\+Engine\+::circles\+Collide (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCircle}{Circle}} \&}]{c}{, }\item[{const \mbox{\hyperlink{classCircle}{Circle}} \&}]{\+\_\+c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if two circles collide. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Two} & circles between which you want to check if collide. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A bool that represents if two circles collide. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_gadb0fde17b93edb081f35e13637266b2c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_gadb0fde17b93edb081f35e13637266b2c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__PhysicsEngineModule_ga38bb7c3cafeb9fc2c770d7665f372839}\index{PhysicsEngine Class@{PhysicsEngine Class}!computeCollisionsBetweenCircles@{computeCollisionsBetweenCircles}}
+\index{computeCollisionsBetweenCircles@{computeCollisionsBetweenCircles}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{computeCollisionsBetweenCircles()}{computeCollisionsBetweenCircles()}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_ga38bb7c3cafeb9fc2c770d7665f372839} 
+void Physics\+Engine\+::compute\+Collisions\+Between\+Circles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCircleContainer}{Circle\+Container}} \&}]{container}{}\end{DoxyParamCaption})}
+
+
+
+Detects and process collisions between two circles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Container} & with all the circles. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_ga38bb7c3cafeb9fc2c770d7665f372839_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_ga38bb7c3cafeb9fc2c770d7665f372839_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__PhysicsEngineModule_ga4a1eaa1d47c07d0299f161a6acbb73fb}\index{PhysicsEngine Class@{PhysicsEngine Class}!computeDirectionCollisionVector@{computeDirectionCollisionVector}}
+\index{computeDirectionCollisionVector@{computeDirectionCollisionVector}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{computeDirectionCollisionVector()}{computeDirectionCollisionVector()}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_ga4a1eaa1d47c07d0299f161a6acbb73fb} 
+sf\+::\+Vector2f Physics\+Engine\+::compute\+Direction\+Collision\+Vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCircle}{Circle}} \&}]{c}{, }\item[{const \mbox{\hyperlink{classCircle}{Circle}} \&}]{\+\_\+c}{}\end{DoxyParamCaption})}
+
+
+
+Compute the direction of the collision vector between two circles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Two} & circles between which you want claculate the direction vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Vector2f with the direction. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_ga4a1eaa1d47c07d0299f161a6acbb73fb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_ga4a1eaa1d47c07d0299f161a6acbb73fb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__PhysicsEngineModule_ga0bc41ae68fb9747380e4d9137ee37917}\index{PhysicsEngine Class@{PhysicsEngine Class}!computeRelativeVelocity@{computeRelativeVelocity}}
+\index{computeRelativeVelocity@{computeRelativeVelocity}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{computeRelativeVelocity()}{computeRelativeVelocity()}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_ga0bc41ae68fb9747380e4d9137ee37917} 
+sf\+::\+Vector2f Physics\+Engine\+::compute\+Relative\+Velocity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCircle}{Circle}} \&}]{c}{, }\item[{const \mbox{\hyperlink{classCircle}{Circle}} \&}]{\+\_\+c}{}\end{DoxyParamCaption})}
+
+
+
+Compute the relative velocity of two circles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Two} & circles between which you want claculate the relative velocity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Vector2f with the relative velocity. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_ga0bc41ae68fb9747380e4d9137ee37917_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_ga0bc41ae68fb9747380e4d9137ee37917_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__PhysicsEngineModule_ga5e6968d87434cfbba5e1282aeb7bf0c8}\index{PhysicsEngine Class@{PhysicsEngine Class}!distanceBetweenCircles@{distanceBetweenCircles}}
+\index{distanceBetweenCircles@{distanceBetweenCircles}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{distanceBetweenCircles()}{distanceBetweenCircles()}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_ga5e6968d87434cfbba5e1282aeb7bf0c8} 
+float Physics\+Engine\+::distance\+Between\+Circles (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCircle}{Circle}} \&}]{c}{, }\item[{const \mbox{\hyperlink{classCircle}{Circle}} \&}]{\+\_\+c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the distance between two circles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Two} & circles between which you want to calculate the distance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance between the circles. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_ga5e6968d87434cfbba5e1282aeb7bf0c8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_ga5e6968d87434cfbba5e1282aeb7bf0c8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__PhysicsEngineModule_gabc214f56cbfdefe7ae9dff00aec092cb}\index{PhysicsEngine Class@{PhysicsEngine Class}!dotProduct@{dotProduct}}
+\index{dotProduct@{dotProduct}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{dotProduct()}{dotProduct()}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_gabc214f56cbfdefe7ae9dff00aec092cb} 
+float Physics\+Engine\+::dot\+Product (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{v}{, }\item[{const sf\+::\+Vector2f \&}]{\+\_\+v}{}\end{DoxyParamCaption})}
+
+
+
+Returns the dot product of two vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Two} & vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product of the vectors. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_gabc214f56cbfdefe7ae9dff00aec092cb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__PhysicsEngineModule_ga03c3a642bc5e1e1f96f6c9b80e2f1843}\index{PhysicsEngine Class@{PhysicsEngine Class}!drawLineWithMouse@{drawLineWithMouse}}
+\index{drawLineWithMouse@{drawLineWithMouse}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{drawLineWithMouse()}{drawLineWithMouse()}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_ga03c3a642bc5e1e1f96f6c9b80e2f1843} 
+void Physics\+Engine\+::draw\+Line\+With\+Mouse (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{w}{, }\item[{\mbox{\hyperlink{classCircleContainer}{Circle\+Container}} \&}]{container}{}\end{DoxyParamCaption})}
+
+
+
+Draw a line from the border of the circle to the mouse pointer when keep pressed mouse left button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Window} & of SMFL, container with all the circles and bool checker. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_ga03c3a642bc5e1e1f96f6c9b80e2f1843_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_ga03c3a642bc5e1e1f96f6c9b80e2f1843_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__PhysicsEngineModule_gaaed456836975d43ec29a4be24af80a81}\index{PhysicsEngine Class@{PhysicsEngine Class}!getActiveCircle@{getActiveCircle}}
+\index{getActiveCircle@{getActiveCircle}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{getActiveCircle()}{getActiveCircle()}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_gaaed456836975d43ec29a4be24af80a81} 
+\mbox{\hyperlink{classCircle}{Circle}} Physics\+Engine\+::get\+Active\+Circle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{group__PhysicsEngineModule_ga262d46558340951aacd46fd43f90cebc}\index{PhysicsEngine Class@{PhysicsEngine Class}!getIntersectionPoint@{getIntersectionPoint}}
+\index{getIntersectionPoint@{getIntersectionPoint}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{getIntersectionPoint()}{getIntersectionPoint()}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_ga262d46558340951aacd46fd43f90cebc} 
+std\+::optional$<$ sf\+::\+Vector2f $>$ Physics\+Engine\+::get\+Intersection\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCircle}{Circle}}}]{c}{, }\item[{const sf\+::\+Vector2f}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Calculate the intersection point between a point outside the area of the circle and the center of the circle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{classCircle}{Circle}} & object and point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Intersection point. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_ga262d46558340951aacd46fd43f90cebc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_ga262d46558340951aacd46fd43f90cebc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__PhysicsEngineModule_gaa6afb2ecc0f47c41ff3649330d526fe5}\index{PhysicsEngine Class@{PhysicsEngine Class}!getMousePoint@{getMousePoint}}
+\index{getMousePoint@{getMousePoint}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{getMousePoint()}{getMousePoint()}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_gaa6afb2ecc0f47c41ff3649330d526fe5} 
+sf\+::\+Vector2f Physics\+Engine\+::get\+Mouse\+Point (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{w}{}\end{DoxyParamCaption})}
+
+
+
+Get the mouse pointer position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em SFML} & window. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector with coordinates of mouse pointer. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_gaa6afb2ecc0f47c41ff3649330d526fe5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__PhysicsEngineModule_ga1f2c7e9484e400e99f98ff097cf2a48c}\index{PhysicsEngine Class@{PhysicsEngine Class}!getName@{getName}}
+\index{getName@{getName}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_ga1f2c7e9484e400e99f98ff097cf2a48c} 
+std\+::string Physics\+Engine\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{group__PhysicsEngineModule_ga211813a5da84bc54e02dc9285605744b}\index{PhysicsEngine Class@{PhysicsEngine Class}!PhysicsEngine@{PhysicsEngine}}
+\index{PhysicsEngine@{PhysicsEngine}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{PhysicsEngine()}{PhysicsEngine()}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_ga211813a5da84bc54e02dc9285605744b} 
+Physics\+Engine\+::\+Physics\+Engine (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+name}{ = {\ttfamily "{}Engine"{}}, }\item[{\mbox{\hyperlink{classCircle}{Circle}} \texorpdfstring{$\ast$}{*}}]{\+\_\+active\+Circle}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+\Hypertarget{group__PhysicsEngineModule_gafb971829673997ec320ca56df6b678da}\index{PhysicsEngine Class@{PhysicsEngine Class}!pointInCircleArea@{pointInCircleArea}}
+\index{pointInCircleArea@{pointInCircleArea}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{pointInCircleArea()}{pointInCircleArea()}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_gafb971829673997ec320ca56df6b678da} 
+bool Physics\+Engine\+::point\+In\+Circle\+Area (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCircle}{Circle}} \&}]{c}{, }\item[{const sf\+::\+Vector2f \&}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if a point is inside a circle area. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{classCircle}{Circle}} & object and point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if point in circle. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_gafb971829673997ec320ca56df6b678da_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_gafb971829673997ec320ca56df6b678da_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__PhysicsEngineModule_ga64358270e88ea42914f4d13c933cc324}\index{PhysicsEngine Class@{PhysicsEngine Class}!pushCircleWhenRelease@{pushCircleWhenRelease}}
+\index{pushCircleWhenRelease@{pushCircleWhenRelease}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{pushCircleWhenRelease()}{pushCircleWhenRelease()}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_ga64358270e88ea42914f4d13c933cc324} 
+void Physics\+Engine\+::push\+Circle\+When\+Release (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{w}{}\end{DoxyParamCaption})}
+
+
+
+Push a circle in a direction when release click button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Window} & of SMFL. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_ga64358270e88ea42914f4d13c933cc324_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_ga64358270e88ea42914f4d13c933cc324_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__PhysicsEngineModule_ga77e6d1d315416fd244f95b2a9715930a}\index{PhysicsEngine Class@{PhysicsEngine Class}!setActiveCircle@{setActiveCircle}}
+\index{setActiveCircle@{setActiveCircle}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{setActiveCircle()}{setActiveCircle()}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_ga77e6d1d315416fd244f95b2a9715930a} 
+void Physics\+Engine\+::set\+Active\+Circle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCircle}{Circle}} \texorpdfstring{$\ast$}{*}}]{c}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_ga77e6d1d315416fd244f95b2a9715930a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__PhysicsEngineModule_gaa1b441fdef6aff6c8df1e94e5ce3a60e}\index{PhysicsEngine Class@{PhysicsEngine Class}!setName@{setName}}
+\index{setName@{setName}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_gaa1b441fdef6aff6c8df1e94e5ce3a60e} 
+void Physics\+Engine\+::set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{n}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__PhysicsEngineModule_gaa5948c1d125c8cc04a08ef138df432d2}\index{PhysicsEngine Class@{PhysicsEngine Class}!updateCirclesState@{updateCirclesState}}
+\index{updateCirclesState@{updateCirclesState}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{updateCirclesState()}{updateCirclesState()}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_gaa5948c1d125c8cc04a08ef138df432d2} 
+void Physics\+Engine\+::update\+Circles\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCircleContainer}{Circle\+Container}} \&}]{container}{}\end{DoxyParamCaption})}
+
+
+
+Updates state of all circles, position, speed and check collisions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Container} & with all circles. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_gaa5948c1d125c8cc04a08ef138df432d2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__PhysicsEngineModule_gaa5948c1d125c8cc04a08ef138df432d2_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{group__PhysicsEngineModule_gae0b2aa649f5d15501edbc04058782281}\index{PhysicsEngine Class@{PhysicsEngine Class}!DAMPING\_COEFFICIENT@{DAMPING\_COEFFICIENT}}
+\index{DAMPING\_COEFFICIENT@{DAMPING\_COEFFICIENT}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{DAMPING\_COEFFICIENT}{DAMPING\_COEFFICIENT}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_gae0b2aa649f5d15501edbc04058782281} 
+const float DAMPING\+\_\+\+COEFFICIENT\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{group__PhysicsEngineModule_ga4225a7492f7d468ad5b985282c8ee7b1}\index{PhysicsEngine Class@{PhysicsEngine Class}!e@{e}}
+\index{e@{e}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{e}{e}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_ga4225a7492f7d468ad5b985282c8ee7b1} 
+const float e\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{group__PhysicsEngineModule_gaf1e66e52e94246d655be750660d93940}\index{PhysicsEngine Class@{PhysicsEngine Class}!FORCE\_SCALE@{FORCE\_SCALE}}
+\index{FORCE\_SCALE@{FORCE\_SCALE}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{FORCE\_SCALE}{FORCE\_SCALE}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_gaf1e66e52e94246d655be750660d93940} 
+const float FORCE\+\_\+\+SCALE\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{group__PhysicsEngineModule_gac5090a6568797128b0a5545228bb8b75}\index{PhysicsEngine Class@{PhysicsEngine Class}!FPS@{FPS}}
+\index{FPS@{FPS}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{FPS}{FPS}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_gac5090a6568797128b0a5545228bb8b75} 
+const int FPS\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{group__PhysicsEngineModule_gae232a3821fffbe66d073a909b746c5a8}\index{PhysicsEngine Class@{PhysicsEngine Class}!HEIGHT@{HEIGHT}}
+\index{HEIGHT@{HEIGHT}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{HEIGHT}{HEIGHT}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_gae232a3821fffbe66d073a909b746c5a8} 
+const unsigned int HEIGHT\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{group__PhysicsEngineModule_gad2744017c31e49d8915ee266226d18e7}\index{PhysicsEngine Class@{PhysicsEngine Class}!keepPushingMouseButton@{keepPushingMouseButton}}
+\index{keepPushingMouseButton@{keepPushingMouseButton}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{keepPushingMouseButton}{keepPushingMouseButton}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_gad2744017c31e49d8915ee266226d18e7} 
+bool keep\+Pushing\+Mouse\+Button\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{group__PhysicsEngineModule_gaeb2644d198d289dcf70f3f6c2370612a}\index{PhysicsEngine Class@{PhysicsEngine Class}!WIDTH@{WIDTH}}
+\index{WIDTH@{WIDTH}!PhysicsEngine Class@{PhysicsEngine Class}}
+\doxysubsubsection{\texorpdfstring{WIDTH}{WIDTH}}
+{\footnotesize\ttfamily \label{group__PhysicsEngineModule_gaeb2644d198d289dcf70f3f6c2370612a} 
+const unsigned int WIDTH\hspace{0.3cm}{\ttfamily [extern]}}
+

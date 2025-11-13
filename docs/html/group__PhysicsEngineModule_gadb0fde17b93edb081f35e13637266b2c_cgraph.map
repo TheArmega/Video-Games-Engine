@@ -1,0 +1,11 @@
+<map id="PhysicsEngine::circlesCollide" name="PhysicsEngine::circlesCollide">
+<area shape="rect" id="Node000001" title="Check if two circles collide." alt="" coords="5,60,200,87"/>
+<area shape="rect" id="Node000002" href="$group__PhysicsEngineModule.html#ga5e6968d87434cfbba5e1282aeb7bf0c8" title="Returns the distance between two circles." alt="" coords="248,23,464,65"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,59,232,56,232,61,200,65"/>
+<area shape="rect" id="Node000005" href="$classCircle.html#a95b7dc25d2e9b1e40a189cd83386a12e" title="Returns the radius." alt="" coords="295,89,417,116"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="200,82,279,91,279,96,200,87"/>
+<area shape="rect" id="Node000003" href="$classCircle.html#a57a962a92b83f003debd33b1198468d5" title="Returns the X position." alt="" coords="512,5,625,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="464,28,496,25,497,30,464,34"/>
+<area shape="rect" id="Node000004" href="$classCircle.html#a20b6bc70bb22a78062f3b06b0bec4c5f" title="Returns the Y position." alt="" coords="512,56,625,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="464,54,497,58,496,63,464,60"/>
+</map>

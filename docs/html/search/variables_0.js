@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['table_5fcreation_5fquery_0',['TABLE_CREATION_QUERY',['../group__DataBaseModule.html#ga8e52eeee35217efae0925213f13b71da',1,'TABLE_CREATION_QUERY:&#160;dataBase.cpp'],['../group__DataBaseModule.html#ga8e52eeee35217efae0925213f13b71da',1,'TABLE_CREATION_QUERY:&#160;dataBase.cpp']]]
+  ['activecircle_0',['activeCircle',['../group__AppModule.html#ga17e01915dab6132e2f4e4813e3979b81',1,'CircleInformation']]],
+  ['activepopup_1',['activePopup',['../group__AppModule.html#gad3d189b4263d5553c34c70038714466c',1,'CircleForm']]]
 ];

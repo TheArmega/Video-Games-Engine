@@ -52,7 +52,7 @@ void App::run() {
     // Clear window
     window.clear();
 
-    ImGui::SetNextWindowSize(ImVec2(300, 80), ImGuiCond_Always);
+    ImGui::SetNextWindowSize(ImVec2(300, 120), ImGuiCond_Always);
     ImGui::SetNextWindowPos({35, 35});
     ImGui::Begin("Circles Manager");
     if (ImGui::Button("Create Circle Form")) {
@@ -62,6 +62,13 @@ void App::run() {
     if (ImGui::Button("Get circle information!")) {
       circleInformation.renderCircleInformationWindow =
           !circleInformation.renderCircleInformationWindow;
+    }
+    if (ImGui::Button("Save State")) {
+      db.saveAllCircles(container);
+    }
+    if (ImGui::Button("Delete Circles")) {
+      db.deleteAllCircles(container);
+      container.setContainer(db.getAllCircles());
     }
     ImGui::End();
 

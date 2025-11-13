@@ -56,7 +56,11 @@ void \mbox{\hyperlink{classDataBase_a95e6568a7cc00d214111282e333aa8f8}{insert\+C
 void \mbox{\hyperlink{classDataBase_a7f796b9dbe216737994ac772d8a22489}{delete\+Circle}} (\mbox{\hyperlink{classCircle}{Circle}} circle)
 \begin{DoxyCompactList}\small\item\em Deletes a \doxylink{classCircle}{Circle} from the database. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{classCircle}{Circle}} $>$ \mbox{\hyperlink{classDataBase_ac259376ed5277573ed728512337b959f}{get\+All\+Circles}} ()
-\begin{DoxyCompactList}\small\item\em Retrieves all Circles from the database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Retrieves all Circles from the database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDataBase_ae1bf33fdfbe680d0d42562dcf8eb3fb8}{save\+All\+Circles}} (\mbox{\hyperlink{classCircleContainer}{Circle\+Container}} \&container)
+\begin{DoxyCompactList}\small\item\em Save the state of the circles in the data base. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDataBase_a2f2a925309a3f909bf5c4d9e173caf8b}{delete\+All\+Circles}} (\mbox{\hyperlink{classCircleContainer}{Circle\+Container}} \&container)
+\begin{DoxyCompactList}\small\item\em Delete all circles from table. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \end{Indent}
 
 
@@ -215,7 +219,38 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=269pt]{classDataBase_a759f781cbeae1ed8924a923193eaaf7c_icgraph}
+\includegraphics[width=350pt]{classDataBase_a759f781cbeae1ed8924a923193eaaf7c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDataBase_a2f2a925309a3f909bf5c4d9e173caf8b}\index{DataBase@{DataBase}!deleteAllCircles@{deleteAllCircles}}
+\index{deleteAllCircles@{deleteAllCircles}!DataBase@{DataBase}}
+\doxysubsubsection{\texorpdfstring{deleteAllCircles()}{deleteAllCircles()}}
+{\footnotesize\ttfamily \label{classDataBase_a2f2a925309a3f909bf5c4d9e173caf8b} 
+void Data\+Base\+::delete\+All\+Circles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCircleContainer}{Circle\+Container}} \&}]{container}{}\end{DoxyParamCaption})}
+
+
+
+Delete all circles from table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Container} & with all the circles states \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_a2f2a925309a3f909bf5c4d9e173caf8b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_a2f2a925309a3f909bf5c4d9e173caf8b_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{classDataBase_a7f796b9dbe216737994ac772d8a22489}\index{DataBase@{DataBase}!deleteCircle@{deleteCircle}}
@@ -265,7 +300,7 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=274pt]{classDataBase_ac259376ed5277573ed728512337b959f_icgraph}
+\includegraphics[width=350pt]{classDataBase_ac259376ed5277573ed728512337b959f_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{classDataBase_aa08eb15c317c43367af63c0f23bb83db}\index{DataBase@{DataBase}!getDbFile@{getDbFile}}
@@ -298,14 +333,6 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[height=550pt]{classDataBase_a95e6568a7cc00d214111282e333aa8f8_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=268pt]{classDataBase_a95e6568a7cc00d214111282e333aa8f8_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{classDataBase_a8774b0989ee6fe253803e1b25f23f8cc}\index{DataBase@{DataBase}!openDb@{openDb}}
@@ -403,6 +430,37 @@ Here is the caller graph for this function\+:
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classDataBase_ac037b0e760165f24f790f2e06c12e8d6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDataBase_ae1bf33fdfbe680d0d42562dcf8eb3fb8}\index{DataBase@{DataBase}!saveAllCircles@{saveAllCircles}}
+\index{saveAllCircles@{saveAllCircles}!DataBase@{DataBase}}
+\doxysubsubsection{\texorpdfstring{saveAllCircles()}{saveAllCircles()}}
+{\footnotesize\ttfamily \label{classDataBase_ae1bf33fdfbe680d0d42562dcf8eb3fb8} 
+void Data\+Base\+::save\+All\+Circles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCircleContainer}{Circle\+Container}} \&}]{container}{}\end{DoxyParamCaption})}
+
+
+
+Save the state of the circles in the data base. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Container} & with all the circles states \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_ae1bf33fdfbe680d0d42562dcf8eb3fb8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_ae1bf33fdfbe680d0d42562dcf8eb3fb8_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{classDataBase_a865f35aab6567328bfeba1093edc10c2}\index{DataBase@{DataBase}!setDbFile@{setDbFile}}

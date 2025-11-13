@@ -1,0 +1,16 @@
+<map id="CircleContainer::addCircle" name="CircleContainer::addCircle">
+<area shape="rect" id="Node000001" title="Adds a Circle to the container." alt="" coords="5,89,180,116"/>
+<area shape="rect" id="Node000002" href="$group__PhysicsEngineModule.html#gadb0fde17b93edb081f35e13637266b2c" title="Check if two circles collide." alt="" coords="228,39,422,65"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,86,245,67,246,72,158,91"/>
+<area shape="rect" id="Node000006" href="$classCircle.html#a95b7dc25d2e9b1e40a189cd83386a12e" title="Returns the radius." alt="" coords="517,89,639,116"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="180,100,501,100,501,105,180,105"/>
+<area shape="rect" id="Node000007" href="$classCircle.html#a8532d048164b60dbf0c5b60b7dc8fe26" title="Returns the name." alt="" coords="267,140,383,167"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="158,114,252,135,251,140,157,119"/>
+<area shape="rect" id="Node000003" href="$group__PhysicsEngineModule.html#ga5e6968d87434cfbba5e1282aeb7bf0c8" title="Returns the distance between two circles." alt="" coords="470,23,686,65"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="422,46,454,45,455,51,422,52"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="396,63,502,85,501,90,395,69"/>
+<area shape="rect" id="Node000004" href="$classCircle.html#a57a962a92b83f003debd33b1198468d5" title="Returns the X position." alt="" coords="734,5,848,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="686,28,719,25,719,30,687,34"/>
+<area shape="rect" id="Node000005" href="$classCircle.html#a20b6bc70bb22a78062f3b06b0bec4c5f" title="Returns the Y position." alt="" coords="734,56,848,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="687,54,719,58,719,63,686,60"/>
+</map>

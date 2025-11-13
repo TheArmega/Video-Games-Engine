@@ -1,0 +1,193 @@
+\doxysection{App Class}
+\hypertarget{group__AppModule}{}\label{group__AppModule}\index{App Class@{App Class}}
+
+
+Manages SFML Im\+Gui windows and the main function of the program.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structCircleForm}{Circle\+Form}}
+\begin{DoxyCompactList}\small\item\em This struct is used as a form to create and visualize at the same time a circle. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structCircleInformation}{Circle\+Information}}
+\begin{DoxyCompactList}\small\item\em This struct is used to use the \doxylink{classCircle}{Circle} Information Window. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classApp}{App}}
+\begin{DoxyCompactList}\small\item\em Handles the SFML and Im\+Gui windows and has the main function of the program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__AppModule_gacb8cbf3e285b91d0170ffe87df5989c5}{App\+::\+App}} ()
+\item 
+\mbox{\hyperlink{group__AppModule_ga34f1f253b1cef5f4ecbac66eaf6964ec}{App\+::\texorpdfstring{$\sim$}{\string~}\+App}} ()
+\item 
+static void \mbox{\hyperlink{group__AppModule_gae09dc71078b64c56c673b1ad1d25b5d1}{App\+::run}} ()
+\begin{DoxyCompactList}\small\item\em Run the main SFML window, load the data from the data base and creates the Im\+Gui window with the buttons to start interacting. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{group__AppModule_gaecdf67547df085a1aab755ef0524dd6c}{ui\+Blocking\+Active}}
+\begin{DoxyCompactList}\small\item\em This variable tells if a UI is active and blocking the interaction with the circles. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__AppModule_gafdf8926fb2d67843c3b66d9e5501b75e}{Circle\+Form\+::render\+Circle\+Creation\+Window}} = false
+\item 
+sf\+::\+Circle\+Shape \mbox{\hyperlink{group__AppModule_ga14943612172d9e5b1dccd1fe0f4257a9}{Circle\+Form\+::c\+Prev}}
+\item 
+char \mbox{\hyperlink{group__AppModule_gad555f3e97b7faa1298211a97ff62f16d}{Circle\+Form\+::name}} \mbox{[}64\mbox{]} = \{0\}
+\item 
+float \mbox{\hyperlink{group__AppModule_gae8b74129ceec34413c2483d42b5574c6}{Circle\+Form\+::radius}} = 10.f
+\item 
+float \mbox{\hyperlink{group__AppModule_ga02d58614804f1f435f6d2b15dd22c251}{Circle\+Form\+::max\+Radius}} = 300.f
+\item 
+float \mbox{\hyperlink{group__AppModule_gad1829f339412254e74edb55112f39b02}{Circle\+Form\+::x}} = 720.f
+\item 
+float \mbox{\hyperlink{group__AppModule_ga52b07dc63e17943388a82f002ef2d472}{Circle\+Form\+::y}} = 540.f
+\item 
+float \mbox{\hyperlink{group__AppModule_ga59dba9b574be3ddde058b0d32b6be008}{Circle\+Form\+::color}} \mbox{[}3\mbox{]} = \{204.f / 255.f, 77.f / 255.f, 5.f / 255.f\}
+\item 
+bool \mbox{\hyperlink{group__AppModule_gae540192b2c4acd99c8b1e8ffd3708823}{Circle\+Form\+::request\+Open\+Error\+Popup}} = false
+\item 
+bool \mbox{\hyperlink{group__AppModule_gad3d189b4263d5553c34c70038714466c}{Circle\+Form\+::active\+Popup}} = false
+\item 
+std\+::string \mbox{\hyperlink{group__AppModule_gac74879838ec11cc0bba8fade2501d324}{Circle\+Form\+::popup\+Error\+Msg}}
+\item 
+bool \mbox{\hyperlink{group__AppModule_ga6089fac57fe2cc7836bcd48b7fd2f580}{Circle\+Information\+::render\+Circle\+Information\+Window}} = false
+\item 
+\mbox{\hyperlink{classCircle}{Circle}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__AppModule_ga17e01915dab6132e2f4e4813e3979b81}{Circle\+Information\+::active\+Circle}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages SFML Im\+Gui windows and the main function of the program. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__AppModule_gacb8cbf3e285b91d0170ffe87df5989c5}\index{App Class@{App Class}!App@{App}}
+\index{App@{App}!App Class@{App Class}}
+\doxysubsubsection{\texorpdfstring{App()}{App()}}
+{\footnotesize\ttfamily \label{group__AppModule_gacb8cbf3e285b91d0170ffe87df5989c5} 
+App\+::\+App (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__AppModule_gae09dc71078b64c56c673b1ad1d25b5d1}\index{App Class@{App Class}!run@{run}}
+\index{run@{run}!App Class@{App Class}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{group__AppModule_gae09dc71078b64c56c673b1ad1d25b5d1} 
+void App\+::run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Run the main SFML window, load the data from the data base and creates the Im\+Gui window with the buttons to start interacting. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__AppModule_gae09dc71078b64c56c673b1ad1d25b5d1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{group__AppModule_gae09dc71078b64c56c673b1ad1d25b5d1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__AppModule_ga34f1f253b1cef5f4ecbac66eaf6964ec}\index{App Class@{App Class}!````~App@{\texorpdfstring{$\sim$}{\string~}App}}
+\index{````~App@{\texorpdfstring{$\sim$}{\string~}App}!App Class@{App Class}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}App()}{\string~App()}}
+{\footnotesize\ttfamily \label{group__AppModule_ga34f1f253b1cef5f4ecbac66eaf6964ec} 
+App\+::\texorpdfstring{$\sim$}{\string~}\+App (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{group__AppModule_ga17e01915dab6132e2f4e4813e3979b81}\index{App Class@{App Class}!activeCircle@{activeCircle}}
+\index{activeCircle@{activeCircle}!App Class@{App Class}}
+\doxysubsubsection{\texorpdfstring{activeCircle}{activeCircle}}
+{\footnotesize\ttfamily \label{group__AppModule_ga17e01915dab6132e2f4e4813e3979b81} 
+\mbox{\hyperlink{classCircle}{Circle}}\texorpdfstring{$\ast$}{*} Circle\+Information\+::active\+Circle = nullptr}
+
+\Hypertarget{group__AppModule_gad3d189b4263d5553c34c70038714466c}\index{App Class@{App Class}!activePopup@{activePopup}}
+\index{activePopup@{activePopup}!App Class@{App Class}}
+\doxysubsubsection{\texorpdfstring{activePopup}{activePopup}}
+{\footnotesize\ttfamily \label{group__AppModule_gad3d189b4263d5553c34c70038714466c} 
+bool Circle\+Form\+::active\+Popup = false}
+
+\Hypertarget{group__AppModule_ga59dba9b574be3ddde058b0d32b6be008}\index{App Class@{App Class}!color@{color}}
+\index{color@{color}!App Class@{App Class}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily \label{group__AppModule_ga59dba9b574be3ddde058b0d32b6be008} 
+float Circle\+Form\+::color\mbox{[}3\mbox{]} = \{204.f / 255.f, 77.f / 255.f, 5.f / 255.f\}}
+
+\Hypertarget{group__AppModule_ga14943612172d9e5b1dccd1fe0f4257a9}\index{App Class@{App Class}!cPrev@{cPrev}}
+\index{cPrev@{cPrev}!App Class@{App Class}}
+\doxysubsubsection{\texorpdfstring{cPrev}{cPrev}}
+{\footnotesize\ttfamily \label{group__AppModule_ga14943612172d9e5b1dccd1fe0f4257a9} 
+sf\+::\+Circle\+Shape Circle\+Form\+::c\+Prev}
+
+\Hypertarget{group__AppModule_ga02d58614804f1f435f6d2b15dd22c251}\index{App Class@{App Class}!maxRadius@{maxRadius}}
+\index{maxRadius@{maxRadius}!App Class@{App Class}}
+\doxysubsubsection{\texorpdfstring{maxRadius}{maxRadius}}
+{\footnotesize\ttfamily \label{group__AppModule_ga02d58614804f1f435f6d2b15dd22c251} 
+float Circle\+Form\+::max\+Radius = 300.f}
+
+\Hypertarget{group__AppModule_gad555f3e97b7faa1298211a97ff62f16d}\index{App Class@{App Class}!name@{name}}
+\index{name@{name}!App Class@{App Class}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{group__AppModule_gad555f3e97b7faa1298211a97ff62f16d} 
+char Circle\+Form\+::name\mbox{[}64\mbox{]} = \{0\}}
+
+\Hypertarget{group__AppModule_gac74879838ec11cc0bba8fade2501d324}\index{App Class@{App Class}!popupErrorMsg@{popupErrorMsg}}
+\index{popupErrorMsg@{popupErrorMsg}!App Class@{App Class}}
+\doxysubsubsection{\texorpdfstring{popupErrorMsg}{popupErrorMsg}}
+{\footnotesize\ttfamily \label{group__AppModule_gac74879838ec11cc0bba8fade2501d324} 
+std\+::string Circle\+Form\+::popup\+Error\+Msg}
+
+\Hypertarget{group__AppModule_gae8b74129ceec34413c2483d42b5574c6}\index{App Class@{App Class}!radius@{radius}}
+\index{radius@{radius}!App Class@{App Class}}
+\doxysubsubsection{\texorpdfstring{radius}{radius}}
+{\footnotesize\ttfamily \label{group__AppModule_gae8b74129ceec34413c2483d42b5574c6} 
+float Circle\+Form\+::radius = 10.f}
+
+\Hypertarget{group__AppModule_gafdf8926fb2d67843c3b66d9e5501b75e}\index{App Class@{App Class}!renderCircleCreationWindow@{renderCircleCreationWindow}}
+\index{renderCircleCreationWindow@{renderCircleCreationWindow}!App Class@{App Class}}
+\doxysubsubsection{\texorpdfstring{renderCircleCreationWindow}{renderCircleCreationWindow}}
+{\footnotesize\ttfamily \label{group__AppModule_gafdf8926fb2d67843c3b66d9e5501b75e} 
+bool Circle\+Form\+::render\+Circle\+Creation\+Window = false}
+
+\Hypertarget{group__AppModule_ga6089fac57fe2cc7836bcd48b7fd2f580}\index{App Class@{App Class}!renderCircleInformationWindow@{renderCircleInformationWindow}}
+\index{renderCircleInformationWindow@{renderCircleInformationWindow}!App Class@{App Class}}
+\doxysubsubsection{\texorpdfstring{renderCircleInformationWindow}{renderCircleInformationWindow}}
+{\footnotesize\ttfamily \label{group__AppModule_ga6089fac57fe2cc7836bcd48b7fd2f580} 
+bool Circle\+Information\+::render\+Circle\+Information\+Window = false}
+
+\Hypertarget{group__AppModule_gae540192b2c4acd99c8b1e8ffd3708823}\index{App Class@{App Class}!requestOpenErrorPopup@{requestOpenErrorPopup}}
+\index{requestOpenErrorPopup@{requestOpenErrorPopup}!App Class@{App Class}}
+\doxysubsubsection{\texorpdfstring{requestOpenErrorPopup}{requestOpenErrorPopup}}
+{\footnotesize\ttfamily \label{group__AppModule_gae540192b2c4acd99c8b1e8ffd3708823} 
+bool Circle\+Form\+::request\+Open\+Error\+Popup = false}
+
+\Hypertarget{group__AppModule_gaecdf67547df085a1aab755ef0524dd6c}\index{App Class@{App Class}!uiBlockingActive@{uiBlockingActive}}
+\index{uiBlockingActive@{uiBlockingActive}!App Class@{App Class}}
+\doxysubsubsection{\texorpdfstring{uiBlockingActive}{uiBlockingActive}}
+{\footnotesize\ttfamily \label{group__AppModule_gaecdf67547df085a1aab755ef0524dd6c} 
+bool ui\+Blocking\+Active\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+This variable tells if a UI is active and blocking the interaction with the circles. 
+
+\Hypertarget{group__AppModule_gad1829f339412254e74edb55112f39b02}\index{App Class@{App Class}!x@{x}}
+\index{x@{x}!App Class@{App Class}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily \label{group__AppModule_gad1829f339412254e74edb55112f39b02} 
+float Circle\+Form\+::x = 720.f}
+
+\Hypertarget{group__AppModule_ga52b07dc63e17943388a82f002ef2d472}\index{App Class@{App Class}!y@{y}}
+\index{y@{y}!App Class@{App Class}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily \label{group__AppModule_ga52b07dc63e17943388a82f002ef2d472} 
+float Circle\+Form\+::y = 540.f}
+

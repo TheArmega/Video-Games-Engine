@@ -1,0 +1,11 @@
+<map id="DataBase::deleteAllCircles" name="DataBase::deleteAllCircles">
+<area shape="rect" id="Node000001" title="Delete all circles from table." alt="" coords="5,81,184,108"/>
+<area shape="rect" id="Node000002" href="$classDataBase.html#a5ae5a957f63e07dbb326a2f08a8e2757" title="Closes the database connection." alt="" coords="259,5,394,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,78,231,41,255,34,257,39,233,47,131,83"/>
+<area shape="rect" id="Node000003" href="$classDataBase.html#a8774b0989ee6fe253803e1b25f23f8cc" title="Opens the database connection." alt="" coords="261,56,393,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,82,245,76,246,81,184,88"/>
+<area shape="rect" id="Node000004" href="$classDataBase.html#adcf7e3433dd200d8f709eca1b55fe2c0" title=" " alt="" coords="232,107,422,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="184,102,216,105,216,111,184,107"/>
+<area shape="rect" id="Node000005" href="$classDataBase.html#ac037b0e760165f24f790f2e06c12e8d6" title="Executes a prepared statement." alt="" coords="243,157,411,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="131,106,233,143,257,150,255,155,231,148,129,111"/>
+</map>
