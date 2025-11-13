@@ -1,6 +1,10 @@
 # Video-Games-Engine
-In this repo I will save all the work I will be doing in orde to build a game engine :)
+In this repo, I’ll be saving all the work I do while building a game engine :)
 
-Right now there is only working a basic application that show's three circles that you can drag and push then around a window with a imgui interface!
+Right now, there’s an app that lets you interact with circle shapes by dragging and pushing them with the mouse. A basic physics system is implemented, so you can see how the circles interact with each other.
+There are also two features implemented using ImGui:
 
-![circles](https://github.com/user-attachments/assets/20b6ab6d-9a59-4576-ba62-c552da3cb1f3)
+- Create Circles Window: an interface where you can create new circles.
+- Get Circles Information: an interface where you can select a circle and view its data in real time.
+  
+https://github.com/user-attachments/assets/6baa9532-d6e2-41bf-b732-50be8a5304bb

@@ -29,6 +29,7 @@ add_library(VideoGamesEngineLib
   src/circleContainer.cpp
   src/dataBase.cpp
   src/physicsEngine.cpp
+  src/app.cpp
 )
 
 target_include_directories(VideoGamesEngineLib

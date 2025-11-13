@@ -69,7 +69,14 @@ public:
    * @param Circle object and point.
    * @return True if point in circle.
    */
-  bool pointInCircleArea(const Circle &c, const sf::Vector2f &p);
+  static bool pointInCircleArea(const Circle &c, const sf::Vector2f &p);
+
+  /**
+   * @brief Check if a circle is inside the window.
+   * @param Circle object.
+   * @return True if circle in window.
+   */
+  bool circleInWindowArea(const Circle &c);
 
   /**
    * @brief Calculate the intersection point between a point outside the area of
@@ -77,7 +84,8 @@ public:
    * @param Circle object and point.
    * @return Intersection point.
    */
-  std::optional<sf::Vector2f> getIntersectionPoint(Circle c, sf::Vector2f p);
+  std::optional<sf::Vector2f> getIntersectionPoint(const Circle c,
+                                                   const sf::Vector2f p);
 
   /**
    * @brief Draw a line from the border of the circle to the mouse pointer when
@@ -97,35 +105,36 @@ public:
    * @param Two vector.
    * @return The dot product of the vectors.
    */
-  float dotProduct(sf::Vector2f &v, sf::Vector2f &_v);
+  float dotProduct(const sf::Vector2f &v, const sf::Vector2f &_v);
 
   /**
    * @brief Returns the distance between two circles.
    * @param Two circles between which you want to calculate the distance.
    * @return The distance between the circles.
    */
-  float distanceBetweenCircles(Circle &c, Circle &_c);
+  static float distanceBetweenCircles(const Circle &c, const Circle &_c);
 
   /**
    * @brief Check if two circles collide.
    * @param Two circles between which you want to check if collide.
    * @return A bool that represents if two circles collide.
    */
-  bool circlesCollide(Circle &c, Circle &_c);
+  static bool circlesCollide(const Circle &c, const Circle &_c);
 
   /**
    * @brief Compute the direction of the collision vector between two circles.
    * @param Two circles between which you want claculate the direction vector.
    * @return A Vector2f with the direction.
    */
-  sf::Vector2f computeDirectionCollisionVector(Circle &c, Circle &_c);
+  sf::Vector2f computeDirectionCollisionVector(const Circle &c,
+                                               const Circle &_c);
 
   /**
    * @brief Compute the relative velocity of two circles.
    * @param Two circles between which you want claculate the relative velocity.
    * @return A Vector2f with the relative velocity.
    */
-  sf::Vector2f computeRelativeVelocity(Circle &c, Circle &_c);
+  sf::Vector2f computeRelativeVelocity(const Circle &c, const Circle &_c);
 
   /**
    * @brief Detects and process collisions between two circles.
