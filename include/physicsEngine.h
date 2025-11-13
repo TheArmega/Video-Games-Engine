@@ -1,3 +1,15 @@
+/**
+ * @file phisicsEngine.h
+ * @author Jaime
+ * @brief PhysicsEngine class declaration
+ * @version 0.1
+ * @date 23/10/25
+ *
+ * @defgroup PhysicsEngineModule PhysicsEngine Class
+ * @brief A group of methods to simulate physics between circles.
+ * @{
+ */
+
 #ifndef PHYSICSENGINE_H
 #define PHYSICSENGINE_H
 
@@ -21,6 +33,10 @@ extern const float FORCE_SCALE;
 extern const float DAMPING_COEFFICIENT;
 extern const float e;
 
+/**
+ * @class PhysicsEngine
+ * @brief Handles the interaction between circles.
+ */
 class PhysicsEngine {
 
 private:

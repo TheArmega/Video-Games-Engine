@@ -1,0 +1,72 @@
+\doxysection{Physics\+Engine Class Reference}
+\hypertarget{classPhysicsEngine}{}\label{classPhysicsEngine}\index{PhysicsEngine@{PhysicsEngine}}
+
+
+Handles the interaction between circles.  
+
+
+
+
+{\ttfamily \#include $<$physics\+Engine.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__PhysicsEngineModule_ga211813a5da84bc54e02dc9285605744b}{Physics\+Engine}} (std\+::string \+\_\+name="{}Engine"{}, \mbox{\hyperlink{classCircle}{Circle}} \texorpdfstring{$\ast$}{*}\+\_\+active\+Circle=nullptr)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Setters}\par
+{\em @ \{ }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__PhysicsEngineModule_gaa1b441fdef6aff6c8df1e94e5ce3a60e}{set\+Name}} (std\+::string n)
+\item 
+void \mbox{\hyperlink{group__PhysicsEngineModule_ga77e6d1d315416fd244f95b2a9715930a}{set\+Active\+Circle}} (\mbox{\hyperlink{classCircle}{Circle}} \texorpdfstring{$\ast$}{*}c)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Getters}\par
+{\em @ \{ }\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{group__PhysicsEngineModule_ga1f2c7e9484e400e99f98ff097cf2a48c}{get\+Name}} () const
+\item 
+\mbox{\hyperlink{classCircle}{Circle}} \mbox{\hyperlink{group__PhysicsEngineModule_gaaed456836975d43ec29a4be24af80a81}{get\+Active\+Circle}} () const
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Methods}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__PhysicsEngineModule_ga182f57f08770f668b84d5b1a53c627d7}{apply\+Friction\+Force}} (\mbox{\hyperlink{classCircle}{Circle}} \&c)
+\begin{DoxyCompactList}\small\item\em Apply friction to a circle speed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__PhysicsEngineModule_gaa5948c1d125c8cc04a08ef138df432d2}{update\+Circles\+State}} (\mbox{\hyperlink{classCircleContainer}{Circle\+Container}} \&container)
+\begin{DoxyCompactList}\small\item\em Updates state of all circles, position, speed and check collisions. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{group__PhysicsEngineModule_gaa6afb2ecc0f47c41ff3649330d526fe5}{get\+Mouse\+Point}} (sf\+::\+Render\+Window \&w)
+\begin{DoxyCompactList}\small\item\em Get the mouse pointer position. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__PhysicsEngineModule_ga38f003f1f7972aaa56bf53fde14cb0c9}{circle\+In\+Window\+Area}} (const \mbox{\hyperlink{classCircle}{Circle}} \&c)
+\begin{DoxyCompactList}\small\item\em Check if a circle is inside the window. \end{DoxyCompactList}\item 
+std\+::optional$<$ sf\+::\+Vector2f $>$ \mbox{\hyperlink{group__PhysicsEngineModule_ga262d46558340951aacd46fd43f90cebc}{get\+Intersection\+Point}} (const \mbox{\hyperlink{classCircle}{Circle}} c, const sf\+::\+Vector2f p)
+\begin{DoxyCompactList}\small\item\em Calculate the intersection point between a point outside the area of the circle and the center of the circle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__PhysicsEngineModule_ga03c3a642bc5e1e1f96f6c9b80e2f1843}{draw\+Line\+With\+Mouse}} (sf\+::\+Render\+Window \&w, \mbox{\hyperlink{classCircleContainer}{Circle\+Container}} \&container)
+\begin{DoxyCompactList}\small\item\em Draw a line from the border of the circle to the mouse pointer when keep pressed mouse left button. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__PhysicsEngineModule_ga64358270e88ea42914f4d13c933cc324}{push\+Circle\+When\+Release}} (sf\+::\+Render\+Window \&w)
+\begin{DoxyCompactList}\small\item\em Push a circle in a direction when release click button. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group__PhysicsEngineModule_gabc214f56cbfdefe7ae9dff00aec092cb}{dot\+Product}} (const sf\+::\+Vector2f \&v, const sf\+::\+Vector2f \&\+\_\+v)
+\begin{DoxyCompactList}\small\item\em Returns the dot product of two vectors. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{group__PhysicsEngineModule_ga4a1eaa1d47c07d0299f161a6acbb73fb}{compute\+Direction\+Collision\+Vector}} (const \mbox{\hyperlink{classCircle}{Circle}} \&c, const \mbox{\hyperlink{classCircle}{Circle}} \&\+\_\+c)
+\begin{DoxyCompactList}\small\item\em Compute the direction of the collision vector between two circles. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{group__PhysicsEngineModule_ga0bc41ae68fb9747380e4d9137ee37917}{compute\+Relative\+Velocity}} (const \mbox{\hyperlink{classCircle}{Circle}} \&c, const \mbox{\hyperlink{classCircle}{Circle}} \&\+\_\+c)
+\begin{DoxyCompactList}\small\item\em Compute the relative velocity of two circles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__PhysicsEngineModule_ga38bb7c3cafeb9fc2c770d7665f372839}{compute\+Collisions\+Between\+Circles}} (\mbox{\hyperlink{classCircleContainer}{Circle\+Container}} \&container)
+\begin{DoxyCompactList}\small\item\em Detects and process collisions between two circles. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{group__PhysicsEngineModule_gafb971829673997ec320ca56df6b678da}{point\+In\+Circle\+Area}} (const \mbox{\hyperlink{classCircle}{Circle}} \&c, const sf\+::\+Vector2f \&p)
+\begin{DoxyCompactList}\small\item\em Check if a point is inside a circle area. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{group__PhysicsEngineModule_ga5e6968d87434cfbba5e1282aeb7bf0c8}{distance\+Between\+Circles}} (const \mbox{\hyperlink{classCircle}{Circle}} \&c, const \mbox{\hyperlink{classCircle}{Circle}} \&\+\_\+c)
+\begin{DoxyCompactList}\small\item\em Returns the distance between two circles. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{group__PhysicsEngineModule_gadb0fde17b93edb081f35e13637266b2c}{circles\+Collide}} (const \mbox{\hyperlink{classCircle}{Circle}} \&c, const \mbox{\hyperlink{classCircle}{Circle}} \&\+\_\+c)
+\begin{DoxyCompactList}\small\item\em Check if two circles collide. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles the interaction between circles. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/jaimemas/dev/videogames/\+Video-\/\+Games-\/\+Engine/include/\mbox{\hyperlink{physicsEngine_8h}{physics\+Engine.\+h}}\item 
+/home/jaimemas/dev/videogames/\+Video-\/\+Games-\/\+Engine/src/\mbox{\hyperlink{physicsEngine_8cpp}{physics\+Engine.\+cpp}}\end{DoxyCompactItemize}

@@ -9,36 +9,38 @@
 \DoxyCodeLine{00015\ }
 \DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{circle_8h}{circle.h}}"{}}}
 \DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
-\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
-\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCircleContainer_ab0979cd5fead531d2450a827ef483a42}{CircleContainer}}\ \{}
-\DoxyCodeLine{00030\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00031\ \ \ std::string\ name;\ }
-\DoxyCodeLine{00032\ \ \ std::unordered\_map<std::string,\ sf::CircleShape>}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ container;\ }
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00040\ \ \ \mbox{\hyperlink{classCircleContainer_ab0979cd5fead531d2450a827ef483a42}{CircleContainer}}(std::string\ \_name\ =\ \textcolor{stringliteral}{"{}container"{}});}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCircleContainer_a8cba4b3fb02453e7d229565a72a0dbd4}{setName}}(std::string\ n);\ }
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00049\ \ \ std::string\ \mbox{\hyperlink{classCircleContainer_a36f0cd263bf0e74f3257306c9e372e86}{getName}}()\ \textcolor{keyword}{const};\ }
-\DoxyCodeLine{00050\ \ \ \textcolor{keyword}{const}\ std::unordered\_map<std::string,\ sf::CircleShape>\ \&}
-\DoxyCodeLine{00051\ \ \ \mbox{\hyperlink{classCircleContainer_abb069708d12d07baa72fe0d6d415fdfb}{getContainer}}()\ \textcolor{keyword}{const};\ }
-\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <SFML/Graphics/RenderWindow.hpp>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <SFML/Window/Window.hpp>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{group__CircleContainerModule_gaf523cc6892ac855bb21f2cafedc3267f}{CircleContainer}}\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ std::string\ name\ =\ \textcolor{stringliteral}{"{}container"{}};\ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ std::vector<Circle>\ container\ =\ \{\};\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \mbox{\hyperlink{group__CircleContainerModule_gaf523cc6892ac855bb21f2cafedc3267f}{CircleContainer}}(std::string\ \_name\ =\ \textcolor{stringliteral}{"{}container"{}},}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Circle>\ \_container\ =\ \{\});}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00046\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__CircleContainerModule_ga8cba4b3fb02453e7d229565a72a0dbd4}{setName}}(std::string\ n);\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__CircleContainerModule_gab3f726d8b549f05067f1d2ab504156d8}{setContainer}}(std::vector<Circle>\ c);\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00052\ \ \ std::string\ \mbox{\hyperlink{group__CircleContainerModule_ga36f0cd263bf0e74f3257306c9e372e86}{getName}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00053\ \ \ \textcolor{keyword}{const}\ std::vector<Circle>\ \&\mbox{\hyperlink{group__CircleContainerModule_ga2770b874e1ce98f196ee77a1e1424988}{getContainer}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00054\ \ \ std::vector<Circle>\ \&\mbox{\hyperlink{group__CircleContainerModule_ga2770b874e1ce98f196ee77a1e1424988}{getContainer}}();}
 \DoxyCodeLine{00056\ }
-\DoxyCodeLine{00060\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCircleContainer_a22ee5e72ce78c31662b5788834ece70a}{addCircle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classCircle}{Circle}}\ \&c);}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCircleContainer_afe70b5f4176405c1595f0d816f0a5574}{addCirclesFromVector}}(\textcolor{keyword}{const}\ std::vector<Circle>\ v);}
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00072\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCircleContainer_af6d6665b32664734a92afe9b3098f2d9}{delCircle}}(\textcolor{keyword}{const}\ std::string\ \&circleName);}
-\DoxyCodeLine{00073\ }
-\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCircleContainer_a353e43f7f25efeb8b927b73617b0f73b}{getSize}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00080\ \};}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CIRCLECONTAINER\_H}}
-\DoxyCodeLine{00083\ \ \textcolor{comment}{//\ end\ of\ CircleContainerModule}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00063\ \ \ std::string\ \mbox{\hyperlink{group__CircleContainerModule_gac49354f76c97df467100eb939ef3333d}{addCircle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classCircle}{Circle}}\ \&c);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__CircleContainerModule_gaf6d6665b32664734a92afe9b3098f2d9}{delCircle}}(\textcolor{keyword}{const}\ std::string\ \&circleName);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__CircleContainerModule_ga353e43f7f25efeb8b927b73617b0f73b}{getSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00081\ \ \ std::string\ \mbox{\hyperlink{group__CircleContainerModule_ga3ece1d87ad4610e1b66ab2aee9da6fe9}{circlesToShape}}(sf::RenderWindow\ \&w);}
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CIRCLECONTAINER\_H}}
 
 \end{DoxyCode}

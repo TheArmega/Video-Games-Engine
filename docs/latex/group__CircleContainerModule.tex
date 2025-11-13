@@ -15,8 +15,208 @@ file \mbox{\hyperlink{circleContainer_8cpp}{circle\+Container.\+cpp}}
 \item 
 class \mbox{\hyperlink{classCircleContainer}{Circle\+Container}}
 \begin{DoxyCompactList}\small\item\em Manages a collection of \doxylink{classCircle}{Circle} objects and their SFML shapes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__CircleContainerModule_gaf523cc6892ac855bb21f2cafedc3267f}{Circle\+Container\+::\+Circle\+Container}} (std\+::string \+\_\+name="{}container"{}, std\+::vector$<$ \mbox{\hyperlink{classCircle}{Circle}} $>$ \+\_\+container=\{\})
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classCircleContainer}{Circle\+Container} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Setters}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__CircleContainerModule_ga8cba4b3fb02453e7d229565a72a0dbd4}{Circle\+Container\+::set\+Name}} (std\+::string n)
+\begin{DoxyCompactList}\small\item\em Sets the name of the container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__CircleContainerModule_gab3f726d8b549f05067f1d2ab504156d8}{Circle\+Container\+::set\+Container}} (std\+::vector$<$ \mbox{\hyperlink{classCircle}{Circle}} $>$ c)
+\begin{DoxyCompactList}\small\item\em Sets the container. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Getters}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{group__CircleContainerModule_ga36f0cd263bf0e74f3257306c9e372e86}{Circle\+Container\+::get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Returns name of the container. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{classCircle}{Circle}} $>$ \& \mbox{\hyperlink{group__CircleContainerModule_ga2770b874e1ce98f196ee77a1e1424988}{Circle\+Container\+::get\+Container}} () const
+\begin{DoxyCompactList}\small\item\em Returns the container. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classCircle}{Circle}} $>$ \& \mbox{\hyperlink{group__CircleContainerModule_ga950119227351d087a5aebf8572779084}{Circle\+Container\+::get\+Container}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Methods}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{group__CircleContainerModule_gac49354f76c97df467100eb939ef3333d}{Circle\+Container\+::add\+Circle}} (const \mbox{\hyperlink{classCircle}{Circle}} \&c)
+\begin{DoxyCompactList}\small\item\em Adds a \doxylink{classCircle}{Circle} to the container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__CircleContainerModule_gaf6d6665b32664734a92afe9b3098f2d9}{Circle\+Container\+::del\+Circle}} (const std\+::string \&circle\+Name)
+\begin{DoxyCompactList}\small\item\em Deletes a \doxylink{classCircle}{Circle} from the container by name. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__CircleContainerModule_ga353e43f7f25efeb8b927b73617b0f73b}{Circle\+Container\+::get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of Circles in the container. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{group__CircleContainerModule_ga3ece1d87ad4610e1b66ab2aee9da6fe9}{Circle\+Container\+::circles\+To\+Shape}} (sf\+::\+Render\+Window \&w)
+\begin{DoxyCompactList}\small\item\em Returns a vector with the circles transformed to shapes\textquotesingle{}s. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Manages a collection of \doxylink{classCircle}{Circle} objects and their SFML representations. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__CircleContainerModule_gac49354f76c97df467100eb939ef3333d}\index{CircleContainer Class@{CircleContainer Class}!addCircle@{addCircle}}
+\index{addCircle@{addCircle}!CircleContainer Class@{CircleContainer Class}}
+\doxysubsubsection{\texorpdfstring{addCircle()}{addCircle()}}
+{\footnotesize\ttfamily \label{group__CircleContainerModule_gac49354f76c97df467100eb939ef3333d} 
+std\+::string Circle\+Container\+::add\+Circle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCircle}{Circle}} \&}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Adds a \doxylink{classCircle}{Circle} to the container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & \doxylink{classCircle}{Circle} to add \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__CircleContainerModule_gac49354f76c97df467100eb939ef3333d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__CircleContainerModule_gaf523cc6892ac855bb21f2cafedc3267f}\index{CircleContainer Class@{CircleContainer Class}!CircleContainer@{CircleContainer}}
+\index{CircleContainer@{CircleContainer}!CircleContainer Class@{CircleContainer Class}}
+\doxysubsubsection{\texorpdfstring{CircleContainer()}{CircleContainer()}}
+{\footnotesize\ttfamily \label{group__CircleContainerModule_gaf523cc6892ac855bb21f2cafedc3267f} 
+Circle\+Container\+::\+Circle\+Container (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+name}{ = {\ttfamily "{}container"{}}, }\item[{std\+::vector$<$ \mbox{\hyperlink{classCircle}{Circle}} $>$}]{\+\_\+container}{ = {\ttfamily \{\}}}\end{DoxyParamCaption})}
+
+
+
+Constructs a new \doxylink{classCircleContainer}{Circle\+Container} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+name} & Name of the container (default "{}container"{}) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__CircleContainerModule_ga3ece1d87ad4610e1b66ab2aee9da6fe9}\index{CircleContainer Class@{CircleContainer Class}!circlesToShape@{circlesToShape}}
+\index{circlesToShape@{circlesToShape}!CircleContainer Class@{CircleContainer Class}}
+\doxysubsubsection{\texorpdfstring{circlesToShape()}{circlesToShape()}}
+{\footnotesize\ttfamily \label{group__CircleContainerModule_ga3ece1d87ad4610e1b66ab2aee9da6fe9} 
+std\+::string Circle\+Container\+::circles\+To\+Shape (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{w}{}\end{DoxyParamCaption})}
+
+
+
+Returns a vector with the circles transformed to shapes\textquotesingle{}s. 
+
+\begin{DoxyReturn}{Returns}
+Vector of shapes 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__CircleContainerModule_ga3ece1d87ad4610e1b66ab2aee9da6fe9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__CircleContainerModule_gaf6d6665b32664734a92afe9b3098f2d9}\index{CircleContainer Class@{CircleContainer Class}!delCircle@{delCircle}}
+\index{delCircle@{delCircle}!CircleContainer Class@{CircleContainer Class}}
+\doxysubsubsection{\texorpdfstring{delCircle()}{delCircle()}}
+{\footnotesize\ttfamily \label{group__CircleContainerModule_gaf6d6665b32664734a92afe9b3098f2d9} 
+void Circle\+Container\+::del\+Circle (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{circle\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Deletes a \doxylink{classCircle}{Circle} from the container by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em circle\+Name} & Name of the \doxylink{classCircle}{Circle} to delete \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{group__CircleContainerModule_gaf6d6665b32664734a92afe9b3098f2d9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__CircleContainerModule_ga950119227351d087a5aebf8572779084}\index{CircleContainer Class@{CircleContainer Class}!getContainer@{getContainer}}
+\index{getContainer@{getContainer}!CircleContainer Class@{CircleContainer Class}}
+\doxysubsubsection{\texorpdfstring{getContainer()}{getContainer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__CircleContainerModule_ga950119227351d087a5aebf8572779084} 
+std\+::vector$<$ \mbox{\hyperlink{classCircle}{Circle}} $>$ \& Circle\+Container\+::get\+Container (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__CircleContainerModule_ga2770b874e1ce98f196ee77a1e1424988}\index{CircleContainer Class@{CircleContainer Class}!getContainer@{getContainer}}
+\index{getContainer@{getContainer}!CircleContainer Class@{CircleContainer Class}}
+\doxysubsubsection{\texorpdfstring{getContainer()}{getContainer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__CircleContainerModule_ga2770b874e1ce98f196ee77a1e1424988} 
+const std\+::vector$<$ \mbox{\hyperlink{classCircle}{Circle}} $>$ \& Circle\+Container\+::get\+Container (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the container. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__CircleContainerModule_ga2770b874e1ce98f196ee77a1e1424988_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__CircleContainerModule_ga36f0cd263bf0e74f3257306c9e372e86}\index{CircleContainer Class@{CircleContainer Class}!getName@{getName}}
+\index{getName@{getName}!CircleContainer Class@{CircleContainer Class}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{group__CircleContainerModule_ga36f0cd263bf0e74f3257306c9e372e86} 
+std\+::string Circle\+Container\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns name of the container. 
+
+\Hypertarget{group__CircleContainerModule_ga353e43f7f25efeb8b927b73617b0f73b}\index{CircleContainer Class@{CircleContainer Class}!getSize@{getSize}}
+\index{getSize@{getSize}!CircleContainer Class@{CircleContainer Class}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily \label{group__CircleContainerModule_ga353e43f7f25efeb8b927b73617b0f73b} 
+int Circle\+Container\+::get\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of Circles in the container. 
+
+\begin{DoxyReturn}{Returns}
+Number of Circles 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__CircleContainerModule_ga353e43f7f25efeb8b927b73617b0f73b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__CircleContainerModule_gab3f726d8b549f05067f1d2ab504156d8}\index{CircleContainer Class@{CircleContainer Class}!setContainer@{setContainer}}
+\index{setContainer@{setContainer}!CircleContainer Class@{CircleContainer Class}}
+\doxysubsubsection{\texorpdfstring{setContainer()}{setContainer()}}
+{\footnotesize\ttfamily \label{group__CircleContainerModule_gab3f726d8b549f05067f1d2ab504156d8} 
+void Circle\+Container\+::set\+Container (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classCircle}{Circle}} $>$}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Sets the container. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__CircleContainerModule_gab3f726d8b549f05067f1d2ab504156d8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__CircleContainerModule_ga8cba4b3fb02453e7d229565a72a0dbd4}\index{CircleContainer Class@{CircleContainer Class}!setName@{setName}}
+\index{setName@{setName}!CircleContainer Class@{CircleContainer Class}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily \label{group__CircleContainerModule_ga8cba4b3fb02453e7d229565a72a0dbd4} 
+void Circle\+Container\+::set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{n}{}\end{DoxyParamCaption})}
+
+
+
+Sets the name of the container. 
 

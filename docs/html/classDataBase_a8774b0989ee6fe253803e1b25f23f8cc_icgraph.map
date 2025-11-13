@@ -1,17 +1,21 @@
 <map id="DataBase::openDb" name="DataBase::openDb">
-<area shape="rect" id="Node000001" title="Opens the database connection." alt="" coords="609,183,742,209"/>
-<area shape="rect" id="Node000002" href="$classDataBase.html#a1f6a8360f23f0fe135566f6329c70bd0" title="Checks if the database exists and is accessible." alt="" coords="392,81,561,108"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="644,175,605,148,560,122,531,111,533,106,562,118,608,144,647,171"/>
-<area shape="rect" id="Node000008" href="$classDataBase.html#a759f781cbeae1ed8924a923193eaaf7c" title="Creates the CIRCLES table if it does not exist." alt="" coords="400,132,554,159"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="605,181,531,162,533,157,606,176"/>
-<area shape="rect" id="Node000010" href="$classDataBase.html#a7f796b9dbe216737994ac772d8a22489" title="Deletes a Circle from the database." alt="" coords="398,183,555,209"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="594,199,555,199,555,193,594,193"/>
-<area shape="rect" id="Node000011" href="$classDataBase.html#ac259376ed5277573ed728512337b959f" title="Retrieves all Circles from the database." alt="" coords="396,233,557,260"/>
-<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="606,216,533,235,531,230,605,211"/>
-<area shape="rect" id="Node000012" href="$classDataBase.html#a95e6568a7cc00d214111282e333aa8f8" title="Inserts a Circle into the database." alt="" coords="400,284,553,311"/>
-<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="647,221,608,248,562,274,533,286,531,281,560,270,605,244,644,217"/>
+<area shape="rect" id="Node000001" title="Opens the database connection." alt="" coords="618,233,751,260"/>
+<area shape="rect" id="Node000002" href="$classDataBase.html#a1f6a8360f23f0fe135566f6329c70bd0" title="Checks if the database exists and is accessible." alt="" coords="396,81,566,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="664,222,625,171,598,145,569,122,546,111,548,106,572,118,602,141,629,167,669,219"/>
+<area shape="rect" id="Node000008" href="$classDataBase.html#a759f781cbeae1ed8924a923193eaaf7c" title="Creates the CIRCLES table if it does not exist." alt="" coords="404,132,558,159"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="653,226,614,199,569,173,540,162,542,157,571,168,617,194,656,221"/>
+<area shape="rect" id="Node000011" href="$classDataBase.html#a2f2a925309a3f909bf5c4d9e173caf8b" title="Delete all circles from table." alt="" coords="392,183,570,209"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="613,232,537,213,538,207,614,226"/>
+<area shape="rect" id="Node000012" href="$classDataBase.html#a7f796b9dbe216737994ac772d8a22489" title="Deletes a Circle from the database." alt="" coords="403,233,559,260"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="603,249,560,249,560,244,603,244"/>
+<area shape="rect" id="Node000013" href="$classDataBase.html#ac259376ed5277573ed728512337b959f" title="Retrieves all Circles from the database." alt="" coords="400,284,562,311"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="614,267,538,286,537,281,613,262"/>
+<area shape="rect" id="Node000014" href="$classDataBase.html#a95e6568a7cc00d214111282e333aa8f8" title="Inserts a Circle into the database." alt="" coords="404,335,558,361"/>
+<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="656,272,617,299,571,325,542,337,540,332,569,320,614,295,653,268"/>
+<area shape="rect" id="Node000015" href="$classDataBase.html#ae1bf33fdfbe680d0d42562dcf8eb3fb8" title="Save the state of the circles in the data base." alt="" coords="396,385,567,412"/>
+<area shape="poly" id="edge16_Node000001_Node000015" title=" " alt="" coords="669,275,629,326,602,353,572,376,548,387,546,382,569,371,598,349,625,322,664,271"/>
 <area shape="rect" id="Node000003" href="$classDataBase.html#a58a2923557d633eee813ae5eaccb4c4d" title="Constructs a new DataBase object." alt="" coords="199,81,344,108"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="377,97,344,97,344,92,377,92"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="381,97,345,97,345,92,381,92"/>
 <area shape="rect" id="Node000004" href="$classDataBase.html#acefc49bd510e54deb771c360ad6432fe" title=" " alt="" coords="5,5,151,32"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="224,77,150,46,119,35,121,30,152,42,226,72"/>
 <area shape="rect" id="Node000005" href="$classDataBase.html#af945073b59f0b047df0392102bf4fca8" title=" " alt="" coords="5,56,151,83"/>
@@ -20,8 +24,11 @@
 <area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="184,109,150,113,149,108,183,104"/>
 <area shape="rect" id="Node000007" href="$classDataBase.html#a0e1c10189f31cef986ebcce79a26d3f6" title=" " alt="" coords="7,157,149,184"/>
 <area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="226,117,152,148,121,159,119,154,150,143,224,112"/>
-<area shape="rect" id="Node000009" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main function of the VideoGameEngine." alt="" coords="247,233,296,260"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="409,167,393,173,337,204,292,235,289,231,334,200,391,168,406,162"/>
-<area shape="poly" id="edge11_Node000011_Node000009" title=" " alt="" coords="381,249,297,249,297,244,381,244"/>
-<area shape="poly" id="edge13_Node000012_Node000009" title=" " alt="" coords="404,282,296,255,297,250,405,277"/>
+<area shape="rect" id="Node000009" href="$group__AppModule.html#gae09dc71078b64c56c673b1ad1d25b5d1" title="Run the main SFML window, load the data from the data base and creates the ImGui window with the butt..." alt="" coords="236,247,306,273"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="408,167,393,173,334,211,289,248,286,244,331,207,391,168,405,162"/>
+<area shape="rect" id="Node000010" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main function of the VideoGameEngine." alt="" coords="53,247,103,273"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="221,263,103,263,103,257,221,257"/>
+<area shape="poly" id="edge11_Node000011_Node000009" title=" " alt="" coords="417,217,393,224,308,251,306,246,391,219,415,212"/>
+<area shape="poly" id="edge14_Node000013_Node000009" title=" " alt="" coords="387,283,307,269,308,264,388,278"/>
+<area shape="poly" id="edge17_Node000015_Node000009" title=" " alt="" coords="402,381,391,376,356,352,325,324,281,275,285,272,329,320,360,348,393,371,404,377"/>
 </map>

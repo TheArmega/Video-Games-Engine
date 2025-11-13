@@ -1,0 +1,7 @@
+<map id="PhysicsEngine::computeRelativeVelocity" name="PhysicsEngine::computeRelativeVelocity">
+<area shape="rect" id="Node000001" title="Compute the relative velocity of two circles." alt="" coords="5,23,220,65"/>
+<area shape="rect" id="Node000002" href="$classCircle.html#a14fc9c404b1d6933550bf53d6b706d9b" title="Returns the X velocity." alt="" coords="268,5,376,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="220,28,252,24,253,30,221,34"/>
+<area shape="rect" id="Node000003" href="$classCircle.html#a0ea79556c4e7e734cd36f3a07d6d0cfd" title="Returns the Y velocity." alt="" coords="268,56,376,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="221,54,253,58,252,64,220,60"/>
+</map>

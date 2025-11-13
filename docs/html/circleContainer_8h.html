@@ -112,25 +112,31 @@ $(function(){initNavTree('circleContainer_8h.html',''); initResizable(true); });
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="circle_8h_source.html">circle.h</a>&quot;</code><br />
 <code>#include &lt;SFML/Graphics.hpp&gt;</code><br />
+<code>#include &lt;SFML/Graphics/RenderWindow.hpp&gt;</code><br />
+<code>#include &lt;SFML/Window/Window.hpp&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
-<code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for circleContainer.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="circleContainer_8h__incl.png" border="0" usemap="#a_2home_2jaimemas_2dev_2videogames_2Video-Games-Engine_2include_2circleContainer_8h" alt=""/></div>
 <map name="a_2home_2jaimemas_2dev_2videogames_2Video-Games-Engine_2include_2circleContainer_8h" id="a_2home_2jaimemas_2dev_2videogames_2Video-Games-Engine_2include_2circleContainer_8h">
-<area shape="rect" title="CircleContainer class declaration." alt="" coords="130,5,342,64"/>
+<area shape="rect" title="CircleContainer class declaration." alt="" coords="338,5,550,64"/>
 <area shape="rect" href="circle_8h.html" title="Circle class declaration." alt="" coords="28,112,91,139"/>
-<area shape="poly" title=" " alt="" coords="180,67,99,107,97,102,177,62"/>
+<area shape="poly" title=" " alt="" coords="338,63,111,115,107,116,106,110,110,109,336,57"/>
 <area shape="rect" title=" " alt="" coords="100,187,158,213"/>
-<area shape="poly" title=" " alt="" coords="200,66,177,88,158,113,144,143,136,172,131,171,139,141,153,111,173,85,196,63"/>
+<area shape="poly" title=" " alt="" coords="337,42,290,50,243,64,197,85,158,114,148,126,141,141,133,172,128,170,136,139,143,124,154,110,194,80,241,59,289,45,336,37"/>
 <area shape="rect" title=" " alt="" coords="167,112,304,139"/>
-<area shape="poly" title=" " alt="" coords="238,64,238,96,233,96,233,64"/>
-<area shape="rect" title=" " alt="" coords="329,112,382,139"/>
-<area shape="poly" title=" " alt="" coords="276,62,328,100,325,105,273,66"/>
-<area shape="rect" title=" " alt="" coords="406,112,516,139"/>
-<area shape="poly" title=" " alt="" coords="310,62,416,104,414,108,308,67"/>
+<area shape="poly" title=" " alt="" coords="377,67,280,108,278,103,375,62"/>
+<area shape="rect" title=" " alt="" coords="329,112,558,139"/>
+<area shape="poly" title=" " alt="" coords="446,64,446,96,441,96,441,64"/>
+<area shape="rect" title=" " alt="" coords="582,112,764,139"/>
+<area shape="poly" title=" " alt="" coords="519,62,627,104,626,109,517,67"/>
+<area shape="rect" title=" " alt="" coords="788,112,846,139"/>
+<area shape="poly" title=" " alt="" coords="551,56,774,109,772,114,550,61"/>
+<area shape="rect" title=" " alt="" coords="870,112,924,139"/>
+<area shape="poly" title=" " alt="" coords="551,49,692,74,856,109,855,114,691,79,550,55"/>
 <area shape="rect" title=" " alt="" coords="5,187,77,213"/>
 <area shape="poly" title=" " alt="" coords="59,140,51,172,45,171,54,139"/>
 <area shape="poly" title=" " alt="" coords="74,137,108,173,105,177,70,141"/>
@@ -141,11 +147,30 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="circleContainer_8h__dep__incl.png" border="0" usemap="#a_2home_2jaimemas_2dev_2videogames_2Video-Games-Engine_2include_2circleContainer_8hdep" alt=""/></div>
 <map name="a_2home_2jaimemas_2dev_2videogames_2Video-Games-Engine_2include_2circleContainer_8hdep" id="a_2home_2jaimemas_2dev_2videogames_2Video-Games-Engine_2include_2circleContainer_8hdep">
-<area shape="rect" title="CircleContainer class declaration." alt="" coords="108,5,320,64"/>
-<area shape="rect" href="circleContainer_8cpp.html" title="CircleContainer class implementation." alt="" coords="5,112,209,171"/>
-<area shape="poly" title=" " alt="" coords="176,77,138,114,134,110,172,73"/>
-<area shape="rect" href="main_8cpp.html" title="Entry point for the VideoGameEngine using SFML and ImGui&#45;SFML." alt="" coords="232,112,411,171"/>
-<area shape="poly" title=" " alt="" coords="256,73,294,110,290,114,252,77"/>
+<area shape="rect" title="CircleContainer class declaration." alt="" coords="235,5,447,64"/>
+<area shape="rect" href="app_8h.html" title="App class declaration." alt="" coords="271,219,449,277"/>
+<area shape="poly" title=" " alt="" coords="348,79,360,218,355,218,342,79"/>
+<area shape="rect" href="app_8cpp.html" title=" " alt="" coords="5,325,184,384"/>
+<area shape="poly" title=" " alt="" coords="220,57,121,81,81,96,56,114,42,134,32,153,27,171,26,189,32,229,46,276,57,301,72,323,67,326,53,304,41,278,27,230,21,189,22,170,27,151,37,131,53,110,79,91,119,76,219,51"/>
+<area shape="rect" href="dataBase_8h.html" title="DataBase class declaration." alt="" coords="67,112,247,171"/>
+<area shape="poly" title=" " alt="" coords="279,74,209,114,206,109,276,70"/>
+<area shape="rect" href="dataBase_8cpp.html" title="DataBase class implementation." alt="" coords="68,219,246,277"/>
+<area shape="poly" title=" " alt="" coords="324,79,297,126,262,172,234,198,205,220,202,216,231,194,258,169,292,123,319,77"/>
+<area shape="rect" href="physicsEngine_8h.html" title=" " alt="" coords="379,112,589,171"/>
+<area shape="poly" title=" " alt="" coords="394,71,446,109,443,114,391,75"/>
+<area shape="rect" href="circleContainer_8cpp.html" title="CircleContainer class implementation." alt="" coords="524,219,727,277"/>
+<area shape="poly" title=" " alt="" coords="463,41,501,50,538,64,573,84,603,110,619,135,628,164,631,218,626,218,622,165,614,138,599,114,570,88,536,69,499,56,461,46"/>
+<area shape="rect" href="physicsEngine_8cpp.html" title="PhysicsEngine class implementation." alt="" coords="751,219,952,277"/>
+<area shape="poly" title=" " alt="" coords="463,57,548,79,633,110,684,134,733,162,815,216,812,220,731,167,681,139,631,114,546,84,462,62"/>
+<area shape="poly" title=" " alt="" coords="274,286,168,327,166,322,272,281"/>
+<area shape="rect" href="main_8cpp.html" title="Entry point for the VideoGameEngine using SFML and ImGui&#45;SFML." alt="" coords="271,325,449,384"/>
+<area shape="poly" title=" " alt="" coords="362,293,362,325,357,325,357,293"/>
+<area shape="poly" title=" " alt="" coords="91,182,72,199,58,220,52,246,55,274,65,300,77,324,72,326,60,302,50,275,46,246,53,218,68,196,87,178"/>
+<area shape="poly" title=" " alt="" coords="160,186,160,218,154,218,154,186"/>
+<area shape="poly" title=" " alt="" coords="440,183,395,220,392,216,437,179"/>
+<area shape="poly" title=" " alt="" coords="491,186,486,234,478,258,463,279,429,291,359,307,184,340,183,335,358,301,428,286,460,275,473,256,481,233,486,186"/>
+<area shape="poly" title=" " alt="" coords="536,178,588,216,585,220,533,182"/>
+<area shape="poly" title=" " alt="" coords="600,173,752,216,750,221,598,178"/>
 </map>
 </div>
 </div>

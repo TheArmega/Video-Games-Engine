@@ -1,0 +1,18 @@
+<map id="PhysicsEngine::pushCircleWhenRelease" name="PhysicsEngine::pushCircleWhenRelease">
+<area shape="rect" id="Node000001" title="Push a circle in a direction when release click button." alt="" coords="5,89,184,132"/>
+<area shape="rect" id="Node000002" href="$group__PhysicsEngineModule.html#ga262d46558340951aacd46fd43f90cebc" title="Calculate the intersection point between a point outside the area of the circle and the center of the..." alt="" coords="232,60,434,103"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,97,216,93,217,98,184,102"/>
+<area shape="rect" id="Node000007" href="$group__PhysicsEngineModule.html#gaa6afb2ecc0f47c41ff3649330d526fe5" title="Get the mouse pointer position." alt="" coords="232,127,435,153"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="184,119,216,123,216,128,184,124"/>
+<area shape="rect" id="Node000003" href="$classCircle.html#a95b7dc25d2e9b1e40a189cd83386a12e" title="Returns the radius." alt="" coords="747,5,870,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="386,57,432,41,482,28,548,19,614,14,732,13,732,18,614,19,548,24,484,33,434,46,387,62"/>
+<area shape="rect" id="Node000004" href="$classCircle.html#a57a962a92b83f003debd33b1198468d5" title="Returns the X position." alt="" coords="752,68,865,95"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="435,79,736,79,736,84,435,84"/>
+<area shape="rect" id="Node000005" href="$classCircle.html#a20b6bc70bb22a78062f3b06b0bec4c5f" title="Returns the Y position." alt="" coords="752,131,865,157"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="435,92,737,132,736,137,435,97"/>
+<area shape="rect" id="Node000006" href="$group__PhysicsEngineModule.html#gafb971829673997ec320ca56df6b678da" title="Check if a point is inside a circle area." alt="" coords="483,43,699,69"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="435,69,467,65,468,71,435,74"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="672,39,731,29,732,34,673,45"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="700,66,737,70,736,76,700,71"/>
+<area shape="poly" id="edge8_Node000006_Node000005" title=" " alt="" coords="628,67,760,122,758,127,626,72"/>
+</map>

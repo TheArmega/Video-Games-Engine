@@ -1,0 +1,31 @@
+<map id="PhysicsEngine::computeCollisionsBetweenCircles" name="PhysicsEngine::computeCollisionsBetweenCircles">
+<area shape="rect" id="Node000001" title="Detects and process collisions between two circles." alt="" coords="5,201,229,244"/>
+<area shape="rect" id="Node000002" href="$group__PhysicsEngineModule.html#gadb0fde17b93edb081f35e13637266b2c" title="Check if two circles collide." alt="" coords="289,151,483,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,198,306,179,307,184,218,203"/>
+<area shape="rect" id="Node000003" href="$group__PhysicsEngineModule.html#ga5e6968d87434cfbba5e1282aeb7bf0c8" title="Returns the distance between two circles." alt="" coords="543,92,759,135"/>
+<area shape="poly" id="edge13_Node000001_Node000003" title=" " alt="" coords="149,198,206,165,240,149,276,136,339,122,405,113,527,106,528,112,405,118,340,127,277,141,242,154,208,170,151,203"/>
+<area shape="rect" id="Node000007" href="$group__PhysicsEngineModule.html#ga4a1eaa1d47c07d0299f161a6acbb73fb" title="Compute the direction of the collision vector between two circles." alt="" coords="277,33,495,76"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="138,199,198,147,235,118,275,92,300,80,302,85,278,97,238,122,201,151,142,203"/>
+<area shape="rect" id="Node000008" href="$group__PhysicsEngineModule.html#ga0bc41ae68fb9747380e4d9137ee37917" title="Compute the relative velocity of two circles." alt="" coords="279,201,493,244"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="229,220,263,220,263,225,229,225"/>
+<area shape="rect" id="Node000011" href="$group__PhysicsEngineModule.html#gabc214f56cbfdefe7ae9dff00aec092cb" title="Returns the dot product of two vectors." alt="" coords="296,268,476,295"/>
+<area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="218,242,307,261,306,267,217,247"/>
+<area shape="rect" id="Node000012" href="$group__CircleContainerModule.html#ga2770b874e1ce98f196ee77a1e1424988" title="Returns the container." alt="" coords="289,319,482,345"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="154,242,211,274,278,304,300,312,298,317,276,309,209,279,152,247"/>
+<area shape="rect" id="Node000013" href="$group__CircleContainerModule.html#ga353e43f7f25efeb8b927b73617b0f73b" title="Returns the number of Circles in the container." alt="" coords="304,369,468,396"/>
+<area shape="poly" id="edge16_Node000001_Node000013" title=" " alt="" coords="139,243,198,299,236,330,278,355,292,361,290,366,275,360,233,334,194,303,136,246"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="459,147,528,134,529,139,460,153"/>
+<area shape="rect" id="Node000006" href="$classCircle.html#a95b7dc25d2e9b1e40a189cd83386a12e" title="Returns the radius." alt="" coords="590,159,712,185"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="484,164,574,167,574,172,483,170"/>
+<area shape="rect" id="Node000004" href="$classCircle.html#a57a962a92b83f003debd33b1198468d5" title="Returns the X position." alt="" coords="807,5,921,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="700,89,817,36,819,41,702,94"/>
+<area shape="rect" id="Node000005" href="$classCircle.html#a20b6bc70bb22a78062f3b06b0bec4c5f" title="Returns the Y position." alt="" coords="807,71,921,97"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="759,96,792,91,792,97,760,101"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="486,74,537,85,536,91,485,79"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="495,44,792,21,792,27,496,49"/>
+<area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="496,59,792,77,792,82,495,64"/>
+<area shape="rect" id="Node000009" href="$classCircle.html#a14fc9c404b1d6933550bf53d6b706d9b" title="Returns the X velocity." alt="" coords="597,209,705,236"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="494,220,581,220,581,225,494,225"/>
+<area shape="rect" id="Node000010" href="$classCircle.html#a0ea79556c4e7e734cd36f3a07d6d0cfd" title="Returns the Y velocity." alt="" coords="597,260,705,287"/>
+<area shape="poly" id="edge12_Node000008_Node000010" title=" " alt="" coords="494,241,582,258,581,263,493,246"/>
+</map>
