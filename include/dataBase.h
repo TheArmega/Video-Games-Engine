@@ -19,6 +19,7 @@
 #include <vector>
 
 #include "circle.h"
+#include "circleContainer.h"
 
 /// @brief This const storage the main structure of the bd circles table.
 extern const std::string TABLE_CREATION_QUERY;
@@ -128,6 +129,18 @@ Setters
    * @return Vector of Circle objects
    */
   std::vector<Circle> getAllCircles();
+
+  /**
+   * @brief Save the state of the circles in the data base
+   * @param Container with all the circles states
+   */
+  void saveAllCircles(CircleContainer &container);
+
+  /**
+   * @brief Delete all circles from table
+   * @param Container with all the circles states
+   */
+  void deleteAllCircles(CircleContainer &container);
   /// @}
 };
 

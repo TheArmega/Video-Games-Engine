@@ -7,6 +7,7 @@
  * setters, getters, and database methods.
  */
 
+#include "circleContainer.h"
 #include "dataBase.h"
 #include <cstddef>
 #include <iostream>
@@ -183,7 +184,7 @@ void DataBase::insertCircle(Circle c) {
   sqlite3_bind_int(stmt, 10, c.getGColor());
   sqlite3_bind_int(stmt, 11, c.getBColor());
 
-  processQuery(stmt, "Inserted Circle successfully!");
+  processQuery(stmt, "Inserted Circle Successfully!");
   closeDb();
 }
 
@@ -269,4 +270,113 @@ std::vector<Circle> DataBase::getAllCircles() {
   closeDb();
 
   return circles;
+}
+
+void DataBase::saveAllCircles(CircleContainer &container) {
+
+  if (!openDb()) {
+    std::cerr << "Can't open DB!" << sqlite3_errmsg(db) << std::endl;
+    return;
+  }
+
+  const char *sql_count = R"(
+      SELECT count(*) FROM CIRCLES WHERE name=?;
+    )";
+
+  const char *sql_update = R"(
+    UPDATE CIRCLES SET render = ?, radius = ?, mass = ?, xPos = ?, yPos = ?, xVel = ?, yVel = ?, r = ?, g = ?, b = ?
+    WHERE name = ?;
+  )";
+
+  const char *sql_insert = R"(
+    INSERT INTO CIRCLES (name, render, radius, mass, xPos, yPos, xVel, yVel, r, g, b)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+  )";
+
+  for (auto &c : container.getContainer()) {
+
+    sqlite3_stmt *check_stmt = prepareStatement(sql_count);
+    if (!check_stmt) {
+      closeDb();
+      return;
+    }
+
+    sqlite3_bind_text(check_stmt, 1, c.getName().c_str(), -1, SQLITE_TRANSIENT);
+    int exists = 0;
+    int rc = sqlite3_step(check_stmt);
+    if (rc == SQLITE_ROW) {
+      exists = sqlite3_column_int(check_stmt, 0);
+    }
+    sqlite3_finalize(check_stmt);
+
+    if (exists > 0) {
+
+      sqlite3_stmt *update_stmt = prepareStatement(sql_update);
+      if (!update_stmt) {
+        closeDb();
+        std::cerr << "Can't prepare statement!" << sqlite3_errmsg(db);
+        return;
+      }
+
+      sqlite3_bind_int(update_stmt, 1, c.getRender() ? 1 : 0);
+      sqlite3_bind_double(update_stmt, 2, c.getRadius());
+      sqlite3_bind_double(update_stmt, 3, c.getMass());
+      sqlite3_bind_double(update_stmt, 4, c.getXPos());
+      sqlite3_bind_double(update_stmt, 5, c.getYPos());
+      sqlite3_bind_double(update_stmt, 6, c.getXVel());
+      sqlite3_bind_double(update_stmt, 7, c.getYVel());
+      sqlite3_bind_int(update_stmt, 8, c.getRColor());
+      sqlite3_bind_int(update_stmt, 9, c.getGColor());
+      sqlite3_bind_int(update_stmt, 10, c.getBColor());
+      sqlite3_bind_text(update_stmt, 11, c.getName().c_str(), -1,
+                        SQLITE_TRANSIENT);
+      processQuery(update_stmt, "Updated Circle Succesfully!");
+
+    } else {
+
+      sqlite3_stmt *insert_stmt = prepareStatement(sql_insert);
+      if (!insert_stmt) {
+        closeDb();
+        std::cerr << "Can't prepare statement!" << sqlite3_errmsg(db);
+        return;
+      }
+
+      sqlite3_bind_text(insert_stmt, 1, c.getName().c_str(), -1,
+                        SQLITE_TRANSIENT);
+      sqlite3_bind_int(insert_stmt, 2, c.getRender() ? 1 : 0);
+      sqlite3_bind_double(insert_stmt, 3, c.getRadius());
+      sqlite3_bind_double(insert_stmt, 4, c.getMass());
+      sqlite3_bind_double(insert_stmt, 5, c.getXPos());
+      sqlite3_bind_double(insert_stmt, 6, c.getYPos());
+      sqlite3_bind_double(insert_stmt, 7, c.getXVel());
+      sqlite3_bind_double(insert_stmt, 8, c.getYVel());
+      sqlite3_bind_int(insert_stmt, 9, c.getRColor());
+      sqlite3_bind_int(insert_stmt, 10, c.getGColor());
+      sqlite3_bind_int(insert_stmt, 11, c.getBColor());
+
+      processQuery(insert_stmt, "Inserted Circle Succesfully!");
+    }
+  }
+  closeDb();
+}
+
+void DataBase::deleteAllCircles(CircleContainer &container) {
+  if (!openDb()) {
+    std::cerr << "Can't open DB!" << sqlite3_errmsg(db) << std::endl;
+    return;
+  }
+
+  const char *sql = R"(
+      DELETE FROM CIRCLES;
+  )";
+
+  sqlite3_stmt *stmt = prepareStatement(sql);
+  if (!stmt) {
+    closeDb();
+    std::cerr << "Can't prepare statement!" << sqlite3_errmsg(db);
+    return;
+  }
+
+  processQuery(stmt, "Deleted All Circles!");
+  closeDb();
 }
