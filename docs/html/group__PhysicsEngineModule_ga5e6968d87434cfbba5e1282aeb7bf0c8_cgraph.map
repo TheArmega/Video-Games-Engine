@@ -1,7 +1,0 @@
-<map id="PhysicsEngine::distanceBetweenCircles" name="PhysicsEngine::distanceBetweenCircles">
-<area shape="rect" id="Node000001" title="Returns the distance between two circles." alt="" coords="5,23,222,65"/>
-<area shape="rect" id="Node000002" href="$classCircle.html#a57a962a92b83f003debd33b1198468d5" title="Returns the X position." alt="" coords="270,5,383,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,28,254,25,255,30,222,34"/>
-<area shape="rect" id="Node000003" href="$classCircle.html#a20b6bc70bb22a78062f3b06b0bec4c5f" title="Returns the Y position." alt="" coords="270,56,383,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="222,54,255,58,254,63,221,60"/>
-</map>

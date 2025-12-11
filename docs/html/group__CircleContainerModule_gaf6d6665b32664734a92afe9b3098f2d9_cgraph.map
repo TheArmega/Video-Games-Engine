@@ -1,5 +1,0 @@
-<map id="CircleContainer::delCircle" name="CircleContainer::delCircle">
-<area shape="rect" id="Node000001" title="Deletes a Circle from the container by name." alt="" coords="5,5,176,32"/>
-<area shape="rect" id="Node000002" href="$classCircle.html#a8532d048164b60dbf0c5b60b7dc8fe26" title="Returns the name." alt="" coords="224,5,340,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,16,208,16,208,21,176,21"/>
-</map>

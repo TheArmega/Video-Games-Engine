@@ -1,7 +1,0 @@
-<map id="DataBase::createTable" name="DataBase::createTable">
-<area shape="rect" id="Node000001" title="Creates the CIRCLES table if it does not exist." alt="" coords="5,31,160,57"/>
-<area shape="rect" id="Node000002" href="$classDataBase.html#a5ae5a957f63e07dbb326a2f08a8e2757" title="Closes the database connection." alt="" coords="208,5,343,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,31,192,27,193,32,160,36"/>
-<area shape="rect" id="Node000003" href="$classDataBase.html#a8774b0989ee6fe253803e1b25f23f8cc" title="Opens the database connection." alt="" coords="209,56,342,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,52,194,56,193,61,160,57"/>
-</map>

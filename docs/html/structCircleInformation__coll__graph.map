@@ -1,5 +1,0 @@
-<map id="CircleInformation" name="CircleInformation">
-<area shape="rect" id="Node000001" title="This struct is used to use the Circle Information Window." alt="" coords="5,96,126,123"/>
-<area shape="rect" id="Node000002" href="$classCircle.html" title="Represents a circle with position, velocity, mass, radius, and color." alt="" coords="38,5,93,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="68,48,68,95,63,95,63,48"/>
-</map>

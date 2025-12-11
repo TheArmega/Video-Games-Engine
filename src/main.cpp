@@ -1,31 +1,53 @@
-/**
- * @file main.cpp
- * @brief Entry point for the VideoGameEngine using SFML and ImGui-SFML
- * @author Jaime
- * @version 0.1
- * @date 23/10/25
- *
- * @details
- * This file initializes the SFML window and ImGui-SFML integration,
- * manages the Circle database, populates a CircleContainer, and runs
- * the main render loop displaying circles and ImGui widgets.
- */
-
-#include "app.h"
+#include "core/Engine.h"
 #include <SFML/Graphics.hpp>
+#include <imgui-SFML.h>
+#include <imgui.h>
+#include <iostream>
 
-/**
- * @brief Main function of the VideoGameEngine
- *
- * Initializes the window and ImGui-SFML, creates example Circle objects,
- * stores them in the database, populates the CircleContainer, and runs
- * the main render loop with ImGui GUI elements.
- *
- * @return int Returns 0 on success, -1 on failure (ImGui initialization
- * failure)
- */
 int main() {
+  sf::RenderWindow window(sf::VideoMode({800, 600}), "ImGui + SFML Test");
 
-  // Run application
-  App::run();
+  if (!ImGui::SFML::Init(window)) {
+    std::cerr << "Failed to initialize ImGui-SFML" << std::endl;
+    return -1;
+  }
+
+  sf::Clock deltaClock;
+  Engine engine; // Instancia única, no la recrees cada frame
+
+  while (window.isOpen()) {
+
+    // Nuevo sistema de eventos SFML3 (std::optional)
+    while (auto eventOpt = window.pollEvent()) {
+      const sf::Event &event = *eventOpt;
+
+      ImGui::SFML::ProcessEvent(window, event);
+
+      if (event.is<sf::Event::Closed>()) {
+        window.close();
+      }
+    }
+
+    // 1. Actualizar ImGui ANTES del Begin()
+    ImGui::SFML::Update(window, deltaClock.restart());
+
+    // 2. Comenzar ImGui frame
+    ImGui::Begin("Hello, ImGui!");
+    ImGui::Text("Engine name: %s", engine.getName().c_str());
+    ImGui::End();
+
+    // Ventana demo opcional
+    ImGui::ShowDemoWindow();
+
+    // 3. Render normal
+    window.clear(sf::Color(30, 30, 30));
+
+    // 4. Render ImGui
+    ImGui::SFML::Render(window);
+
+    window.display();
+  }
+
+  ImGui::SFML::Shutdown();
+  return 0;
 }
