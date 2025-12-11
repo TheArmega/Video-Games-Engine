@@ -3,7 +3,7 @@ add_subdirectory(core)
 # add_subdirectory(graphics)
 # add_subdirectory(input)
 # add_subdirectory(physics)
-# add_subdirectory(utils)
+add_subdirectory(utils)
 
 # Ruta a ImGui
 set(IMGUI_DIR "${CMAKE_SOURCE_DIR}/external/imgui" CACHE PATH "Path to ImGui top-level directory")
@@ -12,15 +12,15 @@ set(IMGUI_DIR "${CMAKE_SOURCE_DIR}/external/imgui" CACHE PATH "Path to ImGui top
 add_subdirectory(${CMAKE_SOURCE_DIR}/external/imgui-sfml ${CMAKE_BINARY_DIR}/imgui-sfml-build)
 
 # Ejecutable principal
-add_executable(HelloEngine main.cpp)
+add_executable(Game main.cpp)
 
 # Enlazar librerías
-target_link_libraries(HelloEngine PRIVATE CoreLib ImGui-SFML)
+target_link_libraries(Game PRIVATE CoreLib ImGui-SFML)
 
 # Incluir cabeceras globales
-target_include_directories(HelloEngine PRIVATE
+target_include_directories(Game PRIVATE
     ${CMAKE_SOURCE_DIR}/include
 )
 
 # Enlazar librerías del motor
-target_link_libraries(HelloEngine PRIVATE CoreLib)
+target_link_libraries(Game PRIVATE CoreLib)

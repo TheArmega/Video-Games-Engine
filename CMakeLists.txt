@@ -8,5 +8,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Carpeta de build independiente
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
+# Esto es para Helix
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # Añadir subdirectorio src
 add_subdirectory(src)
