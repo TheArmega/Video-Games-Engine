@@ -1,46 +1,46 @@
 #include "imgui-SFML.h"
 #include "imgui.h"
+#include "imgui_internal.h"
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <any>
 #include <iostream>
+#include <memory>
 
 #include "core/Engine.h"
+#include "core/ImGuiLayer.h"
 #include "core/Window.h"
 
-Engine::Engine(std::string _name) : name(_name) {};
+#include "scenes/SceneManager.h"
+#include "scenes/TitleScene.h"
+#include "ui/Button.h"
 
-std::string Engine::getName() { return name; }
+Engine::Engine() : window("Main Winmdow", 1440, 1080, 60), sceneManager() {}
 
 void Engine::run() {
-  sf::Clock deltaClock;
-  Window titleWindow("Title Window", 1440, 1080, 60);
 
-  if (titleWindow.checkWindow()) {
-    sf::RenderWindow &tw = titleWindow.getSfWindow();
-    Vec2 windowCenter(titleWindow.getWidth() / 2, titleWindow.getHeight() / 2);
+  sf::RenderWindow &w = window.getSfWindow();
 
-    while (tw.isOpen()) {
+  SceneManager sceneManager;
 
-      while (const std::optional event =
-                 titleWindow.getSfWindow().pollEvent()) {
-        ImGui::SFML::ProcessEvent(titleWindow.getSfWindow(), *event);
+  sceneManager.setScene(std::make_unique<TitleScene>(&window));
 
-        // Close window if requested
-        if (event->is<sf::Event::Closed>())
-          titleWindow.getSfWindow().close();
-      }
-      // Limpiar primero
-      titleWindow.getSfWindow().clear(sf::Color(30, 30, 30));
+  sf::Clock clock;
 
-      // Logic of window
-      titleWindow.drawText("GAME", 120, sf::Color::White,
-                           {windowCenter.x, windowCenter.y});
+  while (w.isOpen()) {
 
-      // Update ImGui-SFML
-      ImGui::SFML::Update(titleWindow.getSfWindow(), deltaClock.restart());
+    while (const std::optional event = w.pollEvent()) {
+      ImGui::SFML::ProcessEvent(w, *event);
 
-      ImGui::SFML::Render(titleWindow.getSfWindow());
-      titleWindow.getSfWindow().display();
+      // Close window if requested
+      if (event->is<sf::Event::Closed>())
+        w.close();
     }
-    ImGui::SFML::Shutdown();
+
+    float dt = clock.restart().asSeconds();
+
+    sceneManager.update(dt);
+    w.clear();
+    sceneManager.render(w);
+    w.display();
   }
 }

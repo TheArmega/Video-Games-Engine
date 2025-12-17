@@ -1,7 +1,7 @@
 #include "core/Engine.h"
 
 int main() {
-  Engine engine("Rabu");
+  Engine engine;
   engine.run();
 
   return 0;

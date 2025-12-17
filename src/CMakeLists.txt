@@ -4,6 +4,8 @@ add_subdirectory(core)
 # add_subdirectory(input)
 # add_subdirectory(physics)
 add_subdirectory(utils)
+add_subdirectory(ui)
+add_subdirectory(scenes)
 
 # Ruta a ImGui
 set(IMGUI_DIR "${CMAKE_SOURCE_DIR}/external/imgui" CACHE PATH "Path to ImGui top-level directory")
@@ -15,7 +17,7 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/external/imgui-sfml ${CMAKE_BINARY_DIR}/img
 add_executable(Game main.cpp)
 
 # Enlazar librerías
-target_link_libraries(Game PRIVATE CoreLib ImGui-SFML)
+target_link_libraries(Game PRIVATE CoreLib UILib ImGui-SFML)
 
 # Incluir cabeceras globales
 target_include_directories(Game PRIVATE
@@ -23,4 +25,4 @@ target_include_directories(Game PRIVATE
 )
 
 # Enlazar librerías del motor
-target_link_libraries(Game PRIVATE CoreLib)
+target_link_libraries(Game PRIVATE CoreLib ScenesLib UILib)

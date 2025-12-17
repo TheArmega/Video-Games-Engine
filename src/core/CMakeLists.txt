@@ -1,5 +1,5 @@
 # Crear librería del core
-add_library(CoreLib Engine.cpp Window.cpp)
+add_library(CoreLib Engine.cpp Window.cpp ImGuiLayer.cpp)
 
 # Incluir cabeceras del core
 target_include_directories(CoreLib PUBLIC

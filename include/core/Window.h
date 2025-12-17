@@ -24,6 +24,7 @@ public:
 
   // Setters
   void setWindow(sf::RenderWindow *w);
+  void setFont(sf::Font f);
   void setName(std::string n);
   void setWidth(unsigned int w);
   void setHeight(unsigned int h);
@@ -32,6 +33,7 @@ public:
   // Getters
   const sf::RenderWindow &getSfWindow() const;
   sf::RenderWindow &getSfWindow();
+  sf::Font getFont();
   std::string getName();
   unsigned int getWidth();
   unsigned int getHeight();

@@ -1,24 +1,18 @@
 #ifndef ENGINE_H
 #define ENGINE_H
 
+#include "core/Window.h"
+#include "scenes/SceneManager.h"
 #include <SFML/Graphics/RenderWindow.hpp>
-#include <iostream>
 
 class Engine {
 
 private:
-  std::string name = "Rabu";
+  Window window;
+  SceneManager sceneManager;
 
 public:
-  // Constructor
-  Engine(std::string _name);
-
-  // Setters
-  void setName(std::string n);
-
-  // Getters
-  std::string getName();
-
+  Engine();
   void run();
 };
 
