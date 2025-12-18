@@ -10,6 +10,7 @@
 #include "core/ImGuiLayer.h"
 #include "core/Window.h"
 
+#include "scenes/SceneCommand.h"
 #include "scenes/SceneManager.h"
 #include "scenes/TitleScene.h"
 #include "ui/Button.h"
@@ -40,6 +41,9 @@ void Engine::run() {
 
     float dt = clock.restart().asSeconds();
 
+    if (sceneManager.getActiveCommand() == SceneCommand::Exit) {
+      w.close();
+    }
     sceneManager.update(dt);
     w.clear();
     sceneManager.render(w);

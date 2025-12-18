@@ -2,6 +2,7 @@
 #define SCENEMANAGER_H
 
 #include "scenes/Scene.h"
+#include "scenes/SceneCommand.h"
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <memory>
 
@@ -25,6 +26,9 @@ public:
 
   // Handle events to current scene
   void eventHandler(const sf::Event &event);
+
+  SceneCommand getActiveCommand() const;
+  void clearActiveCommand();
 };
 
 #endif // SCENEMANAGER_H

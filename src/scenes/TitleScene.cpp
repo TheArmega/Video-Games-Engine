@@ -1,4 +1,6 @@
 #include "scenes/Scene.h"
+#include "scenes/SceneCommand.h"
+#include "scenes/SceneManager.h"
 #include "scenes/TitleScene.h"
 #include "ui/Button.h"
 
@@ -18,8 +20,8 @@ TitleScene::TitleScene(Window *w)
       closeButton("Close Button", "../assets/sprites/buttons/close-button.png",
                   "../assets/sprites/buttons/close-button-pressed.png",
                   {800, 400}) {
-  startButton.setOnClick([this]() { std::cout << "HELLO\n"; });
-  closeButton.setOnClick([this]() { window->getSfWindow().close(); });
+  startButton.setOnClick([this]() { command = SceneCommand::GoToGame; });
+  closeButton.setOnClick([this]() { command = SceneCommand::Exit; });
 }
 
 void TitleScene::init() {

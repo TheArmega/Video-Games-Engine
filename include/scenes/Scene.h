@@ -4,9 +4,12 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <iostream>
 
+#include "SceneCommand.h"
+
 class Scene {
 protected:
   std::string name;
+  SceneCommand command = SceneCommand::None;
 
 public:
   // Constructor
@@ -29,7 +32,12 @@ public:
   // Clean resources in scene
   virtual void cleanUp();
 
+  // Handle events depending of the elements of the scene
   virtual void handleEvent(const sf::Event &event);
+
+  // Comands
+  SceneCommand getCommand() const;
+  void clearCommand();
 };
 
 #endif // SCENE_H

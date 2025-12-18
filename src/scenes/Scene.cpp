@@ -1,4 +1,5 @@
 #include "scenes/Scene.h"
+#include "scenes/SceneCommand.h"
 #include <SFML/Graphics/RenderWindow.hpp>
 
 // Constructor
@@ -13,3 +14,6 @@ void Scene::update(float deltaTime) {}
 void Scene::render(sf::RenderWindow &w) {}
 void Scene::cleanUp() {}
 void Scene::handleEvent(const sf::Event &event) {}
+
+SceneCommand Scene::getCommand() const { return command; }
+void Scene::clearCommand() { command = SceneCommand::None; }

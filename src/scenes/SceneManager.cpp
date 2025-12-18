@@ -1,3 +1,4 @@
+#include "scenes/SceneCommand.h"
 #include "scenes/SceneManager.h"
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
@@ -26,6 +27,20 @@ void SceneManager::update(float deltaTime) {
   if (currentScene) {
     currentScene->update(deltaTime);
   }
+
+  switch (currentScene->getCommand()) {
+  case SceneCommand::GoToGame:
+    std::cout << "Go to game\n";
+    break;
+
+  case SceneCommand::Exit:
+    break;
+
+  default:
+    break;
+  }
+
+  currentScene->clearCommand();
 }
 
 void SceneManager::render(sf::RenderWindow &window) {
@@ -38,4 +53,15 @@ void SceneManager::eventHandler(const sf::Event &event) {
   if (currentScene) {
     currentScene->handleEvent(event);
   }
+}
+
+SceneCommand SceneManager::getActiveCommand() const {
+  if (currentScene)
+    return currentScene->getCommand();
+  return SceneCommand::None;
+}
+
+void SceneManager::clearActiveCommand() {
+  if (currentScene)
+    currentScene->clearCommand();
 }
