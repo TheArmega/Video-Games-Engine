@@ -1,5 +1,6 @@
 #include "scenes/SceneManager.h"
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Window/Event.hpp>
 #include <algorithm>
 #include <memory>
 
@@ -30,5 +31,11 @@ void SceneManager::update(float deltaTime) {
 void SceneManager::render(sf::RenderWindow &window) {
   if (currentScene) {
     currentScene->render(window);
+  }
+}
+
+void SceneManager::eventHandler(const sf::Event &event) {
+  if (currentScene) {
+    currentScene->handleEvent(event);
   }
 }

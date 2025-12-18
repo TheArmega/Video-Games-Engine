@@ -12,3 +12,4 @@ void Scene::init() {}
 void Scene::update(float deltaTime) {}
 void Scene::render(sf::RenderWindow &w) {}
 void Scene::cleanUp() {}
+void Scene::handleEvent(const sf::Event &event) {}

@@ -2,38 +2,46 @@
 #define BUTTON_H
 
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/Texture.hpp>
+#include <functional>
 #include <iostream>
+#include <string>
+
+#include "utils/Vec2.h"
+
+// Forward declaration
+class Window;
 
 class Button {
 private:
-  std::string name = "Generic Button";
-  std::string staticTexture;
-  std::string variableTexture;
-  unsigned int xPos;
-  unsigned int yPos;
+  std::string name;
+  sf::Texture normalTexture;
+  sf::Texture hoveredTexture;
+  sf::Sprite sprite;
+
+  std::function<void()> onClick;
+  bool hovered = false;
 
 public:
   // Constructor
-  Button(std::string _name, std::string _staticTexture,
-         std::string _variableTexture, unsigned int _xPos, unsigned int _yPos);
-
-  // Setters
-  void setName(std::string n);
-  void setStaticTexture(std::string t);
-  void setVariableTexture(std::string t);
-  void setXPos(unsigned int x);
-  void setYPos(unsigned int y);
+  Button(const std::string _name, const std::string normalTexturePath,
+         const std::string hoveredTexturePath, Vec2 pos);
 
   // Getters
   std::string getName();
-  std::string getStaticTexture();
-  std::string getVariableTexture();
-  unsigned int getXPos();
-  unsigned int getYPos();
 
   // Methods
-  // Render the button in the window
-  void render(sf::RenderWindow &w);
+  // Draw the button in the window
+  void draw(Window &w) const;
+
+  // Update the state of the button
+  void update(const Window &w);
+
+  void handleEvent(const sf::Event &event, const Window &w);
+
+  // A
+  void setOnClick(std::function<void()> callback);
 };
 
 #endif // BUTTON_H

@@ -6,13 +6,21 @@
 #include "imgui.h"
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Window/Event.hpp>
+#include <SFML/Window/Mouse.hpp>
 #include <iostream>
 
 TitleScene::TitleScene(Window *w)
     : Scene("Title Scene"), window(w),
       startButton("Start Button", "../assets/sprites/buttons/start-button.png",
-                  "../assets/sprites/buttons/start-button-pressed.png", 500,
-                  500) {}
+                  "../assets/sprites/buttons/start-button-pressed.png",
+                  {500, 400}),
+      closeButton("Close Button", "../assets/sprites/buttons/close-button.png",
+                  "../assets/sprites/buttons/close-button-pressed.png",
+                  {800, 400}) {
+  startButton.setOnClick([this]() { std::cout << "HELLO\n"; });
+  closeButton.setOnClick([this]() { window->getSfWindow().close(); });
+}
 
 void TitleScene::init() {
   if (!ImGui::SFML::Init(window->getSfWindow())) {
@@ -23,16 +31,22 @@ void TitleScene::init() {
 void TitleScene::update(float deltaTime) {
   // Update ImGui-SFML
   ImGui::SFML::Update(window->getSfWindow(), deltaClock.restart());
+  startButton.update(*window);
+  closeButton.update(*window);
 }
 
 void TitleScene::render(sf::RenderWindow &w) {
   w.clear(sf::Color(30, 30, 30));
-  window->drawText("GAME", 120, sf::Color::White, {100, 100});
+  // window->drawText("GAME", 120, sf::Color::White, {550, 200});
+  startButton.draw(*window);
+  closeButton.draw(*window);
   ImGui::SFML::Render(w);
+  w.display();
 }
 
-void TitleScene::cleanUp() {
-  ImGui::SFML::Shutdown();
-}
+void TitleScene::cleanUp() { ImGui::SFML::Shutdown(); }
 
-;
+void TitleScene::handleEvent(const sf::Event &event) {
+  startButton.handleEvent(event, *window);
+  closeButton.handleEvent(event, *window);
+}

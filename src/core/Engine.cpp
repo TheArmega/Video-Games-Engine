@@ -14,7 +14,7 @@
 #include "scenes/TitleScene.h"
 #include "ui/Button.h"
 
-Engine::Engine() : window("Main Winmdow", 1440, 1080, 60), sceneManager() {}
+Engine::Engine() : window("Main Window", 1440, 1080, 60), sceneManager() {}
 
 void Engine::run() {
 
@@ -34,6 +34,8 @@ void Engine::run() {
       // Close window if requested
       if (event->is<sf::Event::Closed>())
         w.close();
+
+      sceneManager.eventHandler(*event);
     }
 
     float dt = clock.restart().asSeconds();

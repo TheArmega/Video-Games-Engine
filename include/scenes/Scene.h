@@ -28,6 +28,8 @@ public:
 
   // Clean resources in scene
   virtual void cleanUp();
+
+  virtual void handleEvent(const sf::Event &event);
 };
 
 #endif // SCENE_H

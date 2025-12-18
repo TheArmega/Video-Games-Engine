@@ -11,6 +11,7 @@ class TitleScene : public Scene {
 private:
   Window *window;
   Button startButton;
+  Button closeButton;
   sf::Clock deltaClock;
 
 public:
@@ -20,6 +21,7 @@ public:
   void update(float deltaTime) override;
   void render(sf::RenderWindow &w) override;
   void cleanUp() override;
+  void handleEvent(const sf::Event &event) override;
 };
 
 #endif // TITLESCENE_H

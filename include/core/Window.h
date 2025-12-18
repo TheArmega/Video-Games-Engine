@@ -1,18 +1,20 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
+#include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Window/Mouse.hpp>
 #include <iostream>
+#include <vector>
 
+#include "ui/Button.h"
 #include "utils/Vec2.h"
 
 class Window {
 
 private:
   sf::RenderWindow sfWindow;
-  sf::Font font;
-  std::string name = "General Window";
   unsigned int width = 1440;
   unsigned int height = 1080;
   unsigned int fps = 60;
@@ -23,9 +25,6 @@ public:
          unsigned int _fps);
 
   // Setters
-  void setWindow(sf::RenderWindow *w);
-  void setFont(sf::Font f);
-  void setName(std::string n);
   void setWidth(unsigned int w);
   void setHeight(unsigned int h);
   void setFps(unsigned int f);
@@ -33,8 +32,6 @@ public:
   // Getters
   const sf::RenderWindow &getSfWindow() const;
   sf::RenderWindow &getSfWindow();
-  sf::Font getFont();
-  std::string getName();
   unsigned int getWidth();
   unsigned int getHeight();
   unsigned int getFps();
@@ -42,8 +39,11 @@ public:
   // Check if the window has been created succesfully
   bool checkWindow();
 
-  // Put a text in a given position in the window
-  void drawText(std::string t, unsigned int size, sf::Color color, Vec2 pos);
+  // Draw a drawable object
+  void draw(const sf::Drawable &drawable);
+
+  // Get mouse position
+  Vec2 getMousePos() const;
 };
 
 #endif // WINDOW_H
