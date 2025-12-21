@@ -1,9 +1,0 @@
-<map id="PhysicsEngine::pointInCircleArea" name="PhysicsEngine::pointInCircleArea">
-<area shape="rect" id="Node000001" title="Check if a point is inside a circle area." alt="" coords="5,56,222,83"/>
-<area shape="rect" id="Node000002" href="$classCircle.html#a95b7dc25d2e9b1e40a189cd83386a12e" title="Returns the radius." alt="" coords="270,5,392,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,53,255,34,256,39,175,58"/>
-<area shape="rect" id="Node000003" href="$classCircle.html#a57a962a92b83f003debd33b1198468d5" title="Returns the X position." alt="" coords="274,56,388,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="222,67,259,67,259,72,222,72"/>
-<area shape="rect" id="Node000004" href="$classCircle.html#a20b6bc70bb22a78062f3b06b0bec4c5f" title="Returns the Y position." alt="" coords="274,107,388,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="175,81,260,101,258,106,173,86"/>
-</map>
