@@ -2,6 +2,7 @@ add_library(ScenesLib STATIC
     Scene.cpp
     SceneManager.cpp
     TitleScene.cpp
+    GameScene.cpp
 )
 
 target_include_directories(ScenesLib PUBLIC

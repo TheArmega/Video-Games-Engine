@@ -36,9 +36,6 @@ public:
   unsigned int getHeight();
   unsigned int getFps();
 
-  // Check if the window has been created succesfully
-  bool checkWindow();
-
   // Draw a drawable object
   void draw(const sf::Drawable &drawable);
 

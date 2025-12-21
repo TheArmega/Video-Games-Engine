@@ -23,24 +23,10 @@ void SceneManager::setScene(std::unique_ptr<Scene> scene) {
   }
 }
 
-void SceneManager::update(float deltaTime) {
+void SceneManager::update() {
   if (currentScene) {
-    currentScene->update(deltaTime);
+    currentScene->update();
   }
-
-  switch (currentScene->getCommand()) {
-  case SceneCommand::GoToGame:
-    std::cout << "Go to game\n";
-    break;
-
-  case SceneCommand::Exit:
-    break;
-
-  default:
-    break;
-  }
-
-  currentScene->clearCommand();
 }
 
 void SceneManager::render(sf::RenderWindow &window) {

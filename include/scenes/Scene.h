@@ -24,7 +24,7 @@ public:
   virtual void init();
 
   // Update scene, logic in it
-  virtual void update(float deltaTime);
+  virtual void update();
 
   // Render scene
   virtual void render(sf::RenderWindow &w);

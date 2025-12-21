@@ -31,15 +31,6 @@ unsigned int Window::getWidth() { return width; }
 unsigned int Window::getHeight() { return height; }
 unsigned int Window::getFps() { return fps; }
 
-// Methods
-bool Window::checkWindow() {
-  if (!ImGui::SFML::Init(sfWindow)) {
-    std::cerr << "Can't create ImGui-SFML instance.";
-    return false;
-  }
-  return true;
-}
-
 void Window::draw(const sf::Drawable &drawable) { sfWindow.draw(drawable); }
 
 Vec2 Window::getMousePos() const {

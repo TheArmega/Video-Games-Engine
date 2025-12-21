@@ -1,17 +1,15 @@
 #include "core/Window.h"
 #include "ui/Button.h"
-#include "utils/Vec2.h"
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <SFML/Graphics/Sprite.hpp>
-#include <SFML/Graphics/Texture.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/Mouse.hpp>
 #include <utility>
 
 // Constructor
 Button::Button(const std::string _name, const std::string normalTexturePath,
-               const std::string hoveredTexturePath, Vec2 pos)
+               const std::string hoveredTexturePath, Vec2 pos, Vec2 scale)
     : name(_name), sprite(normalTexture) {
   if (!normalTexture.loadFromFile(normalTexturePath)) {
     std::cerr << "Failed to load button texture: " << normalTexturePath << '\n';
@@ -25,14 +23,14 @@ Button::Button(const std::string _name, const std::string normalTexturePath,
   sprite = sf::Sprite(normalTexture);
   sprite.setTexture(normalTexture);
   sprite.setPosition({pos.x, pos.y});
+  sprite.setScale({scale.x, scale.y});
 }
 
 // Getters
 std::string Button::getName() { return name; }
+const sf::Sprite &Button::getSprite() const { return sprite; }
 
 // Methods
-void Button::draw(Window &w) const { w.draw(sprite); }
-
 void Button::handleEvent(const sf::Event &event, const Window &w) {
   if (const auto *mouse = event.getIf<sf::Event::MouseButtonPressed>()) {
 
@@ -58,4 +56,17 @@ void Button::update(const Window &w) {
 
 void Button::setOnClick(std::function<void()> callback) {
   onClick = std::move(callback);
+}
+
+void Button::drawBoundingBox(Window &w) {
+  sf::FloatRect bounds = sprite.getGlobalBounds();
+
+  sf::RectangleShape boundingBox;
+  boundingBox.setPosition({bounds.position.x, bounds.position.y});
+  boundingBox.setSize({bounds.size.x, bounds.size.y});
+  boundingBox.setFillColor(sf::Color::Transparent);
+  boundingBox.setOutlineThickness(1.f);
+  boundingBox.setOutlineColor(sf::Color::Red);
+
+  w.draw(boundingBox);
 }

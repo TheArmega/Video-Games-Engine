@@ -26,22 +26,22 @@ private:
 public:
   // Constructor
   Button(const std::string _name, const std::string normalTexturePath,
-         const std::string hoveredTexturePath, Vec2 pos);
+         const std::string hoveredTexturePath, Vec2 pos, Vec2 scale);
 
   // Getters
   std::string getName();
+  const sf::Sprite &getSprite() const;
 
   // Methods
-  // Draw the button in the window
-  void draw(Window &w) const;
-
   // Update the state of the button
   void update(const Window &w);
 
   void handleEvent(const sf::Event &event, const Window &w);
 
-  // A
+  // Function that launches on click
   void setOnClick(std::function<void()> callback);
+
+  void drawBoundingBox(Window &w);
 };
 
 #endif // BUTTON_H

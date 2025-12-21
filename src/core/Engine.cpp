@@ -2,6 +2,7 @@
 #include "imgui.h"
 #include "imgui_internal.h"
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/System/Time.hpp>
 #include <any>
 #include <iostream>
 #include <memory>
@@ -10,6 +11,7 @@
 #include "core/ImGuiLayer.h"
 #include "core/Window.h"
 
+#include "scenes/GameScene.h"
 #include "scenes/SceneCommand.h"
 #include "scenes/SceneManager.h"
 #include "scenes/TitleScene.h"
@@ -21,11 +23,14 @@ void Engine::run() {
 
   sf::RenderWindow &w = window.getSfWindow();
 
-  SceneManager sceneManager;
-
   sceneManager.setScene(std::make_unique<TitleScene>(&window));
 
   sf::Clock clock;
+
+  if (!ImGui::SFML::Init(w)) {
+    std::cerr << "Can't create ImGui-SFML instance.";
+    return;
+  }
 
   while (w.isOpen()) {
 
@@ -39,13 +44,30 @@ void Engine::run() {
       sceneManager.eventHandler(*event);
     }
 
-    float dt = clock.restart().asSeconds();
+    sf::Time dt = clock.restart();
 
-    if (sceneManager.getActiveCommand() == SceneCommand::Exit) {
+    SceneCommand cmd = sceneManager.getActiveCommand();
+
+    switch (cmd) {
+    case SceneCommand::Exit:
       w.close();
+      break;
+
+    case SceneCommand::GoToGame:
+      sceneManager.setScene(std::make_unique<GameScene>(&window));
+      break;
+
+    default:
+      break;
     }
-    sceneManager.update(dt);
-    w.clear();
+    sceneManager.clearActiveCommand();
+
+    ImGui::SFML::Update(w, dt);
+    sceneManager.update();
+
+    w.clear(sf::Color(43, 48, 58));
+
+    ImGui::SFML::Render(w);
     sceneManager.render(w);
     w.display();
   }

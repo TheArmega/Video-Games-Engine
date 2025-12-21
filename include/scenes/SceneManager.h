@@ -19,7 +19,7 @@ public:
   void setScene(std::unique_ptr<Scene> scene);
 
   // Update state of the current scene
-  void update(float deltaTime);
+  void update();
 
   // Render current window
   void render(sf::RenderWindow &window);
