@@ -1,8 +1,6 @@
 # Subdirectorios con código fuente
 add_subdirectory(core)
-# add_subdirectory(graphics)
-# add_subdirectory(input)
-# add_subdirectory(physics)
+add_subdirectory(ecs)
 add_subdirectory(utils)
 add_subdirectory(ui)
 add_subdirectory(scenes)
@@ -17,7 +15,12 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/external/imgui-sfml ${CMAKE_BINARY_DIR}/img
 add_executable(Game main.cpp)
 
 # Enlazar librerías
-target_link_libraries(Game PRIVATE CoreLib UILib ImGui-SFML)
+target_link_libraries(Game
+    PRIVATE
+        CoreLib
+        UILib
+        ImGui-SFML
+)
 
 # Incluir cabeceras globales
 target_include_directories(Game PRIVATE
