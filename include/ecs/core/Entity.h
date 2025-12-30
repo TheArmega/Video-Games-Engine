@@ -6,6 +6,10 @@
 #include <tuple>
 
 #include "Component.h"
+#include "ecs/components/CShape.hpp"
+#include "ecs/components/CTransform.hpp"
+
+using ComponentTuple = std::tuple<CTransform, CShape>;
 
 class Entity {
 private:

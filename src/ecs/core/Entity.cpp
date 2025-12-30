@@ -18,3 +18,8 @@ template <typename T> const T &Entity::get() const {
 
 template <typename T> bool Entity::has() const { return std::get<T>().exists; }
 template <typename T> void Entity::remove() { get<T>() = T(); }
+
+size_t Entity::id() { return m_id; }
+bool Entity::isAlive() const { return m_alive; }
+void Entity::destroy() { m_alive = false; }
+const std::string &Entity::tag() const { return m_tag; }

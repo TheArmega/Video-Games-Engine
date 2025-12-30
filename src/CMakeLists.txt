@@ -19,6 +19,7 @@ target_link_libraries(Game
     PRIVATE
         CoreLib
         UILib
+        ECSLib
         ImGui-SFML
 )
 
