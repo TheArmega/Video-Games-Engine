@@ -77,7 +77,7 @@ void Engine::render() {
   sf::RenderWindow &w = window.getSfWindow();
 
   ImGui::SFML::Render(w);
-  sceneManager.render(w);
+  sceneManager.render();
 }
 
 void Engine::mainLoop() {
@@ -91,10 +91,12 @@ void Engine::mainLoop() {
 
     eventHandler();
     activeCommand();
-    sf::Time dt = clock.restart();
-    sceneManager.update();
+    sf::Time dtTime = clock.restart();
+    float dt = dtTime.asSeconds();
+
+    sceneManager.update(dt);
     m_entityManager.update();
-    updateUI(dt);
+    updateUI(dtTime);
     w.clear(sf::Color(43, 48, 58));
     render();
     w.display();
@@ -102,9 +104,3 @@ void Engine::mainLoop() {
     m_currentFrame++;
   }
 }
-
-void Engine::spawnCharacter() {
-  auto character = m_entityManager.addEntity("Main Ball");
-}
-
-void Engine::spawnEnemy() { auto enemy = m_entityManager.addEntity("Enemy"); }

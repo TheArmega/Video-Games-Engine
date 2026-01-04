@@ -12,8 +12,8 @@ std::string Scene::getName() { return name; }
 
 // Virtual Methods
 void Scene::init() {}
-void Scene::update() {}
-void Scene::render(sf::RenderWindow &w) {}
+void Scene::update(float dt) {}
+void Scene::render() {}
 void Scene::cleanUp() {}
 void Scene::handleEvent(const sf::Event &event) {}
 

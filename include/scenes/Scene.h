@@ -26,10 +26,10 @@ public:
   virtual void init();
 
   // Update scene, logic in it
-  virtual void update();
+  virtual void update(float dt);
 
   // Render scene
-  virtual void render(sf::RenderWindow &w);
+  virtual void render();
 
   // Clean resources in scene
   virtual void cleanUp();

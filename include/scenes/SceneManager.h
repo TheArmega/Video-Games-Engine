@@ -19,10 +19,10 @@ public:
   void setScene(std::unique_ptr<Scene> scene);
 
   // Update state of the current scene
-  void update();
+  void update(float dt);
 
   // Render current window
-  void render(sf::RenderWindow &window);
+  void render();
 
   // Handle events to current scene
   void eventHandler(const sf::Event &event);

@@ -8,9 +8,10 @@
 
 #include "Component.h"
 #include "ecs/components/CShape.hpp"
+#include "ecs/components/CSprite.hpp"
 #include "ecs/components/CTransform.hpp"
 
-using ComponentTuple = std::tuple<CTransform, CShape>;
+using ComponentTuple = std::tuple<CTransform, CSprite, CShape>;
 
 class Entity {
 private:

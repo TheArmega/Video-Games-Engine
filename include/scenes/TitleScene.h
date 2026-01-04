@@ -23,8 +23,8 @@ public:
 
   // Methods
   void init() override;
-  void update() override;
-  void render(sf::RenderWindow &w) override;
+  void update(float dt) override;
+  void render() override;
   void cleanUp() override;
   void handleEvent(const sf::Event &event) override;
 };

@@ -23,15 +23,15 @@ void SceneManager::setScene(std::unique_ptr<Scene> scene) {
   }
 }
 
-void SceneManager::update() {
+void SceneManager::update(float dt) {
   if (currentScene) {
-    currentScene->update();
+    currentScene->update(dt);
   }
 }
 
-void SceneManager::render(sf::RenderWindow &window) {
+void SceneManager::render() {
   if (currentScene) {
-    currentScene->render(window);
+    currentScene->render();
   }
 }
 

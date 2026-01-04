@@ -12,5 +12,6 @@ target_include_directories(ScenesLib PUBLIC
 target_link_libraries(ScenesLib
     PUBLIC
         CoreLib
+        ECSLib
         ImGui-SFML::ImGui-SFML
 )

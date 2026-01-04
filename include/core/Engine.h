@@ -26,12 +26,6 @@ public:
   void updateUI(sf::Time dt);
   void render();
   void activeCommand();
-
-  // Spawn Entitys
-  void spawnCharacter();
-  void spawnEnemy();
-
-  //
 };
 
 #endif // ENGINE_H

@@ -31,19 +31,19 @@ TitleScene::TitleScene(Window *w, EntityManager *em)
 
 void TitleScene::init() { return; }
 
-void TitleScene::update() {
+void TitleScene::update(float dt) {
   // Update Scene
   startButton.update(*window);
   closeButton.update(*window);
 }
 
-void TitleScene::render(sf::RenderWindow &w) {
+void TitleScene::render() {
   //  Draw Title Sprite
-  w.draw(title.getSprite());
+  window->draw(title.getSprite());
 
   // Draw Buttons Sprite
-  w.draw(startButton.getSprite());
-  w.draw(closeButton.getSprite());
+  window->draw(startButton.getSprite());
+  window->draw(closeButton.getSprite());
 
   // Draw Bounding Box to debug
   // startButton.drawBoundingBox(*window);
