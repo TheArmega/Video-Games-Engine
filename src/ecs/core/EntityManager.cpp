@@ -1,7 +1,6 @@
 #include "ecs/core/EntityManager.h"
 #include <algorithm>
 #include <memory>
-#include <type_traits>
 
 void EntityManager::update() {
   for (auto e : m_toAdd) {
@@ -40,4 +39,9 @@ std::shared_ptr<Entity> EntityManager::addEntity(const std::string &tag) {
                                            // by the EntityManager)
   m_toAdd.push_back(e);
   return e;
+}
+
+EntityVec &EntityManager::getEntities() { return m_entities; }
+EntityVec &EntityManager::getEntities(const std::string &tag) {
+  return m_entityMap[tag];
 }

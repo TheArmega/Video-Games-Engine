@@ -1,9 +1,11 @@
+#include "ecs/core/EntityManager.h"
 #include "scenes/Scene.h"
 #include "scenes/SceneCommand.h"
 #include <SFML/Graphics/RenderWindow.hpp>
 
 // Constructor
-Scene::Scene(std::string _name) : name(_name) {}
+Scene::Scene(const std::string _name, EntityManager *_entityManager)
+    : name(_name), entityManager(_entityManager) {}
 
 // Getters
 std::string Scene::getName() { return name; }

@@ -5,15 +5,17 @@
 #include <iostream>
 
 #include "SceneCommand.h"
+#include "ecs/core/EntityManager.h"
 
 class Scene {
 protected:
   std::string name;
   SceneCommand command = SceneCommand::None;
+  EntityManager *entityManager;
 
 public:
   // Constructor
-  explicit Scene(std::string _name);
+  explicit Scene(const std::string _name, EntityManager *_entityManager);
   virtual ~Scene() = default;
 
   // Getters

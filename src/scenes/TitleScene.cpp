@@ -1,3 +1,4 @@
+#include "ecs/core/EntityManager.h"
 #include "scenes/Scene.h"
 #include "scenes/SceneCommand.h"
 #include "scenes/SceneManager.h"
@@ -14,8 +15,8 @@
 #include <SFML/Window/Mouse.hpp>
 #include <iostream>
 
-TitleScene::TitleScene(Window *w)
-    : Scene("Title Scene"), window(w),
+TitleScene::TitleScene(Window *w, EntityManager *em)
+    : Scene("Title Scene", em), window(w),
       title("Game Title", "../assets/sprites/titles/title.png", {450, 200},
             {14, 14}),
       startButton("Start Button", "../assets/sprites/buttons/start-button.png",

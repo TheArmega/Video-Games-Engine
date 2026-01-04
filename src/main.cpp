@@ -2,7 +2,7 @@
 
 int main() {
   Engine engine;
-  engine.run();
+  engine.mainLoop();
 
   return 0;
 }

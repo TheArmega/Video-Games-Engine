@@ -2,6 +2,7 @@
 #define TITLESCENE_H
 
 #include "core/Window.h"
+#include "ecs/core/EntityManager.h"
 #include "scenes/Scene.h"
 #include "ui/Button.h"
 #include "ui/Title.h"
@@ -18,7 +19,7 @@ private:
   sf::Clock deltaClock;
 
 public:
-  explicit TitleScene(Window *w);
+  explicit TitleScene(Window *w, EntityManager *em);
 
   // Methods
   void init() override;
