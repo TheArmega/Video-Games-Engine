@@ -6,6 +6,7 @@ void MovementSystem::update(EntityManager &em, float dt) {
   for (auto e : em.getEntities()) {
     if (e->has<CTransform>()) {
       auto &transform = e->get<CTransform>();
+
       transform.pos.add(transform.velocity * dt);
     }
   }

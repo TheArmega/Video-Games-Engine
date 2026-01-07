@@ -1,4 +1,3 @@
-#include "core/Engine.h"
 #include "ecs/core/Entity.h"
 #include "ecs/core/EntityManager.h"
 #include "imgui-SFML.h"
@@ -13,42 +12,31 @@ GameScene::GameScene(Window *w, EntityManager *em)
 void GameScene::init() {
 
   auto player = entityManager->addEntity("Player");
-  player->add<CSprite>("../assets/sprites/entities/characters/Pelota.png");
-  player->add<CTransform>(Vec2(200, 700), Vec2(100, 100));
-
-  auto circle = entityManager->addEntity("Circle");
-  circle->add<CShape>();
-  circle->add<CTransform>(Vec2(0, 0), Vec2(10, 10));
+  player->add<CShape>(3, 50, sf::Color::Green);
+  player->add<CTransform>(
+      Vec2(window->getWidth() / 2.f - player->get<CShape>().shape.getRadius(),
+           window->getHeight() / 2.f - player->get<CShape>().shape.getRadius()),
+      Vec2(100, 100));
+  player->add<CLife>(200);
+  player->add<CInput>();
 }
 
 void GameScene::update(float dt) { movementSystem.update(*entityManager, dt); }
 
 void GameScene::render() {
   for (auto &e : entityManager->getEntities()) {
-    if (e->has<CTransform>() && e->has<CSprite>()) {
-
-      auto &transform = e->get<CTransform>();
-      auto &sprite = e->get<CSprite>();
-
-      sprite.sprite.setPosition({transform.pos.x, transform.pos.y});
-      sprite.sprite.setScale({8, 8});
-      sprite.sprite.setTexture(sprite.texture);
-
-      window->draw(sprite.sprite);
-    }
-
     if (e->has<CTransform>() && e->has<CShape>()) {
       auto &transform = e->get<CTransform>();
-      auto &shape = e->get<CShape>();
-      shape.shape.setPosition({transform.pos.x, transform.pos.y});
-      shape.shape.setFillColor(sf::Color::Red);
-      shape.shape.setRadius(10.f);
+      e->get<CShape>().shape.setPosition({transform.pos.x, transform.pos.y});
 
-      window->draw(shape.shape);
+      window->draw(e->get<CShape>().shape);
     }
   }
 }
 
 void GameScene::cleanUp() { return; }
 
-void GameScene::handleEvent(const sf::Event &event) { return; }
+void GameScene::handleEvent(const sf::Event &event) {
+  getInputSystem.update(*entityManager, event);
+  playerControlSystem.update(*entityManager);
+}
