@@ -9,4 +9,7 @@ public:
   CTransform() {}
   CTransform(const Vec2 &_pos, const Vec2 &_velocity, const Vec2 &_maxVelocity)
       : pos(_pos), velocity(_velocity), maxVelocity(_maxVelocity) {}
+
+  CTransform(const Vec2 &_pos, const Vec2 &_maxVelocity)
+      : pos(_pos), maxVelocity(_maxVelocity) {}
 };

@@ -2,7 +2,7 @@
 
 class CLifeSpan : public Component {
 public:
-  int life = 100;
+  int life = 200;
   CLifeSpan() {}
   CLifeSpan(int _life) : life(_life) {}
 };

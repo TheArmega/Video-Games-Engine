@@ -5,6 +5,10 @@ target_sources(ECSLib
         GetMouseInputSystem.cpp
         PlayerControlSystem.cpp
         PlayerShootSystem.cpp
+        CreateBulletSystem.cpp
+        CreateEnemySystem.cpp
+        SpawnEnemySystem.cpp
+        EnemyMovementSystem.cpp
         LifeSpanSystem.cpp
 )
 

@@ -7,6 +7,9 @@
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 
+static float acumulator = 0.f;
+constexpr float ENEMY_SPAWN_STEP = 5.f;
+
 GameScene::GameScene(Window *w, EntityManager *em)
     : Scene("Game Scene", em), window(w) {};
 
@@ -23,8 +26,18 @@ void GameScene::init() {
 }
 
 void GameScene::update(float dt) {
+
+  acumulator += dt;
+
+  enemyMovementSystem.update(*entityManager);
+
   movementSystem.update(*entityManager, dt);
   lifeSpanSystem.update(*entityManager);
+
+  if (acumulator >= ENEMY_SPAWN_STEP) {
+    spawnEnemySystem.spawn(*entityManager, *window);
+    acumulator -= ENEMY_SPAWN_STEP;
+  }
 }
 
 void GameScene::render() {

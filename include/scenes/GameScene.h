@@ -4,12 +4,14 @@
 #include "Scene.h"
 #include "core/Window.h"
 #include "ecs/core/EntityManager.h"
+#include "ecs/systems/EnemyMovementSystem.h"
 #include "ecs/systems/GetKeyboardInputSystem.h"
 #include "ecs/systems/GetMouseInputSystem.h"
 #include "ecs/systems/LifeSpanSystem.h"
 #include "ecs/systems/MovementSystem.h"
 #include "ecs/systems/PlayerControlSystem.h"
 #include "ecs/systems/PlayerShootSystem.h"
+#include "ecs/systems/SpawnEnemySystem.h"
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
@@ -22,6 +24,8 @@ private:
   GetMouseInputSystem getMouseInputSystem;
   PlayerControlSystem playerControlSystem;
   PlayerShootSystem playerShootSystem;
+  SpawnEnemySystem spawnEnemySystem;
+  EnemyMovementSystem enemyMovementSystem;
   LifeSpanSystem lifeSpanSystem;
 
 public:

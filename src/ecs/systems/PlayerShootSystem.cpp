@@ -1,4 +1,5 @@
 #include "ecs/core/Entity.h"
+#include "ecs/systems/CreateBulletSystem.h"
 #include "ecs/systems/PlayerShootSystem.h"
 #include "utils/Vec2.h"
 #include <SFML/Graphics/CircleShape.hpp>
@@ -34,10 +35,11 @@ void PlayerShootSystem::update(EntityManager &em, sf::Window &w) {
       Vec2 iP = c + ((v / n) * r);
 
       // Create the bullet entity
-      auto bullet = em.addEntity("Bullet");
-      bullet->add<CShape>(10, sf::Color::White);
-      bullet->add<CTransform>(Vec2(iP.x, iP.y), Vec2(0, 0), Vec2(10, 10));
-      bullet->add<CLifeSpan>(100);
+      CreateBulletSystem createBulletSystem;
+      auto bullet = createBulletSystem.create(em);
+
+      bullet->add<CTransform>(Vec2(iP.x, iP.y), Vec2(10, 10));
+      bullet->add<CLifeSpan>();
 
       // Give the bullet a velocity acording to it's direction
       auto &transform = bullet->get<CTransform>();

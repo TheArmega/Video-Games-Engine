@@ -7,3 +7,6 @@ target_include_directories(ECSLib
         ${PROJECT_SOURCE_DIR}/include
 )
 
+target_link_libraries(ECSLib PRIVATE CoreLib)
+
+
