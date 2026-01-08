@@ -1,5 +1,6 @@
 #include "ecs/core/Entity.h"
 #include "ecs/core/EntityManager.h"
+#include "ecs/systems/PlayerShootSystem.h"
 #include "imgui-SFML.h"
 #include "scenes/GameScene.h"
 #include "utils/Vec2.h"
@@ -12,16 +13,19 @@ GameScene::GameScene(Window *w, EntityManager *em)
 void GameScene::init() {
 
   auto player = entityManager->addEntity("Player");
-  player->add<CShape>(3, 50, sf::Color::Green);
+  player->add<CShape>(30, 50, sf::Color::Green);
   player->add<CTransform>(
       Vec2(window->getWidth() / 2.f - player->get<CShape>().shape.getRadius(),
            window->getHeight() / 2.f - player->get<CShape>().shape.getRadius()),
-      Vec2(100, 100));
+      Vec2(0, 0), Vec2(500, 500));
   player->add<CLife>(200);
   player->add<CInput>();
 }
 
-void GameScene::update(float dt) { movementSystem.update(*entityManager, dt); }
+void GameScene::update(float dt) {
+  movementSystem.update(*entityManager, dt);
+  lifeSpanSystem.update(*entityManager);
+}
 
 void GameScene::render() {
   for (auto &e : entityManager->getEntities()) {
@@ -37,6 +41,8 @@ void GameScene::render() {
 void GameScene::cleanUp() { return; }
 
 void GameScene::handleEvent(const sf::Event &event) {
-  getInputSystem.update(*entityManager, event);
+  getKeyboardInputSystem.update(*entityManager, event);
   playerControlSystem.update(*entityManager);
+  getMouseInputSystem.update(*entityManager, event);
+  playerShootSystem.update(*entityManager, window->getSfWindow());
 }

@@ -15,12 +15,12 @@ public:
     shape.setPointCount(points);
     shape.setRadius(radius);
     shape.setFillColor(color);
-    // shape.setOrigin({shape.getRadius(), shape.getRadius()});
+    shape.setOrigin({shape.getRadius(), shape.getRadius()});
   }
 
   CShape(float _radius, sf::Color _color) : radius(_radius), color(_color) {
     shape.setRadius(radius);
     shape.setFillColor(color);
-    // shape.setOrigin({shape.getRadius(), shape.getRadius()});
+    shape.setOrigin({shape.getRadius(), shape.getRadius()});
   }
 };

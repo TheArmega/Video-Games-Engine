@@ -1,7 +1,10 @@
 target_sources(ECSLib
     PRIVATE
         MovementSystem.cpp
-        GetInputSystem.cpp
+        GetKeyboardInputSystem.cpp
+        GetMouseInputSystem.cpp
         PlayerControlSystem.cpp
+        PlayerShootSystem.cpp
+        LifeSpanSystem.cpp
 )
 

@@ -16,6 +16,8 @@ public:
   Vec2 operator-(Vec2 v);
   Vec2 operator*(Vec2 v);
   Vec2 operator*(float d);
+  Vec2 operator/(Vec2 v);
+  Vec2 operator/(float d);
 
   void print();
 };

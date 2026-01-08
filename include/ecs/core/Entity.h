@@ -9,11 +9,13 @@
 #include "Component.h"
 #include "ecs/components/CInput.hpp"
 #include "ecs/components/CLife.hpp"
+#include "ecs/components/CLifeSpan.hpp"
 #include "ecs/components/CShape.hpp"
 #include "ecs/components/CSprite.hpp"
 #include "ecs/components/CTransform.hpp"
 
-using ComponentTuple = std::tuple<CTransform, CSprite, CShape, CLife, CInput>;
+using ComponentTuple =
+    std::tuple<CTransform, CSprite, CShape, CLife, CInput, CLifeSpan>;
 
 class Entity {
 private:

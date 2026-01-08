@@ -4,9 +4,12 @@
 #include "Scene.h"
 #include "core/Window.h"
 #include "ecs/core/EntityManager.h"
-#include "ecs/systems/GetInputSystem.h"
+#include "ecs/systems/GetKeyboardInputSystem.h"
+#include "ecs/systems/GetMouseInputSystem.h"
+#include "ecs/systems/LifeSpanSystem.h"
 #include "ecs/systems/MovementSystem.h"
 #include "ecs/systems/PlayerControlSystem.h"
+#include "ecs/systems/PlayerShootSystem.h"
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
@@ -15,8 +18,11 @@ class GameScene : public Scene {
 private:
   Window *window;
   MovementSystem movementSystem;
-  GetInputSystem getInputSystem;
+  GetKeyboardInputSystem getKeyboardInputSystem;
+  GetMouseInputSystem getMouseInputSystem;
   PlayerControlSystem playerControlSystem;
+  PlayerShootSystem playerShootSystem;
+  LifeSpanSystem lifeSpanSystem;
 
 public:
   explicit GameScene(Window *w, EntityManager *em);

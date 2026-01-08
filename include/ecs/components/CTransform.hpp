@@ -5,7 +5,8 @@ class CTransform : public Component {
 public:
   Vec2 pos = {0, 0};
   Vec2 velocity = {0, 0};
-  Vec2 speed = {0, 0};
+  Vec2 maxVelocity = {10, 10};
   CTransform() {}
-  CTransform(const Vec2 &_pos, const Vec2 &_speed) : pos(_pos), speed(_speed) {}
+  CTransform(const Vec2 &_pos, const Vec2 &_velocity, const Vec2 &_maxVelocity)
+      : pos(_pos), velocity(_velocity), maxVelocity(_maxVelocity) {}
 };

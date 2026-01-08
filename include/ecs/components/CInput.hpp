@@ -7,6 +7,7 @@ public:
   bool right = false;
   bool left = false;
   bool shoot = false;
+  bool lock_click = false;
 
   CInput() {}
 };
