@@ -19,6 +19,9 @@ public:
   Vec2 operator/(Vec2 v);
   Vec2 operator/(float d);
 
+  float module();
+  Vec2 normalized();
+
   void print();
 };
 

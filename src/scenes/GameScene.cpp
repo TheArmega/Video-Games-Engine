@@ -8,7 +8,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 
 static float acumulator = 0.f;
-constexpr float ENEMY_SPAWN_STEP = 5.f;
+constexpr float ENEMY_SPAWN_STEP = 2.5f;
 
 GameScene::GameScene(Window *w, EntityManager *em)
     : Scene("Game Scene", em), window(w) {};
@@ -16,7 +16,7 @@ GameScene::GameScene(Window *w, EntityManager *em)
 void GameScene::init() {
 
   auto player = entityManager->addEntity("Player");
-  player->add<CShape>(30, 50, sf::Color::Green);
+  player->add<CShape>(8, 50, sf::Color::Green, sf::Color::White, 5.f);
   player->add<CTransform>(
       Vec2(window->getWidth() / 2.f - player->get<CShape>().shape.getRadius(),
            window->getHeight() / 2.f - player->get<CShape>().shape.getRadius()),
@@ -29,15 +29,26 @@ void GameScene::update(float dt) {
 
   acumulator += dt;
 
-  enemyMovementSystem.update(*entityManager);
-
+  // Movement
+  enemyMovementSystem.update(*entityManager, dt);
   movementSystem.update(*entityManager, dt);
-  lifeSpanSystem.update(*entityManager);
 
   if (acumulator >= ENEMY_SPAWN_STEP) {
     spawnEnemySystem.spawn(*entityManager, *window);
     acumulator -= ENEMY_SPAWN_STEP;
   }
+
+  collisionSystem.update(*entityManager);
+
+  enemyDamageSystem.update(*entityManager);
+  bulletDamageSystem.update(*entityManager);
+
+  lifeSpanSystem.update(*entityManager);
+  checkDeathSystem.update(*entityManager);
+
+  clearCollisionSystem.update(*entityManager);
+
+  entityManager->update();
 }
 
 void GameScene::render() {

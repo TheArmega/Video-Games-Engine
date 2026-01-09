@@ -4,6 +4,11 @@
 #include "Scene.h"
 #include "core/Window.h"
 #include "ecs/core/EntityManager.h"
+#include "ecs/systems/BulletDamageSystem.h"
+#include "ecs/systems/CheckDeathSystem.h"
+#include "ecs/systems/ClearCollisionSystem.h"
+#include "ecs/systems/CollisionSystem.h"
+#include "ecs/systems/EnemyDamageSystem.h"
 #include "ecs/systems/EnemyMovementSystem.h"
 #include "ecs/systems/GetKeyboardInputSystem.h"
 #include "ecs/systems/GetMouseInputSystem.h"
@@ -27,6 +32,11 @@ private:
   SpawnEnemySystem spawnEnemySystem;
   EnemyMovementSystem enemyMovementSystem;
   LifeSpanSystem lifeSpanSystem;
+  CollisionSystem collisionSystem;
+  ClearCollisionSystem clearCollisionSystem;
+  BulletDamageSystem bulletDamageSystem;
+  CheckDeathSystem checkDeathSystem;
+  EnemyDamageSystem enemyDamageSystem;
 
 public:
   explicit GameScene(Window *w, EntityManager *em);

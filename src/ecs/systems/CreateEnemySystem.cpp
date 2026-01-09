@@ -4,9 +4,11 @@
 
 std::shared_ptr<Entity> CreateEnemySystem::create(EntityManager &em) {
   auto enemy = em.addEntity("Enemy");
-  enemy->add<CShape>(3, 10, sf::Color::Red);
+  enemy->add<CShape>(4, 20, sf::Color::Red);
   enemy->add<CTransform>();
-  enemy->add<CLife>();
+  enemy->add<CLife>(50);
+  enemy->add<CDamage>(10);
+  enemy->add<CWobble>();
 
   return enemy;
 }

@@ -7,7 +7,7 @@
 #include <SFML/Window/Mouse.hpp>
 #include <cmath>
 
-constexpr float BULLET_SPEED = 600.f;
+constexpr float BULLET_SPEED = 700.f;
 
 void PlayerShootSystem::update(EntityManager &em, sf::Window &w) {
 
@@ -30,20 +30,21 @@ void PlayerShootSystem::update(EntityManager &em, sf::Window &w) {
       Vec2 v = p - c;
       float n = std::sqrt(v.x * v.x + v.y * v.y);
 
-      // Calculate the intersection point between the circle and the direction
-      // vector
-      Vec2 iP = c + ((v / n) * r);
-
       // Create the bullet entity
       CreateBulletSystem createBulletSystem;
       auto bullet = createBulletSystem.create(em);
+      auto &bulletR = bullet->get<CShape>().radius;
 
-      bullet->add<CTransform>(Vec2(iP.x, iP.y), Vec2(10, 10));
+      // Calculate the intersection point between the circle and the direction
+      // vector
+      Vec2 dir = v / n;
+      Vec2 iP = c + dir * (r * bulletR * 0.18);
+
+      bullet->add<CTransform>(iP, Vec2(10, 10));
       bullet->add<CLifeSpan>();
 
       // Give the bullet a velocity acording to it's direction
       auto &transform = bullet->get<CTransform>();
-      Vec2 dir = v / n;
       transform.velocity = dir * BULLET_SPEED;
 
       input.shoot = false;

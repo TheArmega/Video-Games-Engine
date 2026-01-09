@@ -2,7 +2,7 @@
 
 class CLife : public Component {
 public:
-  unsigned int hp = 100;
+  float hp = 100;
   CLife() {};
-  CLife(unsigned int _hp) : hp(_hp) {}
+  CLife(float _hp) : hp(_hp) {}
 };

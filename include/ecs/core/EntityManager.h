@@ -27,6 +27,7 @@ public:
   EntityVec &getEntities(
       const std::string
           &tag); // Return the vector with all entities with a specific tag
+  std::shared_ptr<Entity> getEntityById(const size_t id);
 };
 
 #endif // ENTITYMANAGER_H

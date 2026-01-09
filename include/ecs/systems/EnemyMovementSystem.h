@@ -5,7 +5,7 @@
 class EnemyMovementSystem {
 
 public:
-  void update(EntityManager &em);
+  void update(EntityManager &em, float dt);
 };
 
 #endif // ENEMYMOVEMENTSYSTEM_H

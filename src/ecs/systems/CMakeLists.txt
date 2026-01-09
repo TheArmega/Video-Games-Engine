@@ -10,5 +10,10 @@ target_sources(ECSLib
         SpawnEnemySystem.cpp
         EnemyMovementSystem.cpp
         LifeSpanSystem.cpp
+        BulletDamageSystem.cpp
+        CollisionSystem.cpp
+        ClearCollisionSystem.cpp
+        CheckDeathSystem.cpp
+        EnemyDamageSystem.cpp
 )
 

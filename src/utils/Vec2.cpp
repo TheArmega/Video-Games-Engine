@@ -1,3 +1,4 @@
+#include <cmath>
 #include <iostream>
 
 #include "utils/Vec2.h"
@@ -16,5 +17,8 @@ Vec2 Vec2::operator*(Vec2 v) { return Vec2(x * v.x, y * v.y); }
 Vec2 Vec2::operator*(float d) { return Vec2(x * d, y * d); }
 Vec2 Vec2::operator/(Vec2 v) { return Vec2(x / v.x, y / v.y); }
 Vec2 Vec2::operator/(float d) { return Vec2(x / d, y / d); }
+
+float Vec2::module() { return std::sqrt(x * x + y * y); }
+Vec2 Vec2::normalized() { return Vec2(x, y) / module(); }
 
 void Vec2::print() { std::cout << x << " " << y << std::endl; }

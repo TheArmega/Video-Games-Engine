@@ -16,7 +16,7 @@ void EntityManager::update() {
 
   for (auto it = m_entityMap.begin(); it != m_entityMap.end();) {
 
-    auto vec = it->second;
+    auto &vec = it->second;
 
     vec.erase(std::remove_if(vec.begin(), vec.end(),
                              [](const std::shared_ptr<Entity> &e) {
@@ -44,4 +44,12 @@ std::shared_ptr<Entity> EntityManager::addEntity(const std::string &tag) {
 EntityVec &EntityManager::getEntities() { return m_entities; }
 EntityVec &EntityManager::getEntities(const std::string &tag) {
   return m_entityMap[tag];
+}
+std::shared_ptr<Entity> EntityManager::getEntityById(const size_t id) {
+  for (auto &e : m_entities) {
+    if (e->id() != id)
+      continue;
+    return e;
+  }
+  return nullptr;
 }
