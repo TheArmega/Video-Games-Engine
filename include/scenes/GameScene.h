@@ -8,9 +8,11 @@
 #include "ecs/systems/BulletDamageSystem.h"
 #include "ecs/systems/CheckDeathSystem.h"
 #include "ecs/systems/CheckEnemyDeathSystem.h"
+#include "ecs/systems/CheckScreenCollisionSystem.h"
 #include "ecs/systems/ClearCollisionSystem.h"
 #include "ecs/systems/CollisionSystem.h"
 #include "ecs/systems/DeathFragmentsTransparencySystem.h"
+#include "ecs/systems/DisplayScoreSystem.h"
 #include "ecs/systems/EnemyDamageSystem.h"
 #include "ecs/systems/EnemyMovementSystem.h"
 #include "ecs/systems/GetKeyboardInputSystem.h"
@@ -47,6 +49,8 @@ private:
   ShapeRotationSystem shapeRotationSystem;
   CheckEnemyDeathSystem checkEnemyDeathSystem;
   DeathFragmentsTransparencySystem deathFragmentsTransparencySystem;
+  CheckScreenCollisionSystem checkScreenCollisionSystem;
+  DisplayScoreSystem displayScoreSystem;
 
 public:
   explicit GameScene(Window *w, EntityManager *em);

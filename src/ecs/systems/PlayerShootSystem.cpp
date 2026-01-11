@@ -33,6 +33,7 @@ void PlayerShootSystem::update(EntityManager &em, sf::Window &w) {
       // Create the bullet entity
       CreateBulletSystem createBulletSystem;
       auto bullet = createBulletSystem.create(em);
+      bullet->add<COwner>(e->id());
       auto &bulletR = bullet->get<CShape>().radius;
 
       // Calculate the intersection point between the circle and the direction

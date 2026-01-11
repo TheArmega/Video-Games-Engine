@@ -20,5 +20,8 @@ target_sources(ECSLib
         HitFlashSystem.cpp
         ShapeRotationSystem.cpp
         DeathFragmentsTransparencySystem.cpp
+        CheckScreenCollisionSystem.cpp
+        DisplayScoreSystem.cpp
+        
 )
 

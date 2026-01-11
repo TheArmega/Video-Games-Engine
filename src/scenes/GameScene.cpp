@@ -24,6 +24,7 @@ void GameScene::init() {
   player->add<CLife>(200);
   player->add<CInput>();
   player->add<CRotation>(2);
+  player->add<CScore>();
 }
 
 void GameScene::update(float dt) {
@@ -34,12 +35,12 @@ void GameScene::update(float dt) {
   shapeRotationSystem.update(*entityManager);
   enemyMovementSystem.update(*entityManager, dt);
   movementSystem.update(*entityManager, dt);
-
   if (acumulator >= ENEMY_SPAWN_STEP) {
     spawnEnemySystem.spawn(*entityManager, *window);
     acumulator -= ENEMY_SPAWN_STEP;
   }
 
+  checkScreenCollisionSystem.update(*entityManager, *window);
   collisionSystem.update(*entityManager);
 
   enemyDamageSystem.update(*entityManager);
@@ -66,6 +67,8 @@ void GameScene::render() {
       window->draw(e->get<CShape>().shape);
     }
   }
+
+  displayScoreSystem.update(*entityManager, *window);
 }
 
 void GameScene::cleanUp() { return; }

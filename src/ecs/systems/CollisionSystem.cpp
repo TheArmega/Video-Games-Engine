@@ -14,6 +14,10 @@ void CollisionSystem::update(EntityManager &em) {
       if (!b->has<CTransform>() || !b->has<CShape>() || b == a)
         continue;
 
+      if ((a->tag() == "Player" && b->tag() == "Bullet") ||
+          (a->tag() == "Bullet" && b->tag() == "Player"))
+        continue;
+
       if (a->get<CShape>().shape.getGlobalBounds().findIntersection(
               b->get<CShape>().shape.getGlobalBounds())) {
         a->add<CCollision>(b->id());

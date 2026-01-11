@@ -13,6 +13,7 @@ void EnemyDamageSystem::update(EntityManager &em) {
       continue;
 
     other->get<CLife>().hp -= e->get<CDamage>().damage;
+
     e->destroy();
   }
 }
