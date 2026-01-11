@@ -9,6 +9,7 @@ std::shared_ptr<Entity> CreateEnemySystem::create(EntityManager &em) {
   enemy->add<CLife>(50);
   enemy->add<CDamage>(10);
   enemy->add<CWobble>();
+  enemy->add<CRotation>();
 
   return enemy;
 }

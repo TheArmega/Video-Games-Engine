@@ -8,16 +8,19 @@
 
 #include "ecs/components/CCollision.hpp"
 #include "ecs/components/CDamage.hpp"
+#include "ecs/components/CHitFlash.hpp"
 #include "ecs/components/CInput.hpp"
 #include "ecs/components/CLife.hpp"
 #include "ecs/components/CLifeSpan.hpp"
+#include "ecs/components/CRotation.hpp"
 #include "ecs/components/CShape.hpp"
 #include "ecs/components/CSprite.hpp"
 #include "ecs/components/CTransform.hpp"
 #include "ecs/components/CWobble.hpp"
 
-using ComponentTuple = std::tuple<CTransform, CSprite, CShape, CLife, CInput,
-                                  CLifeSpan, CDamage, CCollision, CWobble>;
+using ComponentTuple =
+    std::tuple<CTransform, CSprite, CShape, CLife, CInput, CLifeSpan, CDamage,
+               CCollision, CWobble, CHitFlash, CRotation>;
 
 class Entity {
 private:

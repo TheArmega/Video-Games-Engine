@@ -14,6 +14,11 @@ target_sources(ECSLib
         CollisionSystem.cpp
         ClearCollisionSystem.cpp
         CheckDeathSystem.cpp
+        CheckEnemyDeathSystem.cpp
         EnemyDamageSystem.cpp
+        AddHitFlashSystem.cpp
+        HitFlashSystem.cpp
+        ShapeRotationSystem.cpp
+        DeathFragmentsTransparencySystem.cpp
 )
 

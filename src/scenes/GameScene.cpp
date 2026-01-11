@@ -23,6 +23,7 @@ void GameScene::init() {
       Vec2(0, 0), Vec2(500, 500));
   player->add<CLife>(200);
   player->add<CInput>();
+  player->add<CRotation>(2);
 }
 
 void GameScene::update(float dt) {
@@ -30,6 +31,7 @@ void GameScene::update(float dt) {
   acumulator += dt;
 
   // Movement
+  shapeRotationSystem.update(*entityManager);
   enemyMovementSystem.update(*entityManager, dt);
   movementSystem.update(*entityManager, dt);
 
@@ -41,9 +43,13 @@ void GameScene::update(float dt) {
   collisionSystem.update(*entityManager);
 
   enemyDamageSystem.update(*entityManager);
+  addHitFlashSystem.update(*entityManager);
   bulletDamageSystem.update(*entityManager);
+  hitFlashSystem.update(*entityManager, dt);
 
   lifeSpanSystem.update(*entityManager);
+  checkEnemyDeathSystem.update(*entityManager);
+  deathFragmentsTransparencySystem.update(*entityManager);
   checkDeathSystem.update(*entityManager);
 
   clearCollisionSystem.update(*entityManager);
